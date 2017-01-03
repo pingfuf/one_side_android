@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="30dp"/>
 
-            <com.kuaipao.ui.view.NoScrollGridView
+            <com.oneside.ui.view.NoScrollGridView
                 android:id="@+id/gv_recomment_bkg_imgs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                 android:scrollbars="@null"
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="4dp" >
-            </com.kuaipao.ui.view.NoScrollGridView>
+            </com.oneside.ui.view.NoScrollGridView>
 
             <View
                 android:layout_width="match_parent"

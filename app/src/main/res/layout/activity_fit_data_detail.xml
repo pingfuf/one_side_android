@@ -216,7 +216,7 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:background="@color/white">
-            <com.kuaipao.ui.view.DashLineView
+            <com.oneside.ui.view.DashLineView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_alignParentBottom="true"/>
@@ -259,7 +259,7 @@
             </android.support.v4.view.ViewPager>
 
 
-            <com.kuaipao.ui.view.CircularProgressView
+            <com.oneside.ui.view.CircularProgressView
                 android:id="@+id/progress_bar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -272,7 +272,7 @@
                 />
         </RelativeLayout>
 
-        <com.kuaipao.ui.view.MyListView
+        <com.oneside.ui.view.MyListView
             android:id="@+id/listview_fit_data_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -280,6 +280,6 @@
             android:divider="@color/transparency"
             android:layout_marginTop="10dp">
 
-        </com.kuaipao.ui.view.MyListView>
+        </com.oneside.ui.view.MyListView>
     </RelativeLayout>
 </ScrollView>

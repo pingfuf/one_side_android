@@ -13,10 +13,10 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.jakewharton.salvage.RecyclingPagerAdapter;
-import com.kuaipao.utils.JumpCenter;
-import com.kuaipao.utils.LangUtils;
-import com.kuaipao.utils.SysUtils;
-import com.kuaipao.manager.R;
+import com.oneside.utils.JumpCenter;
+import com.oneside.utils.LangUtils;
+import com.oneside.utils.SysUtils;
+import com.oneside.R;
 
 import java.util.ArrayList;
 import java.util.List;

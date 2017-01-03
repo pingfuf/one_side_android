@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <!-- <com.kuaipao.ui.view.LazyImageView -->
+    <!-- <com.oneside.ui.view.LazyImageView -->
 
-    <com.kuaipao.ui.view.SquareImageView
+    <com.oneside.ui.view.SquareImageView
         android:id="@+id/iv_comments_pics_grid_item"
         android:layout_width="match_parent"
         android:layout_height="80dp"

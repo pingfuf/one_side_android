@@ -67,7 +67,7 @@
     <string name="wx_friends">微信好友</string>
     <string name="wx_zone">朋友圈</string>
     <string name="btn_login">登录</string>
-    <string name="xxkuaipao_gongzhonghao">小熊快跑</string>
+    <string name="xxoneside_gongzhonghao">小熊快跑</string>
     <string name="text_coupons">优惠券</string>
     <string name="logout_succ">成功退出账号！</string>
     <string name="balance_title">余额</string>
@@ -428,16 +428,16 @@
     <string name="share_act_warn">获取邀请码失败，请稍后再试</string>
     <string name="share_qq_title_default">小熊快跑城市健身通行证</string>
     <string name="share_qq_desc_default">畅享全城数百家健身场馆</string>
-    <string name="share_qq_url_default">http://www.xxkuaipao.com</string>
+    <string name="share_qq_url_default">http://www.xxoneside.com</string>
     <string name="share_weibo_title_default">小熊快跑城市健身通行证</string>
     <string name="share_weibo_desc_default">畅享全城数百家健身场馆</string>
-    <string name="share_weibo_url_default">http://www.xxkuaipao.com</string>
+    <string name="share_weibo_url_default">http://www.xxoneside.com</string>
     <string name="share_weixin_title_default">小熊快跑城市健身通行证</string>
     <string name="share_weixin_desc_default">畅享全城数百家健身场馆</string>
-    <string name="share_weixin_url_default">http://www.xxkuaipao.com/wechat/gym/%1$s</string>
+    <string name="share_weixin_url_default">http://www.xxoneside.com/wechat/gym/%1$s</string>
     <string name="share_pyq_title_default">小熊快跑城市健身通行证</string>
     <string name="share_pyq_desc_default">畅享全城数百家健身场馆</string>
-    <string name="share_pyq_url_default">http://www.xxkuaipao.com/wechat/gym/%1$s</string>
+    <string name="share_pyq_url_default">http://www.xxoneside.com/wechat/gym/%1$s</string>
     <!-- authrity share -->
     <string name="share_warn_title">小熊快跑好友邀请奖励</string>
     <string name="no_advertisement">暂无活动 敬请期待</string>

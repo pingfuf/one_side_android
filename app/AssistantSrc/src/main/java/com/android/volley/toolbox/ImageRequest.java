@@ -22,8 +22,8 @@ import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyLog;
-import com.kuaipao.utils.LangUtils;
-import com.kuaipao.utils.LogUtils;
+import com.oneside.utils.LangUtils;
+import com.oneside.utils.LogUtils;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;

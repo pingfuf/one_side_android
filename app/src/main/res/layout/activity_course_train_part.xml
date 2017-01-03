@@ -19,7 +19,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_ectopectoralis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_arm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_deltoid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_belly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_leg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color_gray_black"/>
 
-        <com.kuaipao.ui.view.NoScrollGridView
+        <com.oneside.ui.view.NoScrollGridView
             android:id="@+id/gv_buttocks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

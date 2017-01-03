@@ -32,11 +32,11 @@ import android.widget.ImageView;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader.ImageContainer;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
-import com.kuaipao.manager.CardManager;
-import com.kuaipao.utils.IOUtils;
-import com.kuaipao.utils.LangUtils;
-import com.kuaipao.utils.LogUtils;
-import com.kuaipao.utils.SysUtils;
+import com.oneside.manager.CardManager;
+import com.oneside.utils.IOUtils;
+import com.oneside.utils.LangUtils;
+import com.oneside.utils.LogUtils;
+import com.oneside.utils.SysUtils;
 
 /**
  * Handles fetching an image from a URL as well as the life-cycle of the

@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center" />
 
-    <com.kuaipao.zxing.view.ViewfinderView
+    <com.oneside.zxing.view.ViewfinderView
         android:id="@+id/open_door_viewfinder_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

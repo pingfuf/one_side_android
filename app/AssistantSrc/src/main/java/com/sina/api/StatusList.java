@@ -24,8 +24,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.kuaipao.model.WebUnBindMerchant;
-import com.kuaipao.utils.WebUtils;
+import com.oneside.model.WebUnBindMerchant;
+import com.oneside.utils.WebUtils;
 
 /**
  * 微博列表结构。

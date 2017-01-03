@@ -19,7 +19,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_qixie"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_hickey"
@@ -40,7 +40,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_dan_che"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_bike"
@@ -61,7 +61,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_yu_jia"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_yoga"
@@ -83,7 +83,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_you_yong"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_swimming"
@@ -104,7 +104,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_wu_dao"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_dance"
@@ -125,7 +125,7 @@
             android:textColor="@color/text_color_gray_black"
             android:textSize="12sp" />
 
-        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+        <com.oneside.ui.view.HistoryDiagramHorizontal
             android:id="@+id/history_diagram_wu_shu"
             style="@style/HistoryDiagramHorizontal"
             app:hdh_color="@color/class_type_wushu"

@@ -5,7 +5,7 @@
     android:background="@color/layout_background"
     android:orientation="vertical">
 
-    <com.kuaipao.ui.view.XListView
+    <com.oneside.ui.view.XListView
         android:id="@+id/lv_items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

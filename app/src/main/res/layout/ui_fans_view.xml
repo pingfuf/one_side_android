@@ -6,7 +6,7 @@
     android:paddingBottom="15dp"
     android:paddingTop="15dp">
 
-    <com.kuaipao.ui.view.RoundLazyImageView
+    <com.oneside.ui.view.RoundLazyImageView
         android:id="@+id/fans_logo_img"
         android:layout_width="@dimen/user_info_item_right_image_height"
         android:layout_height="@dimen/user_info_item_right_image_height"

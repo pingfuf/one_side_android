@@ -12,7 +12,7 @@
         android:layout_height="0.5dp"
         android:background="@color/balance_divider_line_color" />
 
-    <com.kuaipao.ui.view.XListView
+    <com.oneside.ui.view.XListView
         android:id="@+id/personal_course_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

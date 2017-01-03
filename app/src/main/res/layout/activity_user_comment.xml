@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/layout_background"
-    tools:context="com.kuaipao.ui.customer.UserCommentActivity">
+    tools:context="com.oneside.ui.customer.UserCommentActivity">
 
     <EditText
         android:id="@+id/edt_comment"
@@ -19,7 +19,7 @@
         android:background="@color/white"
         />
 
-    <com.kuaipao.ui.view.BeerExpressionView
+    <com.oneside.ui.view.BeerExpressionView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -104,7 +104,7 @@
                 android:layout_alignParentTop="true"
                 android:background="@color/line_gray" />
 
-            <com.kuaipao.ui.view.MeAddressView
+            <com.oneside.ui.view.MeAddressView
                 android:id="@+id/gym_address_home"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
@@ -115,7 +115,7 @@
                 myandroid:title_src="@drawable/ic_home"
                 myandroid:title_text="家" />
 
-            <com.kuaipao.ui.view.MeAddressView
+            <com.oneside.ui.view.MeAddressView
                 android:id="@+id/gym_address_company"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
@@ -126,7 +126,7 @@
                 myandroid:title_src="@drawable/ic_company"
                 myandroid:title_text="公司" />
 
-            <com.kuaipao.ui.view.MyListView
+            <com.oneside.ui.view.MyListView
                 android:id="@+id/gym_search_address_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                 android:layout_below="@id/gym_search_address_listview"
                 android:background="@color/line_gray" />
 
-            <com.kuaipao.ui.view.MyListView
+            <com.oneside.ui.view.MyListView
                 android:id="@+id/gym_search_history_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

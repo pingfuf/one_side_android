@@ -35,7 +35,7 @@
             <!--android:background="@anim/loading"-->
             <!--android:visibility="invisible" />-->
 
-        <com.kuaipao.base.view.XProcessView
+        <com.oneside.base.view.XProcessView
             android:id="@+id/v_process2"
             android:layout_width="40dp"
             android:layout_height="50dp"

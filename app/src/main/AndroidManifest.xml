@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kuaipao.manager">
+    package="com.oneside">
 
     <!-- 开启摄像头 -->
     <uses-feature
@@ -53,7 +53,7 @@
         android:smallScreens="true" />
 
     <application
-        android:name="com.kuaipao.base.CardApplication"
+        android:name="com.oneside.base.CardApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -76,7 +76,7 @@
             android:value="880072a66e414e72b7ded49d" />
 
         <activity
-            android:name="com.kuaipao.ui.SplashActivity"
+            android:name="com.oneside.ui.SplashActivity"
             android:theme="@style/AppFullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -84,53 +84,53 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.kuaipao.ui.LoginActivity"
+        <activity android:name="com.oneside.ui.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
-            android:name="com.kuaipao.ui.MainActivity"
+            android:name="com.oneside.ui.MainActivity"
             android:launchMode="singleTask" />
 
         <!-- 教练 -->
-        <activity android:name="com.kuaipao.ui.coach.CoachPersonalCustomerActivity" />
-        <activity android:name="com.kuaipao.ui.coach.CoachCustomerListActivity" />
-        <activity android:name="com.kuaipao.ui.coach.CoachReceiveCustomerActivity"
+        <activity android:name="com.oneside.ui.coach.CoachPersonalCustomerActivity" />
+        <activity android:name="com.oneside.ui.coach.CoachCustomerListActivity" />
+        <activity android:name="com.oneside.ui.coach.CoachReceiveCustomerActivity"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name="com.kuaipao.ui.coach.CoachReceiveRecordListActivity" />
-        <activity android:name="com.kuaipao.ui.course.CoachPersonalCourseActivity" />
+        <activity android:name="com.oneside.ui.coach.CoachReceiveRecordListActivity" />
+        <activity android:name="com.oneside.ui.course.CoachPersonalCourseActivity" />
 
         <!-- 用户 -->
-        <activity android:name="com.kuaipao.ui.customer.UserPhysicalRecordActivity" />
-        <activity android:name="com.kuaipao.ui.customer.CustomerSourceActivity" />
-        <activity android:name="com.kuaipao.ui.customer.CustomerTypeActivity" />
+        <activity android:name="com.oneside.ui.customer.UserPhysicalRecordActivity" />
+        <activity android:name="com.oneside.ui.customer.CustomerSourceActivity" />
+        <activity android:name="com.oneside.ui.customer.CustomerTypeActivity" />
 
         <!-- 课程 -->
-        <activity android:name="com.kuaipao.ui.course.CourseTrainPartsOfBodyActivity"/>
+        <activity android:name="com.oneside.ui.course.CourseTrainPartsOfBodyActivity"/>
 
         <!-- 友盟 -->
         <activity android:name="com.umeng.fb.ConversationActivity" />
 
-        <activity android:name="com.kuaipao.ui.CustomQuestionsDetailsActivity" />
-        <activity android:name="com.kuaipao.ui.card.CustomerCardsActivity" />
-        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordMenuActivity" />
-        <activity android:name="com.kuaipao.ui.coach.CoachReceiveSuccessActivity" />
-        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordDetailActivity" />
-        <activity android:name="com.kuaipao.ui.gym.MerchantTimeCountActivity" />
-        <activity android:name="com.kuaipao.ui.home.OpenDoorActivity" />
-        <activity android:name="com.kuaipao.ui.web.CardWebActivity" />
+        <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
+        <activity android:name="com.oneside.ui.card.CustomerCardsActivity" />
+        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordMenuActivity" />
+        <activity android:name="com.oneside.ui.coach.CoachReceiveSuccessActivity" />
+        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordDetailActivity" />
+        <activity android:name="com.oneside.ui.gym.MerchantTimeCountActivity" />
+        <activity android:name="com.oneside.ui.home.OpenDoorActivity" />
+        <activity android:name="com.oneside.ui.web.CardWebActivity" />
         <activity
-            android:name="com.kuaipao.ui.wxapi.WXEntryActivity"
+            android:name="com.oneside.ui.wxapi.WXEntryActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
-        <activity android:name="com.kuaipao.ui.QRCodeScanningActivity" />
-        <activity android:name="com.kuaipao.ui.QRCodeScanResultActivity" />
-        <activity android:name="com.kuaipao.ui.card.YearCardDescActivity" />
-        <activity android:name="com.kuaipao.ui.course.CoachAddCourseActivity" />
+        <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
+        <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />
+        <activity android:name="com.oneside.ui.card.YearCardDescActivity" />
+        <activity android:name="com.oneside.ui.course.CoachAddCourseActivity" />
         <!-- wechat pay -->
 
 
 
-        <receiver android:name="com.kuaipao.base.CardNetWorkReceiver">
+        <receiver android:name="com.oneside.base.CardNetWorkReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
@@ -145,7 +145,7 @@
             android:process=":DownloadingService" />
 
         <activity android:name="com.umeng.update.UpdateDialogActivity" />
-        <activity android:name="com.kuaipao.ui.customer.CouponsRulesActivity" />
+        <activity android:name="com.oneside.ui.customer.CouponsRulesActivity" />
         <!-- qq share -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -169,17 +169,17 @@
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.kuaipao.ui.MapOfMerchantsActivity" />
-        <activity android:name="com.kuaipao.ui.course.CoachCourseListActivity" />
-        <activity android:name="com.kuaipao.ui.coach.AddReceiveRecordActivity" />
-        <activity android:name="com.kuaipao.ui.photopicker.PhotoPickerActivity" />
-        <activity android:name="com.kuaipao.ui.photopicker.PhotoPreviewWhenPickActivity" />
-        <activity android:name="com.kuaipao.ui.photopicker.PhotoPreviewAfterPickActivity" />
-        <activity android:name="com.kuaipao.ui.gym.MerchantFacilitiesActivity" />
-        <activity android:name="com.kuaipao.ui.customer.CustomerDetailActivity"
+        <activity android:name="com.oneside.ui.MapOfMerchantsActivity" />
+        <activity android:name="com.oneside.ui.course.CoachCourseListActivity" />
+        <activity android:name="com.oneside.ui.coach.AddReceiveRecordActivity" />
+        <activity android:name="com.oneside.ui.photopicker.PhotoPickerActivity" />
+        <activity android:name="com.oneside.ui.photopicker.PhotoPreviewWhenPickActivity" />
+        <activity android:name="com.oneside.ui.photopicker.PhotoPreviewAfterPickActivity" />
+        <activity android:name="com.oneside.ui.gym.MerchantFacilitiesActivity" />
+        <activity android:name="com.oneside.ui.customer.CustomerDetailActivity"
             android:launchMode="singleTask"/>
 
-        <activity android:name="com.kuaipao.ui.customer.FitDataDetailActivity" />
+        <activity android:name="com.oneside.ui.customer.FitDataDetailActivity" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -188,16 +188,16 @@
         <!-- android:name="com.google.android.gms.version" -->
         <!-- android:value="@integer/google_play_services_version" /> -->
 
-        <activity android:name="com.kuaipao.ui.course.CoachCourseRecordDetailActivity"/>
-        <activity android:name="com.kuaipao.ui.course.CoachPersonalCourseDetailActivity" />
-        <activity android:name="com.kuaipao.ui.card.CardLeftDaysActivity" />
-        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordPhotoActivity" />
+        <activity android:name="com.oneside.ui.course.CoachCourseRecordDetailActivity"/>
+        <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />
+        <activity android:name="com.oneside.ui.card.CardLeftDaysActivity" />
+        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordPhotoActivity" />
 
         <activity
-            android:name="com.kuaipao.ui.customer.UserCommentActivity"
+            android:name="com.oneside.ui.customer.UserCommentActivity"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
-            android:name="com.kuaipao.ui.JumpCenterActivity"
+            android:name="com.oneside.ui.JumpCenterActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>

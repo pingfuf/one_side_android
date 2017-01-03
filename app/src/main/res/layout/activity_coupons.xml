@@ -38,7 +38,7 @@
 
     </LinearLayout>
 
-    <com.kuaipao.ui.view.XListView
+    <com.oneside.ui.view.XListView
         android:id="@+id/lv_coupons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

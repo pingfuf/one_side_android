@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:gravity="center"
-            android:text="guanjia.xxkuaipao.com"
+            android:text="guanjia.xxoneside.com"
             android:textColor="@color/text_color_gray"
             android:textSize="16sp" />
 

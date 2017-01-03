@@ -33,7 +33,7 @@
 
     </LinearLayout>
 
-    <com.kuaipao.base.view.numpicker.XSimpleChosenTimeView
+    <com.oneside.base.view.numpicker.XSimpleChosenTimeView
         android:id="@+id/v_chosen_date"
         android:layout_width="match_parent"
         android:layout_height="160dp"

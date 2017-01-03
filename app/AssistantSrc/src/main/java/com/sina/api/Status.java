@@ -19,7 +19,7 @@ package com.sina.api;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.kuaipao.utils.WebUtils;
+import com.oneside.utils.WebUtils;
 
 import java.util.ArrayList;
 

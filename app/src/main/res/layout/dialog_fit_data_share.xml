@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.kuaipao.ui.view.SelectableRoundedImageView0
+            <com.oneside.ui.view.SelectableRoundedImageView0
                 android:id="@+id/fit_data_share_dialog_top_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:layout_below="@id/fit_data_share_top_view_layout"
             android:layout_marginTop="15dp">
 
-            <com.kuaipao.ui.view.RoundLazyImageView
+            <com.oneside.ui.view.RoundLazyImageView
                 android:id="@+id/fit_data_share_usr_logo_img"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="5dp"
-                android:text="@string/xxkuaipao_gongzhonghao"
+                android:text="@string/xxoneside_gongzhonghao"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_smallest" />
         </FrameLayout>

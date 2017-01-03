@@ -70,13 +70,13 @@
             android:src="@drawable/ic_guide_map_icon"/>
     </LinearLayout>
 
-    <com.kuaipao.base.view.filter.FilterView
+    <com.oneside.base.view.filter.FilterView
         android:id="@+id/filter_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white" />
 
-    <com.kuaipao.ui.view.XListView
+    <com.oneside.ui.view.XListView
         android:id="@+id/lv_gyms"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

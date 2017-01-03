@@ -47,7 +47,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="10dp">
 
-        <com.kuaipao.ui.view.RoundLazyImageView
+        <com.oneside.ui.view.RoundLazyImageView
             android:id="@+id/sina_friends_logo_img"
             android:layout_width="36dp"
             android:layout_height="36dp"

@@ -33,19 +33,19 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.kuaipao.base.view.numpicker.XNumberPicker
+        <com.oneside.base.view.numpicker.XNumberPicker
             android:id="@+id/nb_year"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_centerVertical="true" />
 
-        <com.kuaipao.base.view.numpicker.XNumberPicker
+        <com.oneside.base.view.numpicker.XNumberPicker
             android:id="@+id/nb_month"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/nb_year" />
 
-        <com.kuaipao.base.view.numpicker.XNumberPicker
+        <com.oneside.base.view.numpicker.XNumberPicker
             android:id="@+id/nb_day"
             android:layout_width="80dp"
             android:layout_height="match_parent"

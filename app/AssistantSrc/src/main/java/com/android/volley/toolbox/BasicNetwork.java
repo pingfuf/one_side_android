@@ -31,8 +31,8 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.kuaipao.utils.LangUtils;
-import com.kuaipao.base.net.RequestQueueManager;
+import com.oneside.utils.LangUtils;
+import com.oneside.base.net.RequestQueueManager;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

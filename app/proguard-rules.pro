@@ -28,7 +28,7 @@
 -keepclassmembers class * {
    public <init>(org.json.JSONObject);
 }
--keep public class com.kuaipao.manager.R$*{
+-keep public class com.oneside.manager.R$*{
     public static final int *;
 }
 -keep public class com.umeng.fb.ui.ThreadView {

@@ -1,4 +1,4 @@
-package com.kuaipao.xx;
+package com.oneside.xx;
 
 import org.junit.Test;
 

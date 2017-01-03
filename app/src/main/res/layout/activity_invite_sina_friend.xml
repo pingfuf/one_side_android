@@ -5,7 +5,7 @@
     android:background="@color/setting_background_gray"
     android:orientation="vertical">
 
-    <com.kuaipao.ui.view.XListView
+    <com.oneside.ui.view.XListView
         android:id="@+id/lv_sina_friends_with_classes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

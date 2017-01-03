@@ -17,7 +17,7 @@
 package com.sina.api;
 
 import com.alibaba.fastjson.JSONObject;
-import com.kuaipao.utils.WebUtils;
+import com.oneside.utils.WebUtils;
 
 /**
  * 微博可见性结构体。

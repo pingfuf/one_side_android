@@ -14,7 +14,7 @@
         android:textColor="@color/text_color_gray_black"
         android:textSize="16sp" />
 
-    <com.kuaipao.ui.view.NoScrollGridView
+    <com.oneside.ui.view.NoScrollGridView
         android:id="@+id/gv_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

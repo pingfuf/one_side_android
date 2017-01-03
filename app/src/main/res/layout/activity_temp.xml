@@ -26,12 +26,12 @@
 
     </LinearLayout>
 
-    <com.kuaipao.base.view.XProcessTempView
+    <com.oneside.base.view.XProcessTempView
         android:id="@+id/v_process"
         android:layout_width="40dp"
         android:layout_height="50dp" />
 
-    <com.kuaipao.base.view.XProcessView
+    <com.oneside.base.view.XProcessView
         android:id="@+id/v_process2"
         android:layout_width="40dp"
         android:layout_height="50dp" />
@@ -61,7 +61,7 @@
 
     </LinearLayout>
 
-    <com.kuaipao.base.view.numpicker.XSimpleChosenTimeView
+    <com.oneside.base.view.numpicker.XSimpleChosenTimeView
         android:id="@+id/v_simple_chosen_time"
         android:layout_width="match_parent"
         android:layout_height="160dp"/>

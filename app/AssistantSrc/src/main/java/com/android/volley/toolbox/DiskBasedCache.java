@@ -20,8 +20,8 @@ import android.os.SystemClock;
 
 import com.android.volley.Cache;
 import com.android.volley.VolleyLog;
-import com.kuaipao.utils.IOUtils;
-import com.kuaipao.utils.LangUtils;
+import com.oneside.utils.IOUtils;
+import com.oneside.utils.LangUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

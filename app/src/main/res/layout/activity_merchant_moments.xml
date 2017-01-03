@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.kuaipao.ui.view.StickySeparateNavLayout
+    <com.oneside.ui.view.StickySeparateNavLayout
         android:id="@+id/stick_nav_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="160dp">
 
-            <com.kuaipao.ui.view.LazyImageView
+            <com.oneside.ui.view.LazyImageView
                 android:id="@+id/merchant_pic_failed_or_no_exist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -62,7 +62,7 @@
             android:id="@id/id_stickynavlayout_viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </com.kuaipao.ui.view.StickySeparateNavLayout>
+    </com.oneside.ui.view.StickySeparateNavLayout>
 
     <RelativeLayout
         android:id="@+id/layout_title"

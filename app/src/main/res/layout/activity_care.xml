@@ -144,7 +144,7 @@
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size_list" />
 
-            <com.kuaipao.ui.view.XListView
+            <com.oneside.ui.view.XListView
                 android:id="@+id/care_people_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

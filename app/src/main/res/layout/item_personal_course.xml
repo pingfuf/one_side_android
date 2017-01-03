@@ -6,7 +6,7 @@
                 android:minHeight="100dp">
 
 
-    <com.kuaipao.ui.view.RoundLazyImageView
+    <com.oneside.ui.view.RoundLazyImageView
         android:id="@+id/iv_coach_avator"
         android:layout_width="50dp"
         android:layout_height="50dp"

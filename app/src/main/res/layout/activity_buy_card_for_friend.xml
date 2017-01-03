@@ -79,7 +79,7 @@
                 android:layout_below="@id/line_title"
                 android:orientation="horizontal" >
 
-                <!-- <com.kuaipao.ui.view.PayPackageView
+                <!-- <com.oneside.ui.view.PayPackageView
                     android:id="@+id/iv_one_month"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -87,7 +87,7 @@
                     android:layout_weight="1"
                     muguaka:title="@string/pay_one_month" />
 
-                <com.kuaipao.ui.view.PayPackageView
+                <com.oneside.ui.view.PayPackageView
                     android:id="@+id/iv_three_months"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -96,7 +96,7 @@
                     android:layout_weight="1"
                     muguaka:title="@string/pay_three_months" />
 
-                <com.kuaipao.ui.view.PayPackageView
+                <com.oneside.ui.view.PayPackageView
                     android:id="@+id/iv_six_months"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

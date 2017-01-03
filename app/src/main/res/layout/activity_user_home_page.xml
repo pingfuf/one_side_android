@@ -7,7 +7,7 @@
                 android:orientation="vertical">
 
 
-    <com.kuaipao.ui.view.StickyNavLayout
+    <com.oneside.ui.view.StickyNavLayout
         android:id="@+id/stick_nav_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +34,7 @@
                 <!--android:layout_height="match_parent"-->
                 <!--android:background="@color/alpha_20_percent_black" />-->
 
-                <com.kuaipao.ui.view.RoundCachedImageView
+                <com.oneside.ui.view.RoundCachedImageView
                     android:id="@+id/iv_user_logo"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
@@ -189,7 +189,7 @@
 
         </RelativeLayout>
 
-        <com.kuaipao.ui.view.TabView
+        <com.oneside.ui.view.TabView
             android:id="@+id/id_stickynavlayout_indicator"
             android:layout_width="match_parent"
             android:layout_height="@dimen/user_home_title_height"
@@ -199,7 +199,7 @@
             papaya:item_padding="7dp"
             papaya:text_normal_color="@color/text_color_deep_gray"
             papaya:text_select_color="@color/orange"
-            papaya:text_size="@dimen/text_size_minimal"></com.kuaipao.ui.view.TabView>
+            papaya:text_size="@dimen/text_size_minimal"></com.oneside.ui.view.TabView>
 
         <View
             android:layout_width="match_parent"
@@ -212,12 +212,12 @@
             android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
         <!--<fragment-->
         <!--android:id="@+id/id_fragment_content"-->
-        <!--android:name="com.kuaipao.ui.fragment.CircleFragmentMine"-->
+        <!--android:name="com.oneside.ui.fragment.CircleFragmentMine"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
         <!--android:layout_below="@id/layout_card"-->
         <!--tools:layout="@layout/circle_fragment_in_user_home"/>-->
-    </com.kuaipao.ui.view.StickyNavLayout>
+    </com.oneside.ui.view.StickyNavLayout>
 
 
     <RelativeLayout

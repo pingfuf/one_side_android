@@ -10,7 +10,7 @@
         android:layout_width="86dp"
         android:layout_height="86dp">
 
-        <com.kuaipao.base.view.XProcessView
+        <com.oneside.base.view.XProcessView
             android:id="@+id/v_process"
             android:layout_width="60dp"
             android:layout_height="60dp"

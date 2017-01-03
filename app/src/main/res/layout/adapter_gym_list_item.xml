@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/selector_list_item_background">
 
-    <com.kuaipao.ui.view.RoundCachedImageView
+    <com.oneside.ui.view.RoundCachedImageView
         android:id="@+id/img_small_logo"
         android:layout_width="54dp"
         android:layout_height="54dp"

@@ -24,7 +24,7 @@
                 android:layout_width="66dp"
                 android:layout_height="66dp">
 
-                <com.kuaipao.base.view.XRoundImageView
+                <com.oneside.base.view.XRoundImageView
                     android:id="@+id/iv_coach_header"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
@@ -54,7 +54,7 @@
                 android:layout_width="66dp"
                 android:layout_height="66dp">
 
-                <com.kuaipao.base.view.XRoundImageView
+                <com.oneside.base.view.XRoundImageView
                     android:id="@+id/iv_student_header"
                     android:layout_width="66dp"
                     android:layout_height="66dp"

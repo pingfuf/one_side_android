@@ -36,7 +36,7 @@
         android:layout_below="@id/vip_reminder_title"
         android:background="@color/white">
 
-        <com.kuaipao.ui.view.OvalView
+        <com.oneside.ui.view.OvalView
             android:id="@+id/iv_class_type"
             android:layout_width="12dp"
             android:layout_height="12dp"

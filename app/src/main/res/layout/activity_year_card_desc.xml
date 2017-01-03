@@ -33,7 +33,7 @@
             android:layout_marginTop="15dp"
             android:src="@drawable/ic_arrow_right_gray" />
 
-        <com.kuaipao.ui.view.CollapsibleTextViewMerchant
+        <com.oneside.ui.view.CollapsibleTextViewMerchant
             android:id="@+id/year_card_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

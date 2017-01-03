@@ -18,7 +18,7 @@ package com.sina.api;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.kuaipao.utils.WebUtils;
+import com.oneside.utils.WebUtils;
 
 /**
  * 用户信息结构体。

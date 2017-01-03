@@ -19,7 +19,7 @@ package com.android.volley;
 import android.os.Process;
 
 import com.android.volley.toolbox.ImageRequest;
-import com.kuaipao.utils.LogUtils;
+import com.oneside.utils.LogUtils;
 
 import java.util.concurrent.BlockingQueue;
 

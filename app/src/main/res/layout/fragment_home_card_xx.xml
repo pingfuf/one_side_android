@@ -212,7 +212,7 @@
                     android:textSize="@dimen/text_size_micro" />
             </LinearLayout>
 
-            <com.kuaipao.ui.view.ScrollGridView
+            <com.oneside.ui.view.ScrollGridView
                 android:id="@+id/fragment_home_card_function_item_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -356,7 +356,7 @@
                     android:verticalSpacing="0.5dp" />
             </RelativeLayout>
 
-            <com.kuaipao.ui.view.FitDataTodayView
+            <com.oneside.ui.view.FitDataTodayView
                 android:id="@+id/fragment_home_card_fit_data_layout"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
