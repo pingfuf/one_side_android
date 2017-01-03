@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="default_src" format="reference" />
+        <attr name="net_error_src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Leans45DegreeView">
+        <attr name="leans_height" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="XClipView">
+        <attr name="clip_type" format="integer" />
+        <attr name="clip_degree" format="integer" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="borderColor" format="color" />
+
+    <!-- MyButton Attribute -->
+    <declare-styleable name="PaperButton">
+        <attr name="paper_text" format="string" />
+        <attr name="paper_text_size" format="dimension" />
+        <attr name="paper_text_color" format="color" />
+        <attr name="paper_font" format="string" />
+        <attr name="paper_color" format="color" />
+        <attr name="paper_number_of_button" format="integer" />
+        <attr name="paper_corner_radius" format="dimension" />
+        <attr name="paper_shadow_radius" format="float" />
+        <attr name="paper_shadow_offset_x" format="float" />
+        <attr name="paper_shadow_offset_y" format="float" />
+        <attr name="paper_shadow_color" format="color" />
+    </declare-styleable>
+
+    <!-- payPackageView -->
+    <declare-styleable name="PayPackageView">
+        <attr name="ppv_title" format="string" />
+    </declare-styleable>
+    <!-- TabView Attribute -->
+    <attr name="text_size" format="dimension" />
+    <attr name="text_select_color" format="color" />
+    <attr name="text_normal_color" format="color" />
+    <attr name="item_padding" format="dimension" />
+    <attr name="image_text_margin"></attr>
+
+    <declare-styleable name="TabView">
+        <attr name="text_size"></attr>
+        <attr name="text_select_color"></attr>
+        <attr name="text_normal_color"></attr>
+        <attr name="item_padding"></attr>
+        <attr name="image_text_margin"></attr>
+    </declare-styleable>
+
+    <!-- go gym -->
+    <attr name="merchant_postion" format="dimension" />
+    <attr name="class_postion" format="dimension" />
+
+    <attr name="order_postion" format="dimension" />
+    <attr name="btn_type" format="integer" />
+
+    <declare-styleable name="CrossView">
+        <attr name="lineColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="MeItemView">
+        <attr name="me_left_text" format="string|reference" />
+        <attr name="me_right_text" format="string|reference" />
+    </declare-styleable>
+    <declare-styleable name="MeAddressView">
+        <attr name="del_icon_visible" format="boolean" />
+        <attr name="arraw_icon_visible" format="boolean" />
+        <attr name="title_text" format="string|reference" />
+        <attr name="main_address_text" format="string|reference" />
+        <attr name="detail_address_text" format="string|reference" />
+        <attr name="title_src" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="UserInfoItemView">
+        <attr name="user_info_left_text" format="string|reference" />
+        <attr name="user_info_right_text" format="string|reference" />
+    </declare-styleable>
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressView">
+        <attr name="cpv_progress" format="float" />
+        <attr name="cpv_maxProgress" format="float" />
+        <attr name="cpv_animDuration" format="integer" />
+        <attr name="cpv_animSwoopDuration" format="integer" />
+        <attr name="cpv_animSyncDuration" format="integer" />
+        <attr name="cpv_color" format="color"/>
+        <attr name="cpv_thickness" format="dimension"/>
+        <attr name="cpv_indeterminate" format="boolean" />
+        <attr name="cpv_animAutostart" format="boolean" />
+        <attr name="cpv_animSteps" format="integer" />
+        <attr name="cpv_startAngle" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="HistoryDiagramHorizontal">
+        <attr name="hdh_percent" format="float" />
+        <attr name="hdh_color" format="color" />
+        <attr name="hdh_default_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RankSeekBar">
+        <attr name="rsb_line_height" format="dimension"/>
+        <attr name="rsb_circle_diameter" format="dimension"/>
+        <attr name="rsb_bkg_color" format="color"/>
+        <attr name="rsb_range_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorPressed" format="color" />
+        <attr name="fab_colorNormal" format="color" />
+        <attr name="fab_colorRipple" format="color" />
+        <attr name="fab_colorDisabled" format="color" />
+        <attr name="fab_shadow" format="boolean" />
+        <attr name="fab_type" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

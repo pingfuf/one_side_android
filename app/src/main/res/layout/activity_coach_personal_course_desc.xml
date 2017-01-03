@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <com.kuaipao.base.view.XRoundImageView
+            android:id="@+id/iv_header"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_coach_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="小明"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_add_action"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/ll_add_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus_icon_red" />
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="添加课程"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_sjkc_line" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/shape_divide_dotted_line"
+        android:layerType="software"/>
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/lv_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:divider="@null"
+        android:paddingBottom="10dp"/>
+
+</LinearLayout>

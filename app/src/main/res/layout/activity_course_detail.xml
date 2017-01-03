@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/setting_background_gray"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_body"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@drawable/selector_list_item_background"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/course_detail_parts_text"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/coach_course_parts_toast"
+                android:textColor="@color/text_color_gray_33"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/text_color_gray_66"
+                android:textColorHint="@color/dark_shadow"
+                android:hint="请选择训练部位" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_arrow_right_gray" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginTop="15dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:id="@+id/ll_action_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ll_support_type"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/selector_list_item_white_bg"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="运动方式"
+                android:textColor="@color/text_color_gray_33"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_sport_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:text="不太用力"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:src="@drawable/ic_arrow_right_gray" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="运动强度"
+                android:textColor="@color/text_color_gray_33"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_sport_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:hint="请填写100以内数字"
+                android:textColor="@color/text_color_gray_66"
+                android:textColorHint="@color/dark_shadow"
+                android:inputType="number"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:textColor="@color/text_color_gray_66"
+                android:text="%" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginTop="15dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="有氧运动"
+                    android:textColor="@color/text_color_gray_33"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_oxygen_sport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_color_gray_66"
+                    android:textColorHint="@color/dark_shadow"
+                    android:hint="请填写有氧运动名称"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/course_detail_train_assess_title"
+                android:layout_marginLeft="20dp"
+                android:background="@color/line_gray" />
+
+            <LinearLayout
+                android:id="@+id/ll_time"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="持续时间"
+                    android:textColor="@color/text_color_gray_33"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edit_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="请填写持续时间"
+                    android:textColor="@color/text_color_gray_66"
+                    android:textColorHint="@color/dark_shadow"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/text_color_gray_66"
+                    android:text="分钟" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:background="@color/line_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="距离"
+                    android:textColor="@color/text_color_gray_33"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:ellipsize="end"
+                    android:inputType="number"
+                    android:hint="请填写距离"
+                    android:textColor="@color/text_color_gray_66"
+                    android:textColorHint="@color/dark_shadow"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/text_color_gray_66"
+                    android:text="km" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/line_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin_left_right"
+                    android:text="速度阻尼"
+                    android:textColor="@color/text_color_gray_33"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_space"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:background="@color/white"
+                    android:textColor="@color/text_color_gray_66"
+                    android:textColorHint="@color/dark_shadow"
+                    android:hint="请填写速度／阻尼"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/text_color_gray_66"
+                    android:text="km/h" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:background="@color/line_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin_left_right"
+                    android:text="卡路里"
+                    android:textColor="@color/text_color_gray_33"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_calorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:background="@color/white"
+                    android:textColor="@color/text_color_gray_66"
+                    android:textColorHint="@color/dark_shadow"
+                    android:hint="请填写卡路里"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_margin_left_right"
+                    android:textColor="@color/text_color_gray_66"
+                    android:text="kcal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/course_detail_train_assess_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_tv_height_44"
+            android:layout_marginTop="@dimen/common_margin_top"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="@string/coach_course_comment_toast"
+            android:textColor="@color/text_color_gray_33"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:background="@color/line_gray" />
+
+        <EditText
+            android:id="@+id/edt_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="150"
+            android:gravity="left|top"
+            android:hint="@string/course_detail_assess_hit"
+            android:minHeight="100dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/text_color_gray_66"
+            android:textColorHint="@color/edit_hint_gray"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_gray" />
+
+        <TextView
+            android:id="@+id/tv_merchant_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_merchant_name"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="（可添加训练照片）"
+            android:textColor="@color/text_color_gray"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_gray" />
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:verticalSpacing="14dp"
+            android:numColumns="4" />
+
+        <Button
+            android:id="@+id/add_course_commit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/rectangle_btn_bg"
+            android:text="@string/add_course_commit_btn_title"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ScrollView>

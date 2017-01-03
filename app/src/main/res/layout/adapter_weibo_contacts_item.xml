@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/layout_phone_contact_care_invite"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:background="@drawable/corners_white_stroke_orange"
+            android:gravity="center"
+            android:text="@string/fans_care"
+            android:textColor="@color/btn_orange_text"
+            android:textSize="@dimen/text_size_sub_title" />
+
+        <TextView
+            android:id="@+id/tv_phone_contact_invite"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:background="@drawable/corners_solid_yellow"
+            android:drawableLeft="@drawable/ic_phone_contact_invite"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/phone_contacts_search_invite"
+            android:textColor="@color/btn_white_text"
+            android:textSize="@dimen/text_size_sub_title" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/layout_phone_contact_care_invite"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp">
+
+        <com.kuaipao.ui.view.RoundLazyImageView
+            android:id="@+id/sina_friends_logo_img"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/sina_friends_main_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="@dimen/text_size_normal" />
+
+    </LinearLayout>
+</RelativeLayout>

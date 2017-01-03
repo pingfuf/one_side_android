@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/phone_type"
+        android:layout_width="@dimen/verify_button_width"
+        android:layout_height="@dimen/common_et_height"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/corners_left_login_bg"
+        android:gravity="center"
+        android:text="+86"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_et_height"
+        android:layout_alignBottom="@id/phone_type"
+        android:layout_alignTop="@id/phone_type"
+        android:layout_toRightOf="@id/phone_type"
+        android:background="@drawable/corners_right_login_bg"
+        android:hint="@string/input_phone"
+        android:numeric="integer"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small" />
+
+    <RelativeLayout
+        android:id="@+id/tmp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_phone"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_edit_tv_rec_cor_bor" >
+
+        <Button
+            android:id="@+id/tv_confirm"
+            style="@style/OrangeDialogButtonStyle"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="@string/confirm" />
+
+        <EditText
+            android:id="@+id/et_confirm_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_et_height"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/tv_confirm"
+            android:background="@drawable/shape_edit_tv_rec_cor_bor"
+            android:hint="@string/input_confirmation_code"
+            android:numeric="integer"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_small"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_get_verify_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tmp_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/get_verify_agin"
+        android:textColor="@color/edit_hint_gray"
+        android:textSize="@dimen/text_size_minimal" />
+
+    <Button
+        android:id="@+id/tv_confirm_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_et_height"
+        android:layout_below="@id/tv_get_verify_again"
+        android:layout_marginTop="@dimen/phone_confirm_2_top"
+        android:background="@drawable/logi_btn_gray_bg"
+        android:minHeight="40dp"
+        android:text="@string/confirm_login"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_attention_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_confirm_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/warnning_register"
+        android:textColor="@color/edit_hint_gray"
+        android:textSize="@dimen/text_size_minimal" />
+
+    <TextView
+        android:id="@+id/tv_attention_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_attention_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/edit_hint_gray"
+        android:textSize="@dimen/text_size_minimal" />
+
+</RelativeLayout>

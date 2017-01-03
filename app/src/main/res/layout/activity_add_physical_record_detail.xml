@@ -1,0 +1,1254 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="基础信息"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:textSize="14sp"
+            android:background="@color/layout_background"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/text_color_gray_66"
+                android:text="@string/record_name_hint"
+                android:textColorHint="@color/dark_shadow"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年龄"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColorHint="@color/dark_shadow"
+                android:hint="@string/record_age_hint"
+                android:inputType="number"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_male"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_male"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="男"
+                    android:textColor="@color/text_color_gray_66"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_female"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_male_gray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="女"
+                    android:textColor="@color/text_color_gray_66"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机号码"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="number"
+                android:text="@string/phone_hint"
+                android:textColorHint="@color/dark_shadow"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_list_item_white_bg"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="测试时间"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="请填写测试时间"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_black" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:text="身体成分"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:background="@color/layout_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身高"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="@string/record_height_hint"
+                android:textColorHint="@color/dark_shadow"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cm" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体重"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="@string/record_weight_hint"
+                android:textColorHint="@color/dark_shadow"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="骨骼肌"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_skeleton_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/dark_shadow"
+                android:hint="@string/record_skeleton_hint"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体脂肪"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_fat_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写体脂肪重"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体水含量"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_water_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写体水含量"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="去脂体重"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/required_tag"
+                    android:textColor="@color/title_red_color" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_weight_without_fat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:text="请填写去脂肪体重"
+                android:textColor="@color/dark_shadow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:text="三围测量"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:background="@color/layout_background"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="胸围"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_bust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写胸围"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cm" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="腰围"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_waistline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写腰围"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cm" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="臂围"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_hipline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写臀围"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cm" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:text="血压值"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:textSize="14sp"
+            android:background="@color/layout_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="静态心率"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_heart_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写静态心率"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次/分钟" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收缩压"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_systolic_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写收缩压"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mmHg" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="舒张压"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_diastolic_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="numberDecimal"
+                android:hint="请填写舒张压"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_gray_66"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mmHg" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:text="肥胖指数"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:textSize="14sp"
+            android:background="@color/layout_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_fat_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textSize="14sp"
+                android:text="身体质量指数"
+                android:textColor="@color/dark_shadow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg/m²" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体脂比"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_fat_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textSize="14sp"
+                android:text="体脂比"
+                android:textColor="@color/dark_shadow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginLeft="20dp"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="腰臂比"
+                    android:textColor="@color/text_color_gray_dark_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_bust_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textSize="14sp"
+                android:textColor="@color/dark_shadow"
+                android:text="腰臀比"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/layout_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="综合评分"
+                android:textColor="@color/text_color_gray_dark_black"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/required_tag"
+                android:textColor="@color/title_red_color" />
+
+            <EditText
+                android:id="@+id/edt_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textColor="@color/title_red_color"
+                android:textSize="14sp"
+                android:hint="请给出综合评分"
+                android:textColorHint="@color/dark_shadow"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:text="分"
+                android:textColor="@color/text_color_gray_66"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/layout_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="评估与指导"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="14sp"
+            android:background="@color/layout_background"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="侧面观评估"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:textSize="15sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <EditText
+            android:id="@+id/edt_side_assessment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/white"
+            android:gravity="left"
+            android:minHeight="100dp"
+            android:hint="请给出侧面观评估"
+            android:textSize="14sp"
+            android:textColorHint="@color/dark_shadow"
+            android:textColor="@color/text_color_gray_66"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="背面观评估"
+            android:textColor="@color/text_color_gray_dark_black"
+            android:textSize="15sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <EditText
+            android:id="@+id/edt_back_assessment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/white"
+            android:gravity="left"
+            android:hint="请给出背面观评估"
+            android:textColorHint="@color/dark_shadow"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_gray_66"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="合理化健身指导"
+                android:textColor="@color/text_color_gray_dark_black"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/required_tag"
+                android:textColor="@color/title_red_color" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray"/>
+
+        <EditText
+            android:id="@+id/edt_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/white"
+            android:gravity="left"
+            android:hint="请给出合理化健身指导意见"
+            android:textColorHint="@color/dark_shadow"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_gray_66"/>
+
+    </LinearLayout>
+
+</ScrollView>

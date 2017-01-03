@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_white_to_alpha"
+    android:gravity="center_vertical"
+    android:minHeight="55dp">
+
+    <TextView
+        android:id="@+id/distance_to_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:text="20KM"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size_describe" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line_gray"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="25dp"
+        android:background="@color/line_gray" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/distance_to_location"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/search_address_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:singleLine="true"
+            android:text="wenwenwen"
+            android:textColor="@color/text_color_net_btn"
+            android:textSize="@dimen/text_size_main_title" />
+
+        <TextView
+            android:id="@+id/search_address_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_address_main"
+            android:ellipsize="end"
+            android:gravity="top"
+            android:singleLine="true"
+            android:text="wenwenwen"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_minimal" />
+    </RelativeLayout>
+
+</RelativeLayout>

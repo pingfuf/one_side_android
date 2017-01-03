@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants" >
+
+    <com.kuaipao.ui.view.RoundLazyImageView
+        android:id="@+id/iv_user_logo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_border_tv"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_user_logo_loading_72_in_list" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_user_logo"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/iv_user_logo"
+        android:text="TextView"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_list" />
+
+    <!-- <RatingBar
+        android:id="@+id/rating_star"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_user_logo"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="4dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:rating="5" /> -->
+    
+    <ImageView
+        android:id="@+id/iv_judge_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_user_logo"
+        android:src="@drawable/pic_star_gray" />
+
+    <ImageView
+        android:id="@+id/iv_judge_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_judge_1"
+        android:src="@drawable/pic_star_gray" />
+
+    <ImageView
+        android:id="@+id/iv_judge_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_judge_2"
+        android:src="@drawable/pic_star_gray" />
+
+    <ImageView
+        android:id="@+id/iv_judge_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_judge_3"
+        android:src="@drawable/pic_star_gray" />
+
+    <ImageView
+        android:id="@+id/iv_judge_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/iv_judge_4"
+        android:src="@drawable/pic_star_gray" />
+
+    <LinearLayout
+        android:id="@+id/layout_praise"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/tv_name"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_white_dialog_bg"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/iv_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/pic_zan_blue" />
+
+        <TextView
+            android:id="@+id/tv_praise_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="10dp"
+            android:text="256"
+            android:textColor="@color/text_color_blue"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.kuaipao.ui.view.CollapsibleBlueTextView
+        android:id="@+id/tv_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_judge_1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/iv_user_logo" />
+
+    <com.kuaipao.ui.view.NoScrollGridView
+        android:id="@+id/gv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_dec"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/iv_user_logo"
+        android:cacheColorHint="@android:color/transparent"
+        android:clipChildren="true"
+        android:gravity="center"
+        android:horizontalSpacing="6dp"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:scrollbars="@null"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="6dp" >
+    </com.kuaipao.ui.view.NoScrollGridView>
+
+    <TextView
+        android:id="@+id/tv_attend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/iv_user_logo"
+        android:text="@string/comment_attend_course"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_swim"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/tv_attend"
+        android:src="@drawable/ic_my_order_swimming_small" 
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_yoga"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/iv_swim"
+        android:src="@drawable/ic_my_order_yoga_small" 
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_dance"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/iv_yoga"
+        android:src="@drawable/ic_my_order_dance_small" 
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_bike"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/iv_dance"
+        android:src="@drawable/ic_my_order_bike_small" 
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_hickey"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/iv_bike"
+        android:src="@drawable/ic_my_order_hickey_small"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_wushu"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/gv_pic"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/iv_hickey"
+        android:src="@drawable/ic_my_order_wushu_small" 
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/gv_pic"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="@color/text_color_gray"
+        android:textSize="13sp" />
+
+    <View
+        android:id="@+id/view_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/tv_attend"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/line_gray" />
+
+</RelativeLayout>

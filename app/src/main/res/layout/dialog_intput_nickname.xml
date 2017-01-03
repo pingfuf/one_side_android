@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_bg" >
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/papaya_primary_color"
+        android:textSize="18sp" />
+    <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="20dp"
+            android:background="@color/line_gray" />
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp" 
+        android:layout_marginRight="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/line_2"
+        android:background="@drawable/shape_button_rec_corner"
+        android:hint="@string/usr_info_name_hint"
+        android:textColorHint="@color/text_color_gray"
+        android:layout_marginTop="25dp" >
+    </EditText>
+    
+    <LinearLayout
+        android:id="@+id/dialog_button_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="7.5dp"
+        android:layout_marginRight="7.5dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/et_input"
+        android:paddingBottom="10dp" >
+
+        <Button
+            android:id="@+id/dialog_button_negative"
+            style="@style/WhiteDialogButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7.5dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_weight="1"
+            android:text="@string/no"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/dialog_button_positive"
+            style="@style/OrangeDialogButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7.5dp"
+            android:layout_marginRight="7.5dp"
+            android:layout_weight="1"
+            android:text="@string/go"
+            android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

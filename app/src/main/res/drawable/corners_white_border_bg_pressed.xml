@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="@color/gray_pressed" />
+
+    <corners android:radius="@dimen/edit_tv_corners_height" />
+
+    <stroke
+        android:width="1px"
+        android:color="@color/gray_pressed_deeply" />
+
+</shape>

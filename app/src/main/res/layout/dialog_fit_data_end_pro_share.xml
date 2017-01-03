@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:own="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_bg"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/fit_data_share_total_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/fit_data_share_congratulate_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/fit_congratulation_icon" />
+
+        <com.kuaipao.ui.view.RoundLazyImageView
+            android:id="@+id/fit_data_share_usr_logo_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/fit_data_share_congr_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_congratulate_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="恭喜你"
+            android:textColor="@color/papaya_primary_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/fit_data_share_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_congr_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="完成了第一次器械健身项目"
+            android:textColor="@color/text_color_gray" />
+
+        <LinearLayout
+            android:id="@+id/fit_data_share_desc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_desc_tv"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/user_today_fit_data_dialog_time_title"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_minimal" />
+
+                <TextView
+                    android:id="@+id/fit_data_tv_num_of_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/time_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="0分钟"
+                    android:textColor="@color/tab_user_today_pager_title_color"
+                    android:textSize="@dimen/text_size_larger" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pro_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/user_today_fit_data_dialog_calori_title"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_minimal" />
+
+                <TextView
+                    android:id="@+id/fit_data_tv_num_of_pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pro_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="大卡"
+                    android:textColor="@color/tab_user_today_pager_title_color"
+                    android:textSize="@dimen/text_size_sub_title" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_desc_layout"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/fit_data_share_bottom_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="@string/xxkuaipao_gongzhonghao"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_smallest" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fit_data_share_bottom_img"
+        android:background="@drawable/shape_dialog_bg"
+        android:paddingBottom="12dp"
+        android:paddingRight="7dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/tv_share_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="@string/user_today_fit_dialog_share_title"
+            android:textColor="@color/merchant_logo_default_color"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/wechat_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_wx_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+
+            android:src="@drawable/pyq_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="17dp"
+
+            android:src="@drawable/sina_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/qq_mid_icon" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

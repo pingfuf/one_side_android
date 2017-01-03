@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:background="@color/white"
+    android:minHeight="58dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffdddddd" />
+
+    <ImageView
+        android:id="@+id/pay_item_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:scaleType="fitXY" />
+
+    <RadioButton
+        android:id="@+id/pay_item_checkbox"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:button="@drawable/checkbox_bg"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/pay_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="18dp"
+        android:layout_toLeftOf="@id/pay_item_checkbox"
+        android:layout_toRightOf="@id/pay_item_icon"
+        android:textColor="@color/gray"
+        android:textSize="16dp" />
+
+</RelativeLayout>

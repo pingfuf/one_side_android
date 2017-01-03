@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kuaipao.ui.view.StickySeparateNavLayout
+        android:id="@+id/stick_nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/id_stickynavlayout_topview"
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <com.kuaipao.ui.view.LazyImageView
+                android:id="@+id/merchant_pic_failed_or_no_exist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_merchant_pic_load_failed" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/merchant_moments_mechant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="小熊快跑智能健身房"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/merchant_moments_mechant_fans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:drawableLeft="@drawable/merchant_moments_fans_icon"
+                    android:drawablePadding="10dp"
+                    android:text="296人关注"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_describe" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/id_stickynavlayout_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#ffdddddd" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@id/id_stickynavlayout_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.kuaipao.ui.view.StickySeparateNavLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/papaya_primary_color"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/center_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/user_home_title_height"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/base_title_text_size" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/floating_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="@dimen/common_margin_left_right"
+        android:background="@color/transparency"
+        android:src="@drawable/floating_merchant_moments_floating_btn" />
+</RelativeLayout>

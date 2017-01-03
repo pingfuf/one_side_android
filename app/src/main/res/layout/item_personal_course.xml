@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/selector_list_item_background"
+                android:minHeight="100dp">
+
+
+    <com.kuaipao.ui.view.RoundLazyImageView
+        android:id="@+id/iv_coach_avator"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/circle_border_tv"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_user_logo_loading_72_in_list"/>
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/iv_coach_avator"
+        android:maxEms="8"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="textVIewssggggggggggg"
+        android:textColor="@color/text_color_deep_gray"
+        android:textSize="@dimen/text_size_main_title"/>
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_course_type"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignTop="@id/tv_course_name"-->
+    <!--android:layout_alignBottom="@id/tv_course_name"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_toRightOf="@id/tv_course_name"-->
+    <!--android:paddingLeft="4dp"-->
+    <!--android:paddingRight="4dp"-->
+    <!--android:paddingTop="2dp"-->
+    <!--android:paddingBottom="2dp"-->
+    <!--android:gravity="center|center_vertical"-->
+    <!--android:text="体验"-->
+    <!--android:textSize="@dimen/text_size_minimal"-->
+    <!--android:textColor="@color/personal_course_green"-->
+    <!--android:background="@drawable/corners_personal_coach_green"/>-->
+    <LinearLayout
+        android:id="@+id/layout_course_types"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_course_name"
+        android:layout_alignTop="@id/tv_course_name"
+        android:layout_toRightOf="@id/tv_course_name"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_course_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_course_name"
+        android:layout_below="@id/tv_course_name"
+        android:layout_marginTop="8dp"
+        android:text="textVIew"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/text_size_describe"/>
+
+    <TextView
+        android:id="@+id/tv_course_coach_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_course_time"
+        android:layout_below="@id/tv_course_time"
+        android:layout_marginTop="8dp"
+        android:text="textVIew"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_sub_title"/>
+
+
+    <TextView
+        android:id="@+id/tv_course_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:text="90"
+        android:textColor="@color/orange"
+        android:textSize="13sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignLeft="@id/tv_course_name"
+        android:layout_below="@id/tv_course_coach_name"
+        android:layout_marginTop="15dp"
+        android:background="@color/line_gray"/>
+
+</RelativeLayout>

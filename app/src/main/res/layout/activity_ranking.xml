@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_title_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/papaya_primary_color">
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/base_title_height"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="left|center_vertical"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/base_title_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/left_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/base_title_height"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="@dimen/base_title_horizontal_margin"
+                android:src="@drawable/btn_back_white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp">
+
+                <TextView
+                    android:id="@+id/tv_care_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/ranking_care_tab"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/base_title_text_size" />
+
+                <View
+                    android:id="@+id/view_care_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/tv_care_title"
+                    android:layout_alignRight="@id/tv_care_title"
+                    android:layout_below="@id/tv_care_title"
+                    android:background="@color/papaya_primary_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_total_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/ranking_total_tab"
+                    android:textColor="@color/text_color_net_btn"
+                    android:textSize="@dimen/base_title_text_size" />
+
+                <View
+                    android:id="@+id/view_total_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/tv_total_title"
+                    android:layout_alignRight="@id/tv_total_title"
+                    android:layout_below="@id/tv_total_title"
+                    android:background="@color/papaya_primary_color" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_horizontal_line_below_title"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/layout_title_tab"
+        android:background="@color/line_gray" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_ranking_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_horizontal_line_below_title" />
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/layout_background"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="10dp" >
+
+        <com.kuaipao.ui.view.LazyImageView
+            android:id="@+id/imageView_merchant"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@color/gray_shadow" />
+
+        <TextView
+            android:id="@+id/name_of_club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_merchant"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_normal" />
+
+        <ImageView
+            android:id="@+id/iv_loc"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_below="@id/name_of_club"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/location_of_club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/iv_loc"
+            android:singleLine="true"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_minimal" />
+
+        <ImageView
+            android:id="@+id/iv_swim"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/name_of_club"
+            android:src="@drawable/ic_my_order_swimming_small" />
+
+        <ImageView
+            android:id="@+id/iv_bike"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/iv_swim"
+            android:src="@drawable/ic_my_order_bike_small" />
+
+        <ImageView
+            android:id="@+id/iv_hickey"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/iv_bike"
+            android:src="@drawable/ic_my_order_hickey_small" />
+
+        <ImageView
+            android:id="@+id/iv_yoga"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/iv_hickey"
+            android:src="@drawable/ic_my_order_yoga_small" />
+
+        <ImageView
+            android:id="@+id/iv_dance"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/iv_yoga"
+            android:src="@drawable/ic_my_order_dance_small" />
+
+        <ImageView
+            android:id="@+id/iv_wushu"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/name_of_club"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/iv_dance"
+            android:src="@drawable/ic_my_order_wushu_small" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="动作名称"
+            android:textColor="@color/text_color_gray_33"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/tv_action_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="请填写动作名称"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_describe"
+            android:textColor="@color/text_color_gray_66"
+            android:textColorHint="@color/dark_shadow"/>
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ic_subtraction_btn" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ic_plus_btn" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_action_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <LinearLayout
+            android:id="@+id/ll_delete_action"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_white_to_alpha"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_delete_red_icon"/>-->
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:drawableLeft="@drawable/ic_delete_red_icon"
+                android:drawablePadding="6dp"
+                android:text="删除动作"
+                android:textColor="@color/papaya_primary_color"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_gray" />
+        <LinearLayout
+            android:id="@+id/ll_add_action"
+            android:background="@drawable/item_white_to_alpha"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:drawableLeft="@drawable/ic_plus_icon_red"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="添加动作"
+                android:textColor="@color/papaya_primary_color"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_gray" />
+
+</LinearLayout>

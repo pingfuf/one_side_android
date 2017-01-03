@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="15dp">
+
+    <RelativeLayout
+        android:id="@+id/account_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/tab3_gradient_bg"
+        android:paddingBottom="15dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/account_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:text="@string/account_details_tile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_micro_small" />
+
+        <TextView
+            android:id="@+id/account_details_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:drawableLeft="@drawable/ic_balance_ask"
+            android:drawablePadding="2dp"
+            android:gravity="center_vertical"
+            android:text="@string/account_details_explain"
+            android:textColor="@color/alpha_80_percent_white"
+            android:textSize="@dimen/text_size_minimal" />
+
+        <TextView
+            android:id="@+id/account_details_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_details_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="75sp" />
+    </RelativeLayout>
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/account_msg_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/account_title_layout"
+        android:layout_marginBottom="70dp"
+        android:divider="@null" />
+
+    <RelativeLayout
+        android:id="@+id/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/account_title_layout"
+
+        android:paddingTop="70dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_no_reservation_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/guanzhu_no_pic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_no_reservation_2"
+            android:gravity="top|center_horizontal"
+            android:text="@string/balance_not_found"
+            android:textColor="@color/text_color_gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/account_add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/account_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/common_margin_left_right"
+        android:layout_marginRight="@dimen/common_margin_left_right"
+        android:background="@drawable/selector_btn_account_add"
+        android:gravity="center"
+        android:text="@string/account_details_add"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_main_title" />
+
+    <LinearLayout
+        android:id="@+id/layout_load_failed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/account_title_layout"
+        android:background="@color/paper_button_color"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="28dp"
+        android:visibility="gone">
+
+        <include layout="@layout/widget_network_failed" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/city_choose_item_height" >
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/city_choose_item_height"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/city_name_margin_left"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_list" />
+
+    <ImageView
+        android:id="@+id/city_chose_state_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/city_chose_img_margin_right"
+        android:background="@drawable/ic_gym_normal" />
+
+    <View
+        android:id="@+id/city_horizontal_start_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/city_name"
+        android:background="@color/balance_divider_line_color" />
+
+</RelativeLayout>

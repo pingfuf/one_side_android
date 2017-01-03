@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corners_search_white_border_bg"
+            android:drawableLeft="@drawable/ic_search_gym"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="@string/coach_member_search"
+            android:paddingLeft="8dp"
+            android:textColorHint="@color/line_gray"
+            android:textSize="13sp"
+            android:singleLine="true"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/corners_delete_orange_border_bg"
+            android:text="@string/search"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/lv_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:divider="@color/list_divider"
+        android:dividerHeight="@dimen/line_height"
+        android:scrollbars="none"
+        android:background="@color/white"/>
+
+</LinearLayout>

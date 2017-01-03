@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/setting_background_gray"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/questions_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/setting_background_gray"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/quetions_one"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/quetions_two"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_three"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_four"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_five"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_six"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questions_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/setting_background_gray"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/quetions_one1"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/quetions_two1"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_three1"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_four1"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_five1"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questions_layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/setting_background_gray"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/quetions_one2"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/quetions_two2"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_three2"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questions_layout_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/setting_background_gray"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/quetions_one3"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/quetions_two3"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+
+            <include
+                android:id="@+id/quetions_three3"
+                layout="@layout/view_questions_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/questions_item_margin" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

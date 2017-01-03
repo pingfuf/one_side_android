@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/layout_background"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_pectoralis"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_ectopectoralis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_back"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_arm"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_arm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_deltoid"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_deltoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_abdominal"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_belly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_leg"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_leg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/training_part_hip"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_gray_black"/>
+
+        <com.kuaipao.ui.view.NoScrollGridView
+            android:id="@+id/gv_buttocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:numColumns="3"/>
+
+    </LinearLayout>
+
+</ScrollView>

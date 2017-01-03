@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_white_to_alpha"
+    android:paddingBottom="7.5dp"
+    android:paddingTop="7.5dp">
+
+    <ImageView
+        android:id="@+id/usr_service_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/usr_service_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usr_service_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/text_color_deep_gray"
+        android:textSize="@dimen/text_size_describe" />
+
+    <RelativeLayout
+        android:id="@+id/layout_merchant_topics_count"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignTop="@id/usr_service_img"
+        android:layout_marginLeft="-10dp"
+        android:layout_toRightOf="@id/usr_service_img"
+        android:background="@drawable/circle_white_btn_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_merchant_topics_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="13"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+    </RelativeLayout>
+</RelativeLayout>

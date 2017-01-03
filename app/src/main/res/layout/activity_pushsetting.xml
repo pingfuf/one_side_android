@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setting_background_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_tv_height"
+            android:layout_marginLeft="@dimen/common_margin_left"
+            android:gravity="center_vertical"
+            android:text="@string/push_setting_sys"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_micro_small" />
+
+        <ImageView
+            android:id="@+id/sys_push_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_margin_left"
+            android:background="@drawable/ic_switch_on" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/widget_line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_tv_height"
+            android:layout_marginLeft="@dimen/common_margin_left"
+            android:gravity="center_vertical"
+            android:text="@string/push_setting_like"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_micro_small" />
+
+        <ImageView
+            android:id="@+id/like_push_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_margin_left"
+            android:background="@drawable/ic_switch_on" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/line_1"
+        layout="@layout/widget_line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_tv_height"
+            android:layout_marginLeft="@dimen/common_margin_left"
+            android:gravity="center_vertical"
+            android:text="@string/push_setting_comments"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_micro_small" />
+
+        <ImageView
+            android:id="@+id/comments_push_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_margin_left"
+            android:background="@drawable/ic_switch_on" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/line_2"
+        layout="@layout/widget_line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_3"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_tv_height"
+            android:layout_marginLeft="@dimen/common_margin_left"
+            android:gravity="center_vertical"
+            android:text="@string/push_setting_concern"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_micro_small" />
+
+        <ImageView
+            android:id="@+id/concern_push_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_margin_left"
+            android:background="@drawable/ic_switch_on" />
+    </RelativeLayout>
+
+</LinearLayout>

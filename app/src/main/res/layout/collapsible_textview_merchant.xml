@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="0dp"
+    android:paddingRight="2dp" >
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:maxLines="3"
+        android:textColor="@color/text_color_gray"
+        android:textSize="14sp" />
+    <!--
+    <LinearLayout
+        android:id="@+id/desc_op_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:paddingBottom="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/desc_op_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/papaya_primary_color"           
+            android:layout_gravity="center_vertical"
+            android:textSize="12sp" />
+        <ImageView
+            android:id="@+id/desc_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"     
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_find_more_down" />
+    </LinearLayout>
+    -->
+
+</LinearLayout>

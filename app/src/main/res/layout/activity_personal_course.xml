@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/widget_date_choose_layout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/balance_divider_line_color" />
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/personal_course_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tv_no_class_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:text="@string/no_class_msg"
+        android:textColor="@color/papaya_primary_color"
+        android:textSize="@dimen/text_size_small"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_load_failed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:visibility="gone">
+
+        <include layout="@layout/widget_network_failed" />
+    </LinearLayout>
+</LinearLayout>

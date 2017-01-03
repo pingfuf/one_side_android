@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/layout_background" >
+    <RelativeLayout 
+        android:id="@+id/layout_package_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <ImageView
+        android:id="@+id/iv_checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"
+        android:textSize="16sp"
+        android:textColor="@color/merchant_logo_default_color"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+    <LinearLayout
+        android:id="@+id/layout_desc"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:layout_toLeftOf="@id/tv_unit"
+        android:layout_toRightOf="@id/iv_checked"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/tv_package_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/merchant_logo_default_color"
+            android:layout_marginBottom="5dp"
+            android:text="TextView" />
+        <!-- <TextView
+            android:id="@+id/tv_desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_gray"
+            android:textSize="10dp"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/tv_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_gray"
+            android:textSize="10dp"
+            android:text="TextView" /> -->
+    </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

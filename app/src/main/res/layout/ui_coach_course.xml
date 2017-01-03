@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="124dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/selector_list_item_background"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/v_tag"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/title_red_color" />
+
+            <TextView
+                android:id="@+id/tv_course_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="小熊快跑sdfsdfsdfsdfsdfsdfsdfsdfsdfsdf"
+                android:textColor="@color/text_color_gray_black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_coach"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/ll_title"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_coach_name"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_people_icon" />
+
+            <TextView
+                android:id="@+id/tv_coach_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="当前教练:"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_coach_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="莉莉"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/ll_coach"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_all_courses"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_number_icon" />
+
+            <TextView
+                android:id="@+id/tv_all_courses_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="总共课节:"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_all_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="0节"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/ll_course"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_remaining_courses"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_rezidues_number_icon" />
+
+            <TextView
+                android:id="@+id/tv_remaining_courses_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="剩余节数:"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_remaining_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="3天"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_right"
+        android:layout_width="130dp"
+        android:layout_height="match_parent">
+
+        <com.kuaipao.base.view.XRoundImageView
+            android:id="@+id/iv_coach_img"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_pic_album" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_coach_img"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="已过期"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</LinearLayout>

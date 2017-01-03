@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:background="@drawable/selector_list_item_background"
+    android:gravity="center"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="horizontal">
+
+    <com.kuaipao.base.view.XRoundImageView
+        android:id="@+id/iv_header"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张三"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="16dp"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016-05-18 15:33"
+            android:textColor="@color/text_color_gray_66"/>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_date"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="2016-05-18"-->
+                <!--android:textColor="@color/text_color_gray_66"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_time"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:text="18:30"-->
+                <!--android:textColor="@color/text_color_gray_66"/>-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="6dp"
+            android:background="@color/text_color_gray">
+
+            <View
+                android:id="@+id/v_status"
+                android:layout_width="70dp"
+                android:layout_height="6dp"
+                android:background="@drawable/gradient_btn_submit" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="访客sdfsdfsdfsdfsdfs"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/title_red_color"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

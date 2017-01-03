@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_list_item_background"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/iv_take_photo_left"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bj_camera_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginLeft="6dp"
+                android:layout_toRightOf="@id/iv_take_photo_left"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:text="@string/user_bkg_take_photo_tip"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="#ffdddddd" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_arrow_right" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_from_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_list_item_background"
+            android:layout_below="@id/layout_take_photo">
+
+            <ImageView
+                android:id="@+id/iv_from_gallery_left"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bj_pic_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginLeft="6dp"
+                android:layout_toRightOf="@id/iv_from_gallery_left"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:text="@string/user_bkg_from_gallery_tip"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="#ffdddddd" />
+
+            <ImageView
+                android:id="@+id/me_item_iv_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_arrow_right" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_from_gallery"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ffdddddd" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:text="@string/user_bkg_from_recomment_title"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="#ffdddddd" />
+
+            <ProgressBar
+                android:id="@+id/pb_fetch_recommend"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"/>
+
+            <com.kuaipao.ui.view.NoScrollGridView
+                android:id="@+id/gv_recomment_bkg_imgs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:clipChildren="true"
+                android:gravity="center"
+                android:horizontalSpacing="4dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:scrollbars="@null"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="4dp" >
+            </com.kuaipao.ui.view.NoScrollGridView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ffdddddd" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

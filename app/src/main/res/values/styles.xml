@@ -1,0 +1,230 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<style name="AppBaseTheme" parent="android:Theme.Light">-->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme"> <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+        <item name="android:scrollbarThumbVertical">@drawable/custom_scroll_style</item>
+    </style>
+
+    <style name="AppFullScreenTheme" parent="AppBaseTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/transparency</item>
+    </style>
+
+    <style name="shareDiaLogWindowAnim">
+        <item name="android:windowEnterAnimation">@anim/share_show_anim</item>
+        <item name="android:windowExitAnimation">@anim/share_hide_anim</item>
+    </style>
+
+    <style name="MyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowBackground">@color/transparency</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyWebDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparency</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyCopyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparency</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RoundCornerDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/shape_dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="BkgAlphaBlackDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/alpha_30_percent_black</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="OrangeButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_orange_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="OrangeDialogButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_orange_login_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="YellowDialogButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_yellow_login_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="OrangeStrokeButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_orange_stroke_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="WhiteButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_white_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="WhiteDialogButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:textSize">16sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_white_dialog_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="GreenButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/btn_green_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="GrayButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/logi_btn_gray_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="GrayButtonStyle2" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:background">@drawable/selector_btn2_gray_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="MyAcitivtyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="anim_popup_dir">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
+    <style name="CustomProgressDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/alpha_20_percent_black</item>
+    </style>
+
+    <style name="MyRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/my_rating_background</item>
+        <item name="android:minHeight">21dip</item>
+        <item name="android:maxHeight">21dip</item>
+    </style>
+
+
+    <style name="HistoryDiagramHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="mProgress_circle">
+        <item name="android:indeterminateDrawable">@drawable/rotate_process_bar</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:maxHeight">60dp</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:Theme.Dialog">
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="dialog_bkg" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/alpha_20_percent_black</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/dlg_close_off_merchant_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/close_gray_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_list"
+        android:text="@string/merhcant_time_reopen_door_dlg_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/text_size_sub_title"
+        android:textColor="@color/text_color_net_btn"
+        android:gravity="center_horizontal"
+        android:text="@string/merchant_time_reopen_door_dlg_msg" />
+
+    <Button
+        android:id="@+id/dlg_reopen_merchant_btn"
+        style="@style/OrangeDialogButtonStyle"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:singleLine="true"
+        android:text="@string/merchnat_time_reopen_door_btn_text" />
+
+</LinearLayout>

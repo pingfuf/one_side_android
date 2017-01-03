@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/adapter_coach_avatar_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/circle_coach_gray_bg">
+
+        <com.kuaipao.ui.view.RoundLazyImageView
+            android:id="@+id/adapter_coach_avatar"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_user_logo_loading_72_in_list"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/adapter_coach_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adapter_coach_avatar_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="托尼"
+        android:textColor="@color/btn_gray_66_text"
+        android:textSize="@dimen/text_size_sub_title"/>
+
+
+</RelativeLayout>

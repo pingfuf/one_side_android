@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/merchant_card_view_sensitize_reminder_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/fragment_card_common_margin_left_right"
+    android:layout_marginRight="@dimen/fragment_card_common_margin_left_right"
+    android:layout_marginTop="15dp">
+
+    <RelativeLayout
+        android:id="@+id/sensitize_reminder_title"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/gray_pressed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/sensitize_card_title"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="@dimen/text_size_sub_title" />
+
+        <ImageView
+            android:id="@+id/sensitize_reminder_close_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/class_reminder_close_gray" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sensitize_reminder_title"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@color/white"
+        android:minHeight="65dp">
+
+        <Button
+            android:id="@+id/sensitize_renew_btn"
+            style="@style/OrangeButtonStyle"
+            android:layout_width="78dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="@string/sensitize_card_btn_text"
+            android:textSize="@dimen/text_size_minimal"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/sensitize_renew_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@id/sensitize_renew_btn"
+            android:ellipsize="end"
+            android:textColor="@color/text_color_gray_66"
+            android:textSize="@dimen/text_size_sub_title" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/add_course_ads_iv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_add_course_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_course_ads_iv"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_list_item_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_course_time_title"
+                android:textColor="@color/text_color_gray_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:text="@string/item_course_time_default_desc"
+                android:textColor="@color/dark_shadow" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_list_item_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_course_member_title"
+                android:textColor="@color/text_color_gray_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:text="@string/item_course_member_default_desc"
+                android:textColor="@color/dark_shadow" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_type"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_list_item_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_course_type_title"
+                android:textColor="@color/text_color_gray_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:text="@string/item_course_type_default_desc"
+                android:textColor="@color/dark_shadow"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_gray"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_course_commit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_et_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_btn_bg"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="@string/add_course_commit_btn_title"/>
+
+</RelativeLayout>

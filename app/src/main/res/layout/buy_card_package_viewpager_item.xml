@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:background="@drawable/corners_13dp_solid_white"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/buy_card_package_viewpager_title"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/corners_13dp_solid_buy_package_season_title"
+            android:gravity="center_vertical"
+            android:paddingRight="15dp">
+
+            <View
+                android:id="@+id/horizontal_line_right"
+                android:layout_width="24dp"
+                android:layout_height="4dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/corners_buy_package_2dp_season_line_deep"></View>
+
+            <View
+                android:id="@+id/horizontal_line_mid"
+                android:layout_width="24dp"
+                android:layout_height="4dp"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@id/horizontal_line_right"
+                android:alpha="0.5"
+                android:background="@drawable/corners_buy_package_2dp_season_line_deep"></View>
+
+            <View
+                android:id="@+id/horizontal_line_left"
+                android:layout_width="24dp"
+                android:layout_height="4dp"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@id/horizontal_line_mid"
+                android:alpha="0.3"
+                android:background="@drawable/corners_buy_package_2dp_season_line_deep"></View>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buy_card_package_viewpager_title"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/buy_card_package_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/text_color_gray_33"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/buy_card_package_expire_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="start"
+                android:singleLine="true"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="@dimen/text_size_sub_title" />
+
+            <TextView
+                android:id="@+id/buy_card_package_desc0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/buy_package_desc_label"
+                android:drawablePadding="6dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/edit_hint_gray"
+                android:textSize="@dimen/text_size_minimal" />
+
+            <TextView
+                android:id="@+id/buy_card_package_desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/buy_package_desc_label"
+                android:drawablePadding="6dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/edit_hint_gray"
+                android:textSize="@dimen/text_size_describe" />
+
+            <TextView
+                android:id="@+id/buy_card_package_price_per_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@color/papaya_primary_color"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

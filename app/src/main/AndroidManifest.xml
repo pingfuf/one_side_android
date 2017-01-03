@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kuaipao.manager">
+
+    <!-- 开启摄像头 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.setParameters"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- Push service 运行需要的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- GaoDe_location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- auto get sms code -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- get the low properties of system's log -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <!-- write or read calendar -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:name="com.kuaipao.base.CardApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b3b2fedfc28fff9410de75066c9ec7c6" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="559a3a9b67e58e558b003403" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <meta-data
+            android:name="SUPERID_APPKEY"
+            android:value="7d6fae2e846f34065974bf49" />
+        <meta-data
+            android:name="SUPERID_SECRET"
+            android:value="880072a66e414e72b7ded49d" />
+
+        <activity
+            android:name="com.kuaipao.ui.SplashActivity"
+            android:theme="@style/AppFullScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.kuaipao.ui.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name="com.kuaipao.ui.MainActivity"
+            android:launchMode="singleTask" />
+
+        <!-- 教练 -->
+        <activity android:name="com.kuaipao.ui.coach.CoachPersonalCustomerActivity" />
+        <activity android:name="com.kuaipao.ui.coach.CoachCustomerListActivity" />
+        <activity android:name="com.kuaipao.ui.coach.CoachReceiveCustomerActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.kuaipao.ui.coach.CoachReceiveRecordListActivity" />
+        <activity android:name="com.kuaipao.ui.course.CoachPersonalCourseActivity" />
+
+        <!-- 用户 -->
+        <activity android:name="com.kuaipao.ui.customer.UserPhysicalRecordActivity" />
+        <activity android:name="com.kuaipao.ui.customer.CustomerSourceActivity" />
+        <activity android:name="com.kuaipao.ui.customer.CustomerTypeActivity" />
+
+        <!-- 课程 -->
+        <activity android:name="com.kuaipao.ui.course.CourseTrainPartsOfBodyActivity"/>
+
+        <!-- 友盟 -->
+        <activity android:name="com.umeng.fb.ConversationActivity" />
+
+        <activity android:name="com.kuaipao.ui.CustomQuestionsDetailsActivity" />
+        <activity android:name="com.kuaipao.ui.card.CustomerCardsActivity" />
+        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordMenuActivity" />
+        <activity android:name="com.kuaipao.ui.coach.CoachReceiveSuccessActivity" />
+        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordDetailActivity" />
+        <activity android:name="com.kuaipao.ui.gym.MerchantTimeCountActivity" />
+        <activity android:name="com.kuaipao.ui.home.OpenDoorActivity" />
+        <activity android:name="com.kuaipao.ui.web.CardWebActivity" />
+        <activity
+            android:name="com.kuaipao.ui.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.kuaipao.ui.QRCodeScanningActivity" />
+        <activity android:name="com.kuaipao.ui.QRCodeScanResultActivity" />
+        <activity android:name="com.kuaipao.ui.card.YearCardDescActivity" />
+        <activity android:name="com.kuaipao.ui.course.CoachAddCourseActivity" />
+        <!-- wechat pay -->
+
+
+
+        <receiver android:name="com.kuaipao.base.CardNetWorkReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b3b2fedfc28fff9410de75066c9ec7c6" />
+        <!-- umeng update -->
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" />
+
+        <activity android:name="com.umeng.update.UpdateDialogActivity" />
+        <activity android:name="com.kuaipao.ui.customer.CouponsRulesActivity" />
+        <!-- qq share -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104632019" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- weibo share -->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.kuaipao.ui.MapOfMerchantsActivity" />
+        <activity android:name="com.kuaipao.ui.course.CoachCourseListActivity" />
+        <activity android:name="com.kuaipao.ui.coach.AddReceiveRecordActivity" />
+        <activity android:name="com.kuaipao.ui.photopicker.PhotoPickerActivity" />
+        <activity android:name="com.kuaipao.ui.photopicker.PhotoPreviewWhenPickActivity" />
+        <activity android:name="com.kuaipao.ui.photopicker.PhotoPreviewAfterPickActivity" />
+        <activity android:name="com.kuaipao.ui.gym.MerchantFacilitiesActivity" />
+        <activity android:name="com.kuaipao.ui.customer.CustomerDetailActivity"
+            android:launchMode="singleTask"/>
+
+        <activity android:name="com.kuaipao.ui.customer.FitDataDetailActivity" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.version" -->
+        <!-- android:value="@integer/google_play_services_version" /> -->
+
+        <activity android:name="com.kuaipao.ui.course.CoachCourseRecordDetailActivity"/>
+        <activity android:name="com.kuaipao.ui.course.CoachPersonalCourseDetailActivity" />
+        <activity android:name="com.kuaipao.ui.card.CardLeftDaysActivity" />
+        <activity android:name="com.kuaipao.ui.customer.AddPhysicalRecordPhotoActivity" />
+
+        <activity
+            android:name="com.kuaipao.ui.customer.UserCommentActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
+        <activity
+            android:name="com.kuaipao.ui.JumpCenterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

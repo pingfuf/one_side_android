@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">小熊助手</string>
+    <string name="loading"></string>
+    <string name="main_setting">设置</string>
+    <!-- DetailInfActivity -->
+
+    <string name="login_name_hint"><font size="13">请输入登录账号</font></string>
+    <string name="login_pass_hint"><font size="13">请输入登录密码</font></string>
+
+    <!-- MainActivity -->
+    <string name="exit_warn">再按一次返回退出小熊管家</string>
+    <!-- TabOrderFragment -->
+    <string name="coach_personal_member">私教会员</string>
+    <string name="no_data">无相关信息</string>
+
+    <!-- 教练 -->
+    <string name="receive">接待</string>
+    <string name="receive_hint">请选择接待人</string>
+    <string name="name">姓名</string>
+    <string name="name_hint"><font size='14'>请填写顾客姓名</font></string>
+    <string name="user_phone_hint"><font size='14'>请填写顾客电话</font></string>
+    <string name="coach_receive_hint"><font size='14'>请填写跟进状态</font></string>
+    <string name="sex">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="phone">电话</string>
+    <string name="type">类型</string>
+    <string name="source">来源</string>
+    <string name="required_tag">*</string>
+    <string name="coach_customer">我的顾客</string>
+    <string name="comments">备注</string>
+    <string name="fomat_ignore_year_month_day_week">HH:mm</string>
+    <string name="format_buy_card_date">MM月dd日</string>
+    <string name="format_year_month_day">yyyy年MM月dd日</string>
+    <string name="format_year_month_day_1">yyyy-MM-dd</string>
+    <string name="format_no_sec">yyyy-MM-dd HH:mm</string>
+    <string name="format_ignore_year_month_hour">MM月dd日</string>
+    <string name="order_no_order_code">正在处理中...</string>
+    <string name="order_no_care_desc">无</string>
+    <string name="weibosdk_demo_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>
+
+    <string name="receive_record">跟进记录</string>
+    <string name="upload_photo">体测报告照片</string>
+    <string name="upload_exam_record">体测报告详情</string>
+
+    <!--addPhysicalRecord-->
+    <string name="record_name_hint"><font size="14">请填写姓名</font></string>
+    <string name="record_age_hint"><font size="14">请填写正确年龄</font></string>
+    <string name="record_height_hint"><font size="14">请填写身高</font></string>
+    <string name="record_weight_hint"><font size="14">请填写体重</font></string>
+    <string name="record_skeleton_hint"><font size="14">请填写骨骼肌重</font></string>
+    <!--MessagePostEmptyGymActivity-->
+
+
+    <!-- TabUserFragment -->
+    <string name="rest_money">%1$s元</string>
+    <string name="getting_tip">...</string>
+    <string name="fans_tip">粉丝</string>
+    <string name="default_fans_num">--</string>
+    <string name="continue_purchase_wait">正在获取账户信息，请稍候...</string>
+    <string name="my_collection">关注</string>
+    <string name="default_collection_num">--</string>
+    <string name="add_collection_succ">关注成功</string>
+    <string name="add_collection_failed">关注失败，网络异常</string>
+    <string name="wx_friends">微信好友</string>
+    <string name="wx_zone">朋友圈</string>
+    <string name="btn_login">登录</string>
+    <string name="xxkuaipao_gongzhonghao">小熊快跑</string>
+    <string name="text_coupons">优惠券</string>
+    <string name="logout_succ">成功退出账号！</string>
+    <string name="balance_title">余额</string>
+
+    <!-- ClassInfoActivity -->
+    <string name="order_cancel_cancelled">否</string>
+    <string name="share_to_qq">QQ</string>
+    <string name="share_to_weibo">微博</string>
+    <string name="send_done">发送成功</string>
+    <string name="send_failed">发送失败</string>
+    <string name="send_canceled">发送取消</string>
+    <string name="share_dialog_title">分享红包到：</string>
+    <string name="share_dialog_title_2">分享到：</string>
+    <string name="classinfo_update_city_btn_1">升级</string>
+
+    <!-- 分享示例模板 -->
+    <string name="weibosdk_demo_app_url">https://github.com/mobileresearch/weibo_android_sdk/blob/master/WeiboSDKDemo.apk</string>
+    <string name="weibosdk_demo_share_text_template">我正在使用微博客户端发博器分享文字</string>
+    <string name="weibosdk_demo_share_webpage_template">【%1$s】（分享自 WeiboSDKDemo %2$s）</string>
+    <string name="weibosdk_demo_share_webpage_demo">XXX 新闻</string>
+    <!--TabFragmentUser-->
+    <string name="tab_user_viewpager_today_title">今日健身</string>
+    <string name="tab_user_viewpager_today_time">持续时间</string>
+    <string name="tab_user_viewpager_today_sign">本月签到</string>
+
+    <string name="tab_user_viewpager_dialog_title_common">我在小熊快跑</string>
+    <string name="tab_user_viewpager_dialog_share_failed">分享出问题了：图片截取失败！</string>
+
+    <string name="tab_user_viewpager_history_unit">次</string>
+    <string name="tab_user_viewpager_history_sign">总签到数</string>
+
+
+    <string name="tab_user_history_fit_time_title">健身时间</string>
+
+    <!-- TabFragmentFit -->
+    <string name="time_tip">时间</string>
+    <string name="gym_choose_date_all">全天</string>
+    <string name="gym_choose_date_shangwu">上午(09:00-12:00)</string>
+    <string name="gym_choose_date_zhongwu">中午(12:00-14:00)</string>
+    <string name="gym_choose_date_xiawu">下午(14:00-18:00)</string>
+    <string name="gym_choose_date_wanshang">晚上(18:00-22:00)</string>
+    <string name="business_zone">商圈</string>
+    <string name="traning_class">分类</string>
+    <string name="user_feedback">用户反馈</string>
+    <string name="send">发送</string>
+    <string name="hint_loading">"努力加载中&#8230;"</string>
+    <string name="xlistview_header_hint_loading">" 努力刷新中&#8230;"</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="fomat_tab2_date_with_week2">MM.dd EEEE</string>
+    <string name="fomat_tab2_date_with_week3">MM-dd EEEE</string>
+    <string name="fomat_tab2_week">EEEE</string>
+    <string name="fomat_tab2_date">MM.dd</string>
+    <string name="fomat_tab2_date2">MM-dd</string>
+    <string name="no_remaining">约满</string>
+    <string name="already_book">已预约</string>
+    <string name="not_bookable">预约结束</string>
+    <string name="not_support_before_today">昨日课程已过期&#8230;</string>
+    <string name="not_support_7_after_today">7天后的课程尚未开始&#8230;</string>
+    <string name="today">今天</string>
+    <string name="default_city">北京</string>
+    <string name="city_name_beijing_1">Beijing</string>
+    <string name="city_name_beijing_2">Bei jing</string>
+    <string name="city_name_beijing_3">BeiJing</string>
+    <string name="city_name_beijing_4">Bei Jing</string>
+    <string name="city_name_beijing_5">beijing</string>
+    <string name="city_name_beijing_6">bei jing</string>
+    <string name="city_name_beijing_7">beiJing</string>
+    <string name="city_name_beijing_8">bei Jing</string>
+    <string name="city_shanghai">上海</string>
+    <string name="city_name_shanghai_1">Shanghai</string>
+    <string name="city_name_shanghai_2">Shang hai</string>
+    <string name="city_name_shanghai_3">ShangHai</string>
+    <string name="city_name_shanghai_4">Shang Hai</string>
+    <string name="city_name_shanghai_5">shanghai</string>
+    <string name="city_name_shanghai_6">shang hai</string>
+    <string name="city_name_shanghai_7">shangHai</string>
+    <string name="city_name_shanghai_8">shang Hai</string>
+    <string name="city_shenzhen">深圳</string>
+    <string name="city_name_shenzhen_1">Shenzhen</string>
+    <string name="city_name_shenzhen_2">Shen zhen</string>
+    <string name="city_name_shenzhen_3">ShenZhen</string>
+    <string name="city_name_shenzhen_4">Shen Zhen</string>
+    <string name="city_name_shenzhen_5">shenzhen</string>
+    <string name="city_name_shenzhen_6">shen zhen</string>
+    <string name="city_name_shenzhen_7">shenZhen</string>
+    <string name="city_name_shenzhen_8">shen Zhen</string>
+    <string name="city_guangzhou">广州</string>
+    <string name="city_name_guangzhou_1">Guangzhou</string>
+    <string name="city_name_guangzhou_2">Guang zhou</string>
+    <string name="city_name_guangzhou_3">GuangZhou</string>
+    <string name="city_name_guangzhou_4">Guang Zhou</string>
+    <string name="city_name_guangzhou_5">guangzhou</string>
+    <string name="city_name_guangzhou_6">guang zhou</string>
+    <string name="city_name_guangzhou_7">guangZhou</string>
+    <string name="city_name_guangzhou_8">guang Zhou</string>
+    <string name="city_nanjing">南京</string>
+    <string name="city_name_nanjing_1">Nanjing</string>
+    <string name="city_name_nanjing_2">Nan jing</string>
+    <string name="city_name_nanjing_3">NanJing</string>
+    <string name="city_name_nanjing_4">Nan Jing</string>
+    <string name="city_name_nanjing_5">nanjing</string>
+    <string name="city_name_nanjing_6">nan jing</string>
+    <string name="city_name_nanjing_7">nanJing</string>
+    <string name="city_name_nanjing_8">nan Jing</string>
+    <string name="city_chengdu">成都</string>
+    <string name="city_name_chengdu_1">Chengdu</string>
+    <string name="city_name_chengdu_2">Cheng du</string>
+    <string name="city_name_chengdu_3">ChengDu</string>
+    <string name="city_name_chengdu_4">Cheng Du</string>
+    <string name="city_name_chengdu_5">chengdu</string>
+    <string name="city_name_chengdu_6">cheng du</string>
+    <string name="city_name_chengdu_7">chengDu</string>
+    <string name="city_name_chengdu_8">cheng Du</string>
+    <string name="city_xian">西安</string>
+    <string name="city_name_xian_1">Xian</string>
+    <string name="city_name_xian_2">Xi an</string>
+    <string name="city_name_xian_3">XiAn</string>
+    <string name="city_name_xian_4">Xi An</string>
+    <string name="city_name_xian_5">xian</string>
+    <string name="city_name_xian_6">xi an</string>
+    <string name="city_name_xian_7">xiAn</string>
+    <string name="city_name_xian_8">xi An</string>
+    <string name="city_wuhan">武汉</string>
+    <string name="city_name_wuhan_1">Wuhan</string>
+    <string name="city_name_wuhan_2">Wu han</string>
+    <string name="city_name_wuhan_3">WuHan</string>
+    <string name="city_name_wuhan_4">Wu Han</string>
+    <string name="city_name_wuhan_5">wuhan</string>
+    <string name="city_name_wuhan_6">wu han</string>
+    <string name="city_name_wuhan_7">wuHan</string>
+    <string name="city_name_wuhan_8">wu Han</string>
+    <string name="default_city_tip_pre">您当前默认城市是</string>
+    <string name="default_city_tip_key">北京</string>
+    <string name="default_city_tip_suffix">，是否切换城市？</string>
+    <string name="current_gps_city_tip">您当前定位的城市是</string>
+    <string name="no_city_located_pre">抱歉，</string>
+    <string name="no_city_located_key">定位不到</string>
+    <string name="no_city_located_suffix">您的当前城市\n让我们试试手动选择吧！</string>
+    <string name="city_not_supported_pre">您当前的城市(%1$s)</string>
+    <string name="city_not_supported_key">尚未开通</string>
+    <string name="city_not_supported_suffix">，可以选择其他城市</string>
+    <string name="new_city_located_pre">定位到新城市</string>
+    <string name="new_city_located_suffix">，是否切换？</string>
+    <string name="select_city">选择城市</string>
+    <string name="change_city">修改城市</string>
+    <string name="city_yes">是</string>
+    <string name="city_no">否</string>
+    <string name="bd_all">热门商圈</string>
+    <string name="bd_around">附近</string>
+    <string name="bd_all_tip">全部</string>
+    <string name="bd_others_tip">其他</string>
+    <string name="merchant_net_fail_tip">由于网络原因，页面加载失败！</string>
+    <string name="merchant_net_fail_btn">重新加载</string>
+    <string name="city_tip">市</string>
+    <string name="gym_type_all">全部</string>
+    <string name="gym_type_qi_xie">器械健身</string>
+    <string name="gym_type_qi_xie_1">器械</string>
+    <string name="gym_type_you_yong">游泳</string>
+    <string name="gym_type_yu_jia">瑜伽</string>
+    <string name="gym_type_wu_dao">舞蹈</string>
+    <string name="gym_type_dan_che">单车</string>
+    <string name="gym_type_dan_che_1">动感单车</string>
+    <string name="gym_type_wu_shu">武术</string>
+    <!-- purchase agin/now -->
+    <string name="papaya_card_price">￥99</string>
+    <string name="effective_date">有效期</string>
+    <string name="phone_hint"><font size="14">请填写电话号码</font></string>
+    <string name="verify_button_again">重新验证</string>
+    <string name="confirm_second">s</string>
+    <string name="vip_title">会员续费减免￥10</string>
+    <string name="coupons_edit_empty_phone">该朋友手机号为空</string>
+    <string name="buy_card_balance_title">使用余额</string>
+    <string name="total_price1">总价</string>
+    <string name="coupons_friend_num_title">朋友手机号:</string>
+    <string name="coupons_months">%1$s个月</string>
+    <string name="coupons_empty_phone">朋友手机号不能为空</string>
+    <string name="coupons_wrong_phone">朋友手机号码不正确</string>
+    <string name="coupons_to_use">使用</string>
+    <string name="balance_to_use">(使用余额￥%1$s)</string>
+    <string name="balance_not_found">暂无余额</string>
+    <string name="fans_not_found">暂无粉丝</string>
+    <string name="upgrade_title">是否将当前套餐升级至%1$s元/月的套餐？</string>
+    <string name="package_choose">套餐选择</string>
+    <string name="between_date">至</string>
+    <string name="unit_month">/月</string>
+    <string name="unit_yuan">￥</string>
+    <string name="buy_title_city">当前城市为%1$s</string>
+    <string name="buy_title_city_is_null">当前城市为空</string>
+    <string name="buy_package_unit">(包月%1$s元)</string>
+    <!-- defaultSetting -->
+    <string name="push_setting">新消息推送</string>
+    <string name="check_upgrade">检查更新</string>
+    <string name="setting_feedback">反馈</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_change_account">退出</string>
+    <string name="setting_logout_confirm_title">是否退出当前账号?</string>
+    <string name="setting_download_in_wifi">自动下载安装包\n仅wifi环境下，自动下载</string>
+    <string name="setting_clear_cache_title">清理缓存</string>
+    <string name="setting_size_cache_finished">当前缓存已清理完毕。</string>
+    <string name="setting_size_cache">约%1$s</string>
+    <string name="setting_show_pic_title">仅wifi网络下显示图片</string>
+    <!--PushSettingActivity-->
+    <string name="push_setting_title">新消息推送</string>
+    <string name="push_setting_sys">系统消息</string>
+    <string name="push_setting_like">赞</string>
+    <string name="push_setting_comments">评论</string>
+    <string name="push_setting_concern">关注提醒</string>
+    <!-- 切换账号 -->
+    <string name="papaya_declare1">购买则表明您同意\n《使用条款及隐私政策》</string>
+
+    <string name="cancel">取消</string>
+    <string name="upgrade_tip_0">当前是最新版本，无需更新。</string>
+    <string name="upgrade_tip_1">wifi连网失败...</string>
+    <string name="upgrade_tip_2">网络超时...</string>
+    <!-- feedback -->
+    <!-- PayActivity -->
+    <string name="warning_for_no_weixin">未安装微信</string>
+    <!-- phone confirm -->
+    <string name="input_phone">请输入手机号码</string>
+    <string name="confirm">获取验证码</string>
+    <string name="input_confirmation_code">请输入收到的验证码</string>
+    <string name="confirm_login">验证身份</string>
+    <string name="phone_input_error">手机号错误</string>
+    <string name="phone_input_same_as_current">用户已登录</string>
+    <string name="code_not_empty">验证码不能为空</string>
+    <string name="code_send_failed">验证码发送失败</string>
+    <string name="code_send_succ">验证码发送成功</string>
+    <string name="login_failed">登录失败</string>
+    <string name="warnning_register">注册代表你已阅读并同意</string>
+    <string name="get_verify_agin">若未收到验证码，请于60s后重新获取</string>
+    <string name="register_content">小熊快跑用户协议和隐私条款</string>
+    <!-- buy card -->
+    <string name="buy_card_now">立即购买</string>
+    <string name="buy_card_for_friend_warn">温馨提示：帮朋友买不能使用个人代金券</string>
+    <string name="total_money">￥%1$s</string>
+    <string name="money_unit">￥%1$s/月</string>
+    <!-- order act -->
+    <!-- OrderActivity -->
+    <string name="no_network_warn">网络不给力，请检查您的网络</string>
+    <!-- tmp remember to delete after using -->
+    <!-- viewUtil dialog -->
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+    <!-- aboutActivity -->
+    <string name="introduce_papaya_card">小熊快跑是神马</string>
+    <string name="introduce_papaya_card_details">小熊快跑是一款贴心的包月健身服务。普通健身卡只能在固定一家健身场馆健身，而通过小熊快跑，您可以随便去北京、上海、深圳等8个城市数千家健身场馆，并且器械、游泳、舞蹈、瑜伽全都有！和长期无聊地泡在同一家健身房彻底说拜拜吧！\n\n价格便宜、灵活度高、场馆又丰富，小熊快跑现已是最潮流、最有意思的健身模式。场馆也许出现在你家、公司附近，甚至你的TA的附近哦，我们不会再给你偷懒的理由，快滚去健身！ </string>
+    <string name="target_of_papaya_card">小熊快跑的初衷</string>
+    <string name="target_of_papaya_card_details">很多人都有过健身计划，但只有很少的人真的执行。不是钱包瘪，就是毅力不够，找这么多借口的时间能跑多少圈你造吗 ？小熊快跑的初衷就是要改变传统健身，让健身的人越来越多，让不去健身的借口消失。\n\n\n我们的优点是：\n1. 便宜（12个月的小熊快跑价格，还不到单一健身房年卡的一半哦！）\n2. 场馆多（去瑜伽、游泳、器械、舞蹈，想怎么来就怎么来，方便！）\n3. 简单（手机一点，轻松预约，免去繁琐和麻烦！）\n\n\n有那么多好玩儿高质量的场馆等着你，只去一家实在是太可惜了不是么？所以我们规定同一家场馆最多只能去三次！你不会再觉得无聊和单调，健身体验好到爆表！
+快快加入我们吧！</string>
+    <!-- dialog pay name -->
+    <string name="dialog_pay_name_alipay">支付宝</string>
+    <string name="dialog_pay_name_wx">微信支付</string>
+    <string name="dialog_pay_title">付款方式</string>
+    <string name="dialog_pay_go">立即支付</string>
+    <!-- pay result -->
+    <!-- msg activity -->
+    <!-- fav activity -->
+    <!-- CouponsActivity -->
+    <string name="coupons_activity_title">选择优惠券</string>
+    <string name="coupons_activity_def_title">优惠券</string>
+    <string name="coupons_add">添加</string>
+    <string name="coupons_rule">使用规则</string>
+    <string name="coupons_money_icon">￥</string>
+    <string name="coupons_name">代金券</string>
+    <string name="coupons_rules">购满%1$s元即减</string>
+    <string name="coupons_already_used">已使用</string>
+    <string name="coupons_unused">未使用</string>
+    <string name="coupons_expired">已过期</string>
+    <string name="coupons_using">购买中</string>
+    <string name="coupons_input_code">输入优惠码</string>
+    <string name="coupons_add_coupon_code_is_null">优惠码不能为空</string>
+    <string name="coupons_cannot_use">(不可用)</string>
+    <!-- CouponsRulesActivity -->
+    <string name="coupon_help">代金券使用帮助</string>
+    <string name="coupon_help_title_1">1、什么是优惠码?</string>
+    <string name="coupon_help_title_2">2、什么是代金券?</string>
+    <string name="coupon_help_title_3">3、如何获取代金券?</string>
+    <string name="coupon_help_title_4">4、如何使用代金券?</string>
+    <string name="coupon_help_title_5">5、代金券找零兑现吗?</string>
+    <string name="coupon_help_1">优惠码是小熊快跑发行和认可并可定向兑换成代金券。</string>
+    <string name="coupon_help_2">代金券是小熊快跑发行和认可的购买折扣券，可以在购买小熊快跑服务付款时抵扣相应面值的金额。</string>
+    <string name="coupon_help_3">小熊快跑客户端和微信服务号会不定期推出秒杀活动，手机用户及时留意和关注有关活动通知，机会不容错过!</string>
+    <string name="coupon_help_4">在手机客户端和微信服务号上付款时，都可以选择使用符合条件代金券，即可抵扣相应的金额。</string>
+    <string name="coupon_help_5">代金券不找零，不兑换。付款时系统会自动匹配最高优惠金额的代金券，用户可自行选择。</string>
+    <string name="coupon_suggestion_tip">小熊快跑客服电话 : 400-8818-255</string>
+    <!-- fav activity -->
+    <string name="no_fav_merchant_warn">您没有关注任何场馆哦</string>
+    <string name="fav_gym_title">关注场馆</string>
+    <string name="fav_fetch_failed">因为网络原因，获取关注列表失败。</string>
+    <!-- scanning activity -->
+    <string name="scan_title">扫码验证</string>
+    <string name="scan_text">将二维码放入框内，即可自动扫描</string>
+    <string name="scan_success_tip">验证成功！</string>
+    <string name="scan_fail_tip">验证失败！</string>
+    <string name="scan_fail_network">服务器未能及时响应！</string>
+    <string name="scan_success_order_code">验证码：</string>
+    <string name="scan_success_order_class">课程：</string>
+    <string name="scan_success_order_time">时间：</string>
+    <string name="scan_success_order_merchant">场馆：</string>
+    <string name="scan_confirm">确定</string>
+    <string name="scan_check_class">查看课程</string>
+    <string name="scan_call_phone">电话咨询</string>
+    <string name="scan_suggestion_tip_0">[小熊快跑]建议您：</string>
+    <string name="scan_suggestion_tip_1">咨询商家是否还可以参加该项目，如若可以，请商家帮忙验证即可正常参加项目。</string>
+    <string name="scan_suggestion_tip_2">如有任何疑问，请拨打客服电话进行咨询：400-8818-255</string>
+    <string name="official_phone_number">400-8818-255</string>
+    <string name="scaning_tip">正在验证中...</string>
+    <!-- merchant act -->
+    <string name="merchant_is_banned">该场馆暂时不能预约</string>
+    <string name="merchant_facilities_title">场馆设施</string>
+    <string name="merchant_facilities_park">停车场</string>
+    <string name="merchant_facilities_wifi">WIFI</string>
+    <string name="merchant_facilities_cabinet">锁具</string>
+    <string name="merchant_facilities_no_cabinet">储物柜</string>
+    <string name="merchant_facilities_shower">沐浴</string>
+    <string name="merchant_facilities_child">小孩托管</string>
+    <!-- <string name="merchant_facilities_dress">专业服装</string> -->
+    <!-- <string name="merchant_comments_title_empty">场馆评论(暂无)</string> -->
+    <!-- <string name="merchant_recommend_empty">暂时无人推荐</string> -->
+    <string name="format_money">￥%1$s</string>
+    <string name="desc_shrinkup">收起全文</string>
+    <string name="desc_spread">展开全文</string>
+    <string name="no_map_app">未安装任何地图应用！</string>
+    <string name="dialog_select_map_title">选择要使用的应用：</string>
+    <string name="no_class_msg">没有任何项目，换个日期看看~</string>
+    <string name="favor_count">%1$s人关注</string>
+    <string name="merchant_fans_count">%1$s个粉丝</string>
+    <string name="is_favored">已关注</string>
+    <string name="cancel_favor">取消关注</string>
+    <string name="add_favor">+关注</string>
+
+    <!-- share -->
+    <string name="share_img_name">小熊快跑打卡</string>
+    <string name="weibo_share_title">#小熊快跑礼包#小熊快跑礼包送给您，游泳瑜伽舞蹈健身全部告别年卡！</string>
+    <string name="wx_all_share_title">我邀请大家使用小熊快跑健身，49元就可以包月畅享全城场馆！</string>
+    <string name="wx_qq_share_title2">我邀请你开通小熊快跑会员，立享半价！</string>
+    <string name="wx_qq_share_dec2">邀请专享限时49元特价，还不快抢！</string>
+    <string name="share_res_act_title">分享到新浪微博</string>
+    <string name="weibo_share_title2">#小熊快跑vip#我邀请你开通小熊快跑会员，立享半价！邀请专享限时49元特价，还不快抢！</string>
+    <string name="weibo_share_image_title">小熊快跑城市健身通行证</string>
+    <string name="weibosdk_demo_test_webpage_url">http://news.sina.com.cn/c/2013-10-22/021928494669.shtml</string>
+    <!--&lt;!&ndash; share course &ndash;&gt;-->
+    <!--<string name="share_bike_desc">坐地日行八万里</string>-->
+    <!--<string name="share_swim_desc">让我再游十个来回吧</string>-->
+    <!--<string name="share_qixie_desc">如果杠铃杆还没弯，你就是在装样子</string>-->
+    <!--<string name="share_yoga_desc">让我静静，我想静静</string>-->
+    <!--<string name="share_dance_desc">左手，右手，一个慢动作~</string>-->
+    <!--<string name="share_wushu_desc">打不死我的都会让我更强</string>-->
+    <!-- ChooseMerchantMapActivity -->
+    <string name="comma_tip">、</string>
+    <string name="my_location_tip">我的位置</string>
+    <string name="fetch_merchants_fail_tip">获取商家列表失败！</string>
+    <string name="go_to_merchant_tip">进入场馆</string>
+    <string name="merchant_type_tip">分类：</string>
+    <!-- share act -->
+    <string name="share_act_title">邀请有奖</string>
+    <string name="share_act_warn">获取邀请码失败，请稍后再试</string>
+    <string name="share_qq_title_default">小熊快跑城市健身通行证</string>
+    <string name="share_qq_desc_default">畅享全城数百家健身场馆</string>
+    <string name="share_qq_url_default">http://www.xxkuaipao.com</string>
+    <string name="share_weibo_title_default">小熊快跑城市健身通行证</string>
+    <string name="share_weibo_desc_default">畅享全城数百家健身场馆</string>
+    <string name="share_weibo_url_default">http://www.xxkuaipao.com</string>
+    <string name="share_weixin_title_default">小熊快跑城市健身通行证</string>
+    <string name="share_weixin_desc_default">畅享全城数百家健身场馆</string>
+    <string name="share_weixin_url_default">http://www.xxkuaipao.com/wechat/gym/%1$s</string>
+    <string name="share_pyq_title_default">小熊快跑城市健身通行证</string>
+    <string name="share_pyq_desc_default">畅享全城数百家健身场馆</string>
+    <string name="share_pyq_url_default">http://www.xxkuaipao.com/wechat/gym/%1$s</string>
+    <!-- authrity share -->
+    <string name="share_warn_title">小熊快跑好友邀请奖励</string>
+    <string name="no_advertisement">暂无活动 敬请期待</string>
+    <string name="advertisment_end">%1$s结束</string>
+    <!-- address activity -->
+    <string name="address_edit_hint">请输入地址</string>
+    <string name="address_edit">编辑</string>
+    <string name="address_all_choosen">全选</string>
+    <string name="address_all_chosen_cancel">取消全选</string>
+    <string name="address_delete">删除</string>
+    <string name="address_add_new">+ 添加其他常用地址</string>
+    <string name="address_normal_title">常址</string>
+    <!-- user info activity -->
+    <string name="user_info_title">个人信息</string>
+    <string name="go">前往</string>
+    <string name="nickname_input_title_invite">需填写个人昵称才能发布信息哦</string>
+    <string name="user_address_tip">常用地址</string>
+    <string name="user_info_age_50">50后</string>
+    <string name="user_info_age_60">60后</string>
+    <string name="user_info_age_70">70后</string>
+    <string name="user_info_age_80">80后</string>
+    <string name="user_info_age_90">90后</string>
+    <string name="user_info_age_00">00后</string>
+    <string name="user_height_tip_unit">厘米</string>
+    <string name="user_weight_tip_unit">公斤</string>
+    <string name="user_desc_default">别再懒了，赶紧签名吧！</string>
+    <!-- photo picker -->
+    <string name="title_activity_choose_pic">选择图片</string>
+    <string name="select">选择</string>
+    <string name="all_image">所有图片</string>
+    <string name="over_max_count_tips">你最多可以选择%1$d张图片</string>
+    <string name="done_fail_tip">还未选中图片</string>
+    <string name="preview">预览</string>
+    <string name="preview_count">预览(%1$d)</string>
+    <string name="file_count">%1$d张</string>
+    <string name="file_save_fail">图像存储失败！</string>
+    <string name="photo_delete_tip">是否删除当前照片？</string>
+    <!-- photo viewpager -->
+    <!-- publish comment act -->
+    <string name="comment_album">相册</string>
+    <string name="comment_take_photo">拍照</string>
+    <string name="comment_upload_pic1">上传照片</string>
+    <string name="comment_attend_course">参加项目:</string>
+    <!-- merchant comment -->
+    <!-- customer questions -->
+    <string name="customer_question_counpon">优惠券的获得与使用说明</string>
+    <string name="customer_question_account_balance">余额使用说明</string>
+    <string name="customer_question_xxer_circle">小熊圈说明</string>
+    <string name="customer_question_title4">了解三次通卡</string>
+    <string name="customer_question_title5">了解有氧空间</string>
+    <string name="customer_question_answer">常见问题 Q&amp;A </string>
+    <string name="customer_question_one_title">1.小熊快跑的包月套餐怎么算？</string>
+    <string name="customer_question_one_answer">从购买日起31天为一个有效周期。</string>
+    <string name="customer_question_two_title">2.为什么有的项目无法预约？</string>
+    <string name="customer_question_two_answer">A、小熊快跑包含项目众多，有的项目需要提前预约并受场馆大小有一定的名额限制；\nB、因为商家经常调整项目课表，所以目前我们最多仅能提供一周内可预约的项目；\nC、您在一个周期内已约满同一个场馆三次，即不能再预约该场馆的项目（爽约也计算在内）。</string>
+    <string name="customer_question_three_title">3.如何使用小熊快跑？</string>
+    <string name="customer_question_three_answer">小熊快跑并不发售实体卡，当您成功购买小熊快跑会员后，可以在小熊快跑APP或微信公众服务号上进行预约，然后很据项目要求时间到店扫码签到即可体验。</string>
+    <string name="customer_question_four_title">4.为什么预约的项目无法取消？</string>
+    <string name="customer_question_four_answer">因为项目名额宝贵，为保证各方利益严禁临时取消或爽约的行为，所以您需至少提前三小时进行取消操作，如有突发状况请及时与客服联系。</string>
+    <string name="customer_question_five_title">5.小熊快跑有什么使用限制？</string>
+    <string name="customer_question_five_answer">一、在一个31天的有效周期内，同一家场馆最多只能去三次；\n二、爽约两次，冻结账户一周，账户被冻结后用户不可进行任何预约操作；累计三次爽约，冻结当月会员。</string>
+    <string name="customer_question_six_title">6.新用户有什么优惠活动？</string>
+    <string name="customer_question_six_answer">请关注【小熊快跑】微信公众账号，了解每日最新资讯，更多优惠等你来拿。</string>
+    <string name="customer_question_one_title1">1.什么是优惠码？</string>
+    <string name="customer_question_one_answer1">优惠码是小熊快跑发行和认可并可定向兑换成代金券。</string>
+    <string name="customer_question_two_title1">2.什么是代金券？</string>
+    <string name="customer_question_two_answer1">代金券是小熊快跑发行和认可的购买折扣券，可以在购买小熊快跑服务付款时抵扣相应面值的金额。</string>
+    <string name="customer_question_three_title1">3.如何获取代金券？</string>
+    <string name="customer_question_three_answer1">小熊快跑客户端和微信服务号会不定期推出秒杀活动，手机用户及时留意和关注有关活动通知，机会不容错过！</string>
+    <string name="customer_question_four_title1">4.如何使用代金券？</string>
+    <string name="customer_question_four_answer1">在手机客户端和微信服务号上付款时，都可以选择使用符合条件代金券，即可抵扣相应的金额。</string>
+    <string name="customer_question_five_title1">5.代金券找零兑现吗？</string>
+    <string name="customer_question_five_answer1">代金券不找零，不兑换。付款时系统会自动匹配最高优惠金额的代金券，用户可自行选择。</string>
+    <string name="customer_question_one_title2">1.什么是余额？</string>
+    <string name="customer_question_one_answer2">余额是当前用户的账户金额，可用于购买小熊快跑时进行金额减免，但不可兑现，不找零。</string>
+    <string name="customer_question_two_title2">2.如何积攒余额？</string>
+    <string name="customer_question_two_answer2">可通过邀请新用户购买小熊快跑服务获得余额奖励，每次成功邀请奖励所得余额请以实际邀请规则为准。</string>
+    <string name="customer_question_three_title2">3.余额使用限制？</string>
+    <string name="customer_question_three_answer2">余额仅用于购买小熊快跑会员服务，不可用于购买小熊快跑其他商品。</string>
+
+    <string name="customer_question_one_title3">1.什么是小熊圈？</string>
+    <string name="customer_question_one_answer3">小熊圈是一个陌生人组成的健身交流圈，是现实健身发起在网络世界的延生，也是个人秀自己或获取他人信息健身状态的重要渠道。用户可以发起健身邀约，以及健身打卡晒出自己的健身成果，达到与其他用户线上互动线下交流的目的。</string>
+    <string name="customer_question_two_title3">2.怎么使用小熊圈？</string>
+    <string name="customer_question_two_answer3">亲若购买了小熊快跑会员，即可开始您的小熊之旅\n\n操作步骤：\n2-1. 手机登录小熊快跑，点击【开始健身】\n2-2. 选择一家您身边的健身场馆，成功【预约】该场馆的课程\n2-3. 再点击【我的预约】 -  在页面上方【即将开始】栏下点击【健身邀请】\n*2-4. 完成预约课程之后，在页面下方【全部预约】栏下点击【健身打卡】</string>
+    <string name="customer_question_three_title3">3.小熊圈能给你带来什么？</string>
+    <string name="customer_question_three_answer3">小熊圈是健身的一种沟通、交流的新方式，需要自己经营好，能给自己带来丰富的健身好友，圈文的回复或是点赞，都是得到圈内健身人士关注的途径，让自己的健身路更规范合理化，让自己的健身更精彩有趣。</string>
+    <string name="customer_questions_two_span">操作步骤：</string>
+
+
+    <string name="customer_question_one_title4">1. 三次通卡是什么？</string>
+    <string name="customer_question_one_answer4">小熊快跑三次通卡是一张城市健身通行证。通过小熊快跑您可以随便去北京、上海、深圳等8个城市数千家健身场馆，并且器械、游泳、舞蹈、瑜伽全都有（每家每月最多去三次）！和长期无聊地泡在同一家健身房彻底说拜拜吧！</string>
+    <string name="customer_question_two_title4">2. 三次通卡有什么优点？</string>
+    <string name="customer_question_two_answer4">- 购买灵活，价格实惠。支持单月购买，让您更加灵活安排自己的健身周期。\n- 场馆覆盖广。小熊快跑合作场馆覆盖全城，让您在任何商圈都能找到合适的场馆健身。\n- 项目选择广。器械，游泳，瑜伽，舞蹈，武术，各种健身项目应有尽有</string>
+    <string name="customer_question_three_title4">3. 使用规则说明</string>
+    <string name="customer_question_three_answer4">- 完成购买后，您将在卡片对应的有效期内预约健身。\n- 在会员过期之前续费，新的会员期将从过期日开始算起。</string>
+
+
+    <string name="customer_question_one_title5">1.有氧空间是什么?</string>
+    <string name="customer_question_one_answer5">在小熊快跑有氧空间这里每周都有顶级私教，为你带来劲爆的有氧课程。无论你想减脂、塑形还是提高身体机能，这里都能满足你！并且，顶级私教亲自指导，加上秒杀一般健身房的训练环境，价格却只是普通私教课的零头哦！</string>
+    <string name="customer_question_two_title5">2.有氧空间有什么优点？</string>
+    <string name="customer_question_two_answer5">- 购买灵活，价格实惠。支持单月购买，让您更加灵活安排自己的健身周期。\n- 顶级教练指导，无限次预约，一卡练遍全国。</string>
+
+    <string name="customer_question_three_title5">3.使用规则说明</string>
+    <string name="customer_question_three_answer5">- 完成购买后，您将在卡片对应的有效期内预约健身。\n- 在会员过期之前续费，新的会员期将从过期日开始算起。</string>
+    <!-- gymSearchActivity -->
+    <string name="gym_search_hint">输入场馆或地址</string>
+    <string name="search">搜索</string>
+    <string name="gym_search_history_clear">清除搜索记录</string>
+    <string name="gym_search_no_result">搜索无结果</string>
+    <!-- user info activity -->
+    <string name="usr_info_change_name_empty_tip">昵称不能为空～</string>
+    <string name="usr_info_change_name_tip">您设置的昵称超出15个字，已帮您截取，请知悉～</string>
+    <string name="usr_info_unknown">未知</string>
+    <string name="usr_info_man">男</string>
+    <string name="usr_info_woman">女</string>
+    <string name="usr_info_name_hint">填写昵称(1~15个字符)</string>
+    <string name="distance_less_to">&lt;%1$skm</string>
+    <string name="distance_equal_with">%1$skm</string>
+    <string name="open_camera_failed">打开相机出现异常！</string>
+    <string name="upload_nickname_failed">网络不畅，昵称上传失败了～</string>
+    <string name="upload_sign_failed">网络不畅，签名上传失败了～</string>
+    <string name="upload_backimg_failed">设置背景图片失败了~</string>
+    <string name="title_activity_buy_card_for_friend">BuyCardForFriendActivity</string>
+    <!-- AccountActivity -->
+    <string name="account_details_tile">账户余额(元)</string>
+    <string name="account_details_explain">余额说明</string>
+    <string name="account_details_add">增加余额</string>
+    <!-- MessageActivity -->
+    <string name="delete_history_gym_warning">您确定要删除此项搜索记录吗？</string>
+    <string name="address_already_existed">该地址已存在，请重新设置！</string>
+    <string name="take_photo_failed">获取图片失败，请检查相机功能。</string>
+    <!-- <string name="combo_act_title">选择健身城市</string> -->
+    <!-- yearCardActivity -->
+    <string name="year_card_desc_and_exchange_pro">描述及购买须知</string>
+    <string name="year_card_price_desc">描述</string>
+    <string name="year_card_exchange_title">兑换流程</string>
+    <string name="year_card_buy_warn">购买须知</string>
+    <!-- buyonce -->
+    <!-- MessagePostActivity -->
+    <string name="post_msg_success">发送成功！</string>
+    <string name="post_msg_fail">网络故障，发送失败。</string>
+    <string name="msg_give_up_yes">确定</string>
+
+    <!-- CircleActivity -->
+
+    <!-- tabCirecleFragment -->
+    <string name="circle_care">关注</string>
+    <string name="circle_find">发现</string>
+
+    <!-- CircleView -->
+    <string name="circle_format">yyyy-MM-dd\'T\'HH:mm:ss</string>
+    <string name="circle_share">分享</string>
+    <string name="circle_delete">删除</string>
+    <string name="circle_cancel">取消</string>
+    <string name="circle_net_failed">亲，网络不好，请检查网络后再次尝试。</string>
+
+    <!--personal coach-->
+
+
+    <!-- Coatch ListActivity -->
+    <string name="push_title_default">小熊快跑</string>
+    <string name="push_desc_default">您有未读消息</string>
+    <string name="coach_receive_customer_title">顾客接待</string>
+
+    <!--CoachSingleAdapter-->
+    <!-- SigntureActivity  -->
+    <!--FansActivity-->
+    <string name="fans_gym_title">场馆粉丝</string>
+    <string name="fans_user_title">粉丝</string>
+    <string name="fans_care">+ 关注</string>
+    <string name="fans_out_of_pages">暂时无法查看更多信息</string>
+    <!--FollowActivity-->
+    <string name="care_search_nick">搜索昵称</string>
+    <string name="care_gym_title">关注场馆</string>
+    <string name="care_people_title">关注的人</string>
+    <string name="care_people_not_found">暂无关注的人</string>
+    <!--messageTypeActivity-->
+
+    <!--CircleDraftsActivity-->
+    <string name="circle_draft_type_title_0">健身邀约</string>
+    <string name="circle_draft_type_title_1">健身打卡</string>
+    <string name="circle_draft_type_title_2">健身动态</string>
+
+    <!--UserBkgSettingActivity-->
+    <string name="user_bkg_setting_title">背景设置</string>
+    <string name="user_bkg_take_photo_tip">拍照上传</string>
+    <string name="user_bkg_from_gallery_tip">相册上传</string>
+    <string name="user_bkg_from_recomment_title">推荐背景</string>
+    <string name="user_bkg_set_user_bkg">设为主页背景</string>
+    <string name="user_bkg_set_user_bkg_success">更换成功</string>
+
+    <string name="user_home_set_bkg">更换背景图片</string>
+    <string name="cancel_follow_confirm">取消关注后将不能在小熊圈看到他（她）发布的消息，是否取消关注？</string>
+    <string name="cancel_follow_confirm_yes">是</string>
+    <string name="cancel_follow_confirm_no">否</string>
+    <!--TabUser todayfit-->
+    <string name="user_today_fit_dialog_share_title">分享到</string>
+    <string name="user_today_fit_end_title">结束健身</string>
+    <string name="user_today_fit_caroli_unit">大卡</string>
+    <string name="user_today_fit_time_unit">分钟</string>
+    <string name="user_today_fit_sign_unit">次</string>
+    <string name="user_today_fit_time">%1$s分钟</string>
+    <string name="user_today_fit_sign">%1$s次</string>
+    <string name="user_today_fit_caroli">%1$s大卡</string>
+    <string name="user_today_fit_time_dialog_detail_data_got_end_or_not">你已经锻炼了%1$s分钟，成功消耗%2$s大卡，是否要结束健身</string>
+    <string name="user_today_fit_time_dialog_detail_end_yes">是</string>
+    <string name="user_today_fit_time_dialog_detail_end_no">否</string>
+
+    <string name="user_today_fit_data_upload_warning">结束今日健身失败，请检查网络后重新尝试</string>
+
+    <string name="user_today_fit_data_dialog_time_title">时长</string>
+    <string name="user_today_fit_data_dialog_calori_title">能量消耗</string>
+    <string name="user_today_fit_data_uer_info_warning">完善身高体重等信息，让数据更准确</string>
+    <!--TabUserHome Photo-->
+    <string name="fetch_user_home_photo_find_failed_tip">因为网络原因，暂时无法获取数据。</string>
+    <!--TabUserHome fitdata-->
+    <string name="user_home_fit_data_empty_title">该用户太懒了，没有任何数据</string>
+
+    <!--RankingActivity-->
+    <string name="ranking_total_tab">全部</string>
+    <string name="ranking_care_tab">好友排名</string>
+    <string name="ranking_merchant_title">场馆会员排名</string>
+
+    <!--FitDataDetailActivity-->
+    <string name="fit_data_detail_tab_week">周</string>
+    <string name="fit_data_detail_tab_month">月</string>
+    <string name="fit_data_detail_fit_time">%1$s小时</string>
+    <string name="fit_data_detail_fit_time_unit">小时</string>
+    <string name="fit_data_detail_fit_time_tip">健身时间</string>
+    <string name="fit_data_detail_fit_energy">%1$s大卡</string>
+    <string name="fit_data_detail_fit_energy_unit">大卡</string>
+    <string name="fit_data_detail_fit_energy_tip">总消耗热量</string>
+    <string name="fit_data_detail_fit_project_unit">个</string>
+    <string name="fit_data_detail_fit_project_tip">完成项目</string>
+
+    <string name="week_tag_1">一</string>
+    <string name="week_tag_2">二</string>
+    <string name="week_tag_3">三</string>
+    <string name="week_tag_4">四</string>
+    <string name="week_tag_5">五</string>
+    <string name="week_tag_6">六</string>
+    <string name="week_tag_7">日</string>
+
+    <string name="comments_500_beyond_warning">评论内容不能超过500字哦~</string>
+    <string name="fit_data_photo_empty_others">该用户太懒了，未发表照片</string>
+    <string name="fit_data_dialog_show_error">亲，弹出分享界面出现问题，记得稍后再试哦～</string>
+
+    <!--BeFriendActivity-->
+
+    <!--PhoneContactsActivity-->
+    <string name="phone_contacts_search_invite">邀请</string>
+
+    <string name="sina_friend_title">微博好友</string>
+    <string name="sina_invite_friend_dlg_title">是否立即邀请%1$s加入小熊快跑</string>
+    <string name="sina_invite_succ_toast">邀请成功</string>
+    <!--MerchantActivity-->
+    <string name="merchant_member_no_coaches">暂无场馆教练</string>
+    <string name="merchant_member_coaches_title">场馆教练</string>
+
+    <string name="merchant_more_personal_coach_title">私教课</string>
+
+    <!--FragmentHomeXX-->
+
+
+    <!--FragmentHomeMerchant-->
+
+    <string name="home_merchant_card_not_support_by_xx_tip">不支持通卡</string>
+
+
+    <!--FragmentHomeSpecial-->
+
+
+    <!--HomeMerchantsFilterActivity-->
+
+    <!--BindingMerchantActivity-->
+
+    <!--GymCardManagerActivity-->
+
+    <!--BindingReasonActivity-->
+
+    <!--BindingMemberInfoActivity-->
+
+    <!--MerchantOpenDoorActivity-->
+    <string name="activity_merchant_open_door_qr_pic">进门二维码</string>
+    <string name="activity_merchant_open_door_qr_scan">扫一扫</string>
+    <string name="activity_merchant_open_door_pause_overtime">亲，暂时离店时间过长，已默认结束健身了～</string>
+
+    <!--OpenDoorActviity-->
+    <string name="open_door_activity_pic_warn">将二维码贴近扫码器，即可打开门禁</string>
+
+    <!--HowToUseXXCardActivity-->
+
+
+    <!--HowToBindMerchantActivity-->
+
+    <!--CardLeftDaysActivity-->
+    <string name="activity_card_left_days_title">三次通卡剩余天数</string>
+    <string name="activity_card_special_left_days_title">有氧空间剩余天数</string>
+    <string name="activity_card_left_days_subtitle_1">今日日期</string>
+    <string name="activity_card_left_days_subtitle_2">总剩余天数</string>
+    <string name="activity_card_left_days_subtitle_3">当前周期剩余天数</string>
+    <string name="activity_card_left_days_date_range">有效期至 %1$s</string>
+    <!--merchantopendoor-->
+    <string name="open_door_succ_dlg_title">进店扫码成功！</string>
+    <string name="open_door_fail_reopen_text">门没打开，重新开门</string>
+    <!--MerchantTimeCountActivity-->
+
+    <string name="merchant_time_count_title">在店计时</string>
+    <string name="merchant_time_question_desc">还没进店?</string>
+    <string name="merchant_time_welcome_desc">我们开始为您计时，纪录您每天的健身时间。</string>
+    <string name="merchant_time_welcome_title">欢迎进入本场馆！</string>
+    <string name="merhcant_time_reopen_door_dlg_title">还没进店</string>
+    <string name="merchant_time_reopen_door_dlg_msg">我还没有进入健身房内\n需要重新进入</string>
+    <string name="merchnat_time_reopen_door_btn_text">重新进店</string>
+    <string name="merchant_time_door_has_open">门已打开?</string>
+
+    <!--BuyCardActivity-->
+    <string name="buy_card_expire_time_format">使用时长：%1$s天</string>
+    <string name="buy_card_price_formatter">￥%1$s/月</string>
+
+    <!--FitDataActivity-->
+    <string name="fit_data_activity_title">健身数据</string>
+
+    <!--BookClassListActivity-->
+
+    <!--FragmentHomeCardMerchant-->
+
+    <string name="fragment_home_card_type_left_day_title">剩余天数：</string>
+
+    <string name="fragment_home_card_online_num">在店人数：</string>
+    <!--merchantCardType-->
+    <string name="fragment_home_card_type_merchant_my_order">我的预约</string>
+    <string name="fragment_home_card_type_merchant_order_class">预约课程</string>
+    <string name="fragment_home_card_type_merchant_shower_class">我的淋浴</string>
+
+    <string name="fragment_home_card_type_merchant_moments">场馆动态</string>
+
+    <string name="home_merchant_card_my_attention">我的关注</string>
+    <string name="home_merchant_card_buy_vip">会员购买</string>
+    <string name="home_merchant_card_buy_personal_coach">购买私教</string>
+
+    <!--merchantCardBuyActivity-->
+    <!--SelectCardTypeActivity-->
+    <string name="today_fit_today_caroli_title">今日消耗</string>
+
+
+    <string name="off_door_btn_text">出门</string>
+    <string name="open_door_btn_text">进门</string>
+
+
+    <!--orderlistactivity-->
+    <string name="vip_near_reminder_title">会员卡到期提醒</string>
+    <string name="vip_near_reminder_desc">您的会员卡即将到期，为了您的用户体验请尽快完成续费。</string>
+    <string name="vip_near_renew">立即续费</string>
+
+    <string name="sensitize_card_title">开卡提醒</string>
+    <string name="sensitize_card_desc">您已购买该场馆的%1$s到店开卡或自助开卡后方可正常使用</string>
+    <string name="sensitize_card_btn_text">自助开卡</string>
+
+    <string name="class_near_reminder_title">课程提醒</string>
+
+    <!--Emoji-->
+
+    <!--ShowerBuyActivity-->
+
+    <!--ShowerBalanceActivity-->
+    <string name="merchant_card_view_open_door">扫码\n开门</string>
+
+    <!--AddCourseActivity-->
+    <!--AddCourseActivity-->
+
+    <string name="item_course_time_title">课程时间</string>
+    <string name="item_course_time_default_desc">请选择课程时间</string>
+
+    <string name="item_course_member_title">上课会员</string>
+    <string name="item_course_member_default_desc">请选择上课会员</string>
+    <string name="item_course_type_title">课程名称</string>
+    <string name="item_course_type_default_desc">请选择课程名称</string>
+    <string name="add_course_commit_btn_title">提  交</string>
+    <string name="course_detail_title">详情记录</string>
+
+    <string name="course_detail_assess_hit">请给出训练评价和训练建议</string>
+
+
+    <!-- Coach members -->
+    <string name="coach_member_search">搜索会员名</string>
+    <string name="coach_member_no_data">暂无私教会员</string>
+
+    <!-- Upgrage Auto -->
+    <string name="upgrade_positive_btn">立即更新</string>
+    <string name="upgrade_negative_btn">取消</string>
+    <string name="upgrade_ignore_btn">不再提醒</string>
+
+    <!-- Course Detail Strength-->
+    <string name="strength_type_1">不太用力</string>
+    <string name="strength_type_2">比较用力</string>
+    <string name="strength_type_3">强度很大</string>
+    
+    <string name="training_part_pectoralis">胸大肌</string>
+    <string name="training_part_back">背</string>
+    <string name="training_part_arm">手臂</string>
+    <string name="training_part_deltoid">三角肌</string>
+    <string name="training_part_abdominal">腹肌</string>
+    <string name="training_part_leg">腿</string>
+    <string name="training_part_hip">臀</string>
+
+    <string name="coach_course_upload_success">课程提交成功</string>
+    <string name="coach_course_modify_success">课程修改成功</string>
+    <string name="coach_course_upload_fail">课程提交失败</string>
+    <string name="coach_course_modify_fail">课程修改失败</string>
+
+    <string name="coach_course_parts_toast">训练部位 *</string>
+    <string name="coach_course_comment_toast">训练评价 *</string>
+    <string name="coach_course_alert_title">温馨提示</string>
+    <string name="coach_course_parts_empty">请填写必填项后提交</string>
+    <string name="coach_course_action_empty">请完整填写训练动作的数据后提交</string>
+
+    <string name="coach_course_upload">提 交</string>
+    <string name="coach_course_modify">修 改</string>
+
+</resources>

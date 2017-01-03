@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/year_card_desc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/year_card_price_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/year_card_desc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="@string/year_card_price_desc"
+            android:textSize="@dimen/text_size_list" />
+
+        <ImageView
+            android:id="@+id/iv_right_arrow_year_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_arrow_right_gray" />
+
+        <com.kuaipao.ui.view.CollapsibleTextViewMerchant
+            android:id="@+id/year_card_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/year_card_desc_title"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:text="@string/year_card_price_desc"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_describe" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/year_card_exchange_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/year_card_desc_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/year_card_exchange_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="@string/year_card_buy_warn"
+            android:textSize="@dimen/text_size_list" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_arrow_right_gray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/year_exchange_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/year_card_exchange_title"
+            android:layout_marginLeft="@dimen/common_margin_left_right"
+            android:layout_marginRight="@dimen/common_margin_left_right"
+            android:text="@string/year_card_exchange_title"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_describe" />
+    </RelativeLayout>
+</LinearLayout>

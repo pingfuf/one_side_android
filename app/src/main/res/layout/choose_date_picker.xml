@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <NumberPicker
+        android:id="@+id/numberPicker_solar_year"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:layout_width="17dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-18dp"
+        android:gravity="center_vertical|right"
+        android:text="年"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker_solar_month"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-22dp"
+        android:gravity="center_vertical"
+        android:text="月"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker_solar_day"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-22dp"
+        android:gravity="center_vertical"
+        android:text="日"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

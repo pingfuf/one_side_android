@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_tv_height_44"
+                android:layout_marginLeft="20dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="重量"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="@dimen/text_size_list" />
+
+            <EditText
+                android:id="@+id/edt_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center_vertical|right"
+                android:hint="重量"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textColor="@color/text_color_gray_66"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="@dimen/text_size_describe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_tv_height_44"
+                android:layout_marginLeft="20dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="次数"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="@dimen/text_size_list" />
+
+            <EditText
+                android:id="@+id/edt_times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center_vertical|right"
+                android:hint="次数"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/text_color_gray_66"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="@dimen/text_size_describe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_gray" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_tv_height_44"
+                android:layout_marginLeft="20dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="组数"
+                android:textColor="@color/text_color_gray_66"
+                android:textSize="@dimen/text_size_list" />
+
+            <EditText
+                android:id="@+id/edt_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center_vertical|right"
+                android:hint="组数"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/text_color_gray_66"
+                android:textColorHint="@color/dark_shadow"
+                android:textSize="@dimen/text_size_describe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="组"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

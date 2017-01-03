@@ -1,0 +1,127 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- BaseActivity -->
+    <dimen name="base_title_horizontal_margin">15dp</dimen>
+    <dimen name="base_title_height">50dp</dimen>
+    <dimen name="base_title_text_size">16.5sp</dimen>
+    <dimen name="base_left_right_text_size">14.5sp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="text_size_larger">18sp</dimen>
+    <dimen name="text_size_large">17sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_main_title">16sp</dimen>
+    <!-- 主标题类（项目名称、场馆名称、搜索地址和场馆名等） -->
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_list">15sp</dimen>
+    <!-- 列表文字 -->
+    <dimen name="text_size_micro_small">15sp</dimen>
+    <dimen name="text_size_sub_title">14sp</dimen>
+    <!-- 次级标题（筛选项、副标签栏） -->
+    <dimen name="text_size_micro">14sp</dimen>
+    <dimen name="text_size_describe">13sp</dimen>
+    <!-- 描述介绍类 -->
+    <dimen name="text_size_minimal">12sp</dimen>
+    <dimen name="text_size_smallest">10sp</dimen>
+
+    <!-- line width or height -->
+    <dimen name="line_height">0.5dp</dimen>
+    <dimen name="line_width">0.5dp</dimen>
+
+    <!-- common MarginLeft -->
+    <dimen name="common_margin_left">22dp</dimen>
+    <dimen name="common_margin_right">22dp</dimen>
+    <dimen name="common_margin_left_right">15dp</dimen>
+
+    <!-- common MarginTop -->
+    <dimen name="common_margin_top">20dp</dimen>
+    <!-- common MarginBottom -->
+    <!-- commen TextView height -->
+    <dimen name="common_tv_height">50dp</dimen>
+    <!-- commen EditText height -->
+    <dimen name="common_et_height">55dp</dimen>
+
+    <!-- commen layout height -->
+    <!-- Tab1Fragment -->
+
+    <!-- Tab2Fragment -->
+    <dimen name="expand_view_title_height">44dp</dimen>
+
+    <!-- Tab3Fragment -->
+    <dimen name="item_height">46dp</dimen>
+    <!-- ClassInfoActivity -->
+
+    <!-- feedback -->
+    <!-- purchase_now -->
+    <dimen name="verify_button_width">65dp</dimen>
+    <dimen name="order_common_tv_height">40dp</dimen>
+    <!-- MyButton Default -->
+    <dimen name="paper_text_size">14sp</dimen>
+    <dimen name="paper_button_corner_radius">2dp</dimen>
+    <!-- widget numPicker -->
+    <!-- dialog size -->
+    <dimen name="dialog_close_btn_margin">8dp</dimen>
+    <dimen name="dialog_title_image">20dp</dimen>
+    <dimen name="dialog_title_image_top">25dp</dimen>
+    <!-- collectionActivity -->
+    <!-- orderActivity -->
+    <!-- buycardnow -->
+    <dimen name="but_margin_left_right">17.5dp</dimen>
+    <dimen name="phone_confirm_2_top">30dp</dimen>
+    <!-- aboutActivity -->
+    <dimen name="about_title_margin_top">36dp</dimen>
+    <dimen name="introduce_title_margin">20dp</dimen>
+
+    <!-- user info activity -->
+    <dimen name="user_info_item_height">46dp</dimen>
+    <dimen name="user_info_item_right_image_height">44dp</dimen>
+    <dimen name="user_info_item_margin_left">15dp</dimen>
+    <dimen name="user_info_item_margin_right">15dp</dimen>
+    <!-- gym search activity -->
+    <dimen name="edit_tv_height">30dp</dimen>
+    <dimen name="edit_tv_corners_height">18dp</dimen>
+    <!-- questions -->
+    <dimen name="questions_item_padding_top_bottom">10dp</dimen>
+    <dimen name="questions_item_margin">8dp</dimen>
+    <!-- privilegeActivity -->
+    <!-- AccountActivity -->
+    <dimen name="account_button_height">50dp</dimen>
+    <!-- CityCHooseViewItem -->
+    <dimen name="city_choose_item_height">54dp</dimen>
+    <dimen name="city_choose_title_width">100dp</dimen>
+    <dimen name="city_name_margin_left">30dp</dimen>
+    <dimen name="city_chose_img_margin_right">15dp</dimen>
+    <!-- yearCardActivity -->
+    <!-- MomentsActivity -->
+    <!--coach avator-->
+
+    <dimen name="user_home_title_height">55dp</dimen>
+
+    <!--merchantActivity-->
+    <dimen name="merchant_activity_pager_margin_top">10dp</dimen>
+
+    <dimen name="tab_home_filter_view_height">45dp</dimen>
+
+
+    <!--floatingActionButton-->
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_shadow_size">12dp</dimen>
+
+    <dimen name="fab_scroll_threshold">4dp</dimen>
+    <dimen name="fab_elevation_lollipop">8dp</dimen>
+    <dimen name="fab_press_translation_z">6dp</dimen>
+
+    <!--fragmentHomeCard-->
+    <dimen name="fragment_card_common_margin_left_right">10dp</dimen>
+    <!--floatingBtn for MerchantMomentsActivity-->
+    <!--<dimen name="floating_btn_for_moments_start_z">0</dimen>-->
+    <!--<dimen name="floating_btn_for_moments_end_z">6</dimen>-->
+
+    <dimen name="arrow_width">10dp</dimen>
+    <dimen name="class_near_reminder_tp_margin">10dp</dimen>
+    <dimen name="common_tv_height_44">44dp</dimen>
+</resources>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+        <RelativeLayout
+            android:id="@+id/layout_fit_data_title_tab"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/papaya_primary_color">
+
+            <LinearLayout
+                android:id="@+id/left_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/base_title_height"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left|center_vertical"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/base_title_horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/left_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/base_title_height"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/base_title_horizontal_margin"
+                    android:paddingRight="@dimen/base_title_horizontal_margin"
+                    android:src="@drawable/btn_back_white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/right_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/base_title_height"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/right_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/base_title_height"
+                    android:layout_gravity="right|center_vertical"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/base_title_horizontal_margin"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_share_solid_white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tv_week_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="13dp"
+                    android:gravity="bottom"
+                    android:text="@string/fit_data_detail_tab_week"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/base_title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_month_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="13dp"
+                    android:gravity="bottom"
+                    android:text="@string/fit_data_detail_tab_month"
+                    android:textColor="@color/text_color_net_btn"
+                    android:textSize="@dimen/base_title_text_size" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_fit_date_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_fit_data_title_tab"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:paddingTop="12dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_micro"
+            android:background="@color/white"/>
+
+        <LinearLayout
+            android:id="@+id/layout_fit_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fit_date_range"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tv_fit_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/fit_data_detail_fit_time_unit"
+                    android:textColor="@color/tab_user_today_pager_title_color"
+                    android:textSize="@dimen/text_size_larger" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/tv_fit_time"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/fit_data_detail_fit_time_tip"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_micro" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_fit_energy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/fit_data_detail_fit_energy_unit"
+                    android:textColor="@color/tab_user_today_pager_title_color"
+                    android:textSize="@dimen/text_size_larger" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/tv_fit_energy"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/fit_data_detail_fit_energy_tip"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_micro" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="15dp"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/tv_fit_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/fit_data_detail_fit_project_unit"
+                    android:textColor="@color/tab_user_today_pager_title_color"
+                    android:textSize="@dimen/text_size_larger" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tv_fit_project"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/fit_data_detail_fit_project_tip"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_micro" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_fit_energy_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_fit_data"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12sp"
+            android:gravity="right|bottom"
+            android:background="@color/white"/>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_horizontal_line_below_energy_max"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_fit_energy_max"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@color/white">
+            <com.kuaipao.ui.view.DashLineView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_fit_data_chart"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:layout_below="@id/layout_horizontal_line_below_energy_max"
+            android:background="@color/white">
+
+
+            <ImageView
+                android:id="@+id/iv_scroll_to_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_left"/>
+
+            <ImageView
+                android:id="@+id/iv_scroll_to_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="15dp"
+                android:paddingLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_fit_data_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/iv_scroll_to_left"
+                android:layout_toLeftOf="@id/iv_scroll_to_right">
+
+            </android.support.v4.view.ViewPager>
+
+
+            <com.kuaipao.ui.view.CircularProgressView
+                android:id="@+id/progress_bar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:padding="0dp"
+                app:cpv_animAutostart="true"
+                app:cpv_indeterminate="true"
+                app:cpv_thickness="4dp"
+                app:cpv_color="@color/papaya_primary_color"
+                />
+        </RelativeLayout>
+
+        <com.kuaipao.ui.view.MyListView
+            android:id="@+id/listview_fit_data_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_fit_data_chart"
+            android:divider="@color/transparency"
+            android:layout_marginTop="10dp">
+
+        </com.kuaipao.ui.view.MyListView>
+    </RelativeLayout>
+</ScrollView>

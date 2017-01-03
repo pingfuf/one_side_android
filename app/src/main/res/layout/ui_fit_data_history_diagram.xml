@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_qi_xie_1"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_qixie"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_hickey"
+            app:hdh_default_color="@color/layout_background"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_dan_che"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_dan_che"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_bike"
+            app:hdh_default_color="@color/search_white_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_yu_jia"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_yu_jia"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_yoga"
+            app:hdh_default_color="@color/search_white_gray"
+            app:hdh_percent="0.0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_you_yong"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_you_yong"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_swimming"
+            app:hdh_default_color="@color/search_white_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_wu_dao"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_wu_dao"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_dance"
+            app:hdh_default_color="@color/search_white_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_type_wu_shu"
+            android:textColor="@color/text_color_gray_black"
+            android:textSize="12sp" />
+
+        <com.kuaipao.ui.view.HistoryDiagramHorizontal
+            android:id="@+id/history_diagram_wu_shu"
+            style="@style/HistoryDiagramHorizontal"
+            app:hdh_color="@color/class_type_wushu"
+            app:hdh_default_color="@color/search_white_gray"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_list_item_background">
+
+    <com.kuaipao.ui.view.RoundCachedImageView
+        android:id="@+id/img_small_logo"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/tv_care_layout"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="小熊"
+            android:textColor="@color/text_color_deep_gray"
+            android:textSize="@dimen/text_size_main_title" />
+
+
+        <RelativeLayout
+            android:id="@+id/tv_care_layout"
+            android:layout_width="58dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/tv_name"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_care"
+                android:layout_width="58dp"
+                android:layout_height="24dp"
+                android:background="@drawable/corners_white_stroke_orange"
+                android:gravity="center"
+                android:text="+关注"
+                android:textColor="@color/btn_orange_text"
+                android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/gym_care_progressbar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:progressDrawable="@drawable/progress_bar_green_bg"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RatingBar
+        android:id="@+id/rb_score"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_title"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:clickable="false"
+        android:isIndicator="true"
+        android:rating="4.6"
+        android:stepSize="0.1" />
+
+    <LinearLayout
+        android:id="@+id/ll_distance"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_below="@+id/rb_score"
+        android:layout_marginTop="-3dp"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_care_num"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text="10个粉丝"
+            android:textColor="@color/text_color_gray_78"
+            android:textSize="@dimen/text_size_describe" />
+
+        <View
+            android:id="@+id/view_vertical_line"
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/text_color_gray_78" />
+
+        <ImageView
+            android:id="@+id/iv_location_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="距离1KM"
+            android:textColor="@color/text_color_gray_78"
+            android:textSize="@dimen/text_size_describe" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/iv_not_support_by_xx"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_below="@+id/ll_distance"
+        android:layout_marginBottom="3dp"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:background="@drawable/corner_label_not_support_by_xx"
+        android:gravity="center"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="@string/home_merchant_card_not_support_by_xx_tip"
+        android:textColor="@color/white"
+        android:textSize="11.5sp" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_not_support_by_xx"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="北京市海淀区中关村"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/text_size_describe" />
+
+    <LinearLayout
+        android:id="@+id/ll_gym_features"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_location"
+        android:layout_toRightOf="@+id/img_small_logo"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/ll_gym_feature_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/img_small_logo"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_gym_features"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_extend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@drawable/ic_business_zone_down"
+                android:text="展开 " />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_retract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@drawable/ic_business_zone_up"
+                android:text="收起 " />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

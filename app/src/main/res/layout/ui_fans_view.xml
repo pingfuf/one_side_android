@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_white_to_alpha"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp">
+
+    <com.kuaipao.ui.view.RoundLazyImageView
+        android:id="@+id/fans_logo_img"
+        android:layout_width="@dimen/user_info_item_right_image_height"
+        android:layout_height="@dimen/user_info_item_right_image_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/common_margin_left_right"
+        android:scaleType="centerInside" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/fans_logo_img"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/fans_btn_follow"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/corners_white_stroke_orange"
+            android:gravity="center"
+            android:text="+ 关注"
+            android:textColor="@color/btn_orange_text"
+            android:textSize="@dimen/text_size_sub_title" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/fans_btn_follow">
+
+            <RelativeLayout
+                android:id="@+id/fans_name_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/fans_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_net_btn"
+                    android:textSize="@dimen/text_size_list" />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/fans_sex"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="16dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="@dimen/comments_margin_left_between_tv"-->
+                    <!--android:layout_toRightOf="@id/fans_name"-->
+                    <!--android:background="@drawable/shape_circle_man_bg"-->
+                    <!--android:drawablePadding="3dp"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:paddingLeft="3dp"-->
+                    <!--android:paddingRight="3dp"-->
+                    <!--android:text="90hou"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/text_size_smallest" />-->
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fans_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fans_name_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/edit_hint_gray"
+                android:textSize="@dimen/text_size_describe" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

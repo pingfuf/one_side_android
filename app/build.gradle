@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.kuaipao.manager"
+        minSdkVersion 14      //14(ICE_CREAM_SANDWICH Android4.0)
+        targetSdkVersion 22   //must below 23(M Android6.0)
+        versionCode 2
+        versionName "1.1"
+
+        // dex突破65535的限制
+        multiDexEnabled true
+        // 默认是inhouse的渠道
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "inhouse"]
+        //由于目前superid sdk只有arm的so库，x86还在研发中，所以假若开发者集成百度、高德地图sdk包含x86等其他架构，则会报错。
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    // This is important, it will run lint checks but won't abort build
+    // 移除lint检查的error
+    lintOptions {
+        //
+        checkReleaseBuilds true
+
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../xxkuaipao.keystore")
+            storePassword "kuaipao123"
+            keyAlias "xxkuaipao"
+            keyPassword "kuaipao123"
+        }
+
+        release {
+            storeFile file("../xxkuaipao.keystore")
+            storePassword "kuaipao123"
+            keyAlias "xxkuaipao"
+            keyPassword "kuaipao123"
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            //测试服务：http://54.223.228.100:8005
+            buildConfigField "String", "serverUrl", "\"http://gym-api.xxkuaipao.com\""
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //测试服务：http://54.223.228.100:8018
+            buildConfigField "String", "serverUrl", "\"http://gym-api.xxkuaipao.com\""
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            // 是否进行混淆
+            minifyEnabled false//true
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为xxkuaipao_v1.0_wandoujia.apk
+                        def fileName = "assistant_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+//                        // 输出apk名称为xxkuaipao_v1.0_2015-01-15_wandoujia.apk
+//                        def fileName = "xxkuaipao_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    productFlavors {
+        tencent {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "tencent"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        _360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]
+        }
+        inhouse {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "inhouse"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+            //add base src dir
+            java.srcDirs = [
+                    'src/main/java',
+                    'AssistantSrc/src/main/java',
+                    'BaseSrc/src/main/java'
+            ]
+
+            //add base res dir
+            res.srcDirs = [
+                    'src/main/res',
+                    'AssistantSrc/src/main/res',
+                    'BaseSrc/src/main/res'
+            ]
+        }
+    }
+
+    packagingOptions {
+        //OkHttp和Voley的冲突
+//        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.xml'
+//        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.properties'
+//        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+//        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:recyclerview-v7:22.1.1'
+    compile 'com.android.support:support-v4:22.1.1'
+
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'de.greenrobot:greendao:2.0.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+
+    //二维码扫码
+    compile 'com.google.zxing:core:3.2.0'
+    compile 'com.google.zxing:android-core:3.2.0'
+
+    //友盟分析
+    compile 'com.umeng.analytics:analytics:5.4.2'
+    compile 'com.jiechic.library:umeng-update:2.6.1'
+    compile 'com.umeng:fb:5.4.0'
+
+    testCompile 'junit:junit:4.12'
+}

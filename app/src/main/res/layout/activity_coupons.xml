@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/ll_top_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/et_input_code"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@drawable/shape_button_rec_corner"
+            android:hint="@string/coupons_input_code" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:text="@string/coupons_add"
+            style="@style/OrangeDialogButtonStyle"/>
+
+    </LinearLayout>
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/lv_coupons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_top_container"
+        android:background="@color/gray_pressed"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:listSelector="@android:color/transparent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:scrollbars="none" />
+
+</RelativeLayout>

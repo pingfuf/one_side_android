@@ -1,0 +1,176 @@
+<resources>
+
+    <!--
+         <string-array name="bd_district_order">
+        <item name="chao_yang">@string/chao_yang</item>
+        <item name="hai_dian">@string/hai_dian</item>
+        <item name="dong_cheng">@string/dong_cheng</item>
+        <item name="xi_cheng">@string/xi_cheng</item>
+        <item name="chang_ping">@string/chang_ping</item>
+        <item name="feng_tai">@string/feng_tai</item>
+        <item name="da_xing">@string/da_xing</item>
+        <item name="tong_zhou">@string/tong_zhou</item>
+        <item name="huai_rou">@string/huai_rou</item>
+        <item name="shi_jing_shan">@string/shi_jing_shan</item>
+        <item name="men_tou_gou">@string/men_tou_gou</item>
+        <item name="yan_qing">@string/yan_qing</item>
+        <item name="ping_gu">@string/ping_gu</item>
+        <item name="fang_shan">@string/fang_shan</item>
+        <item name="qi_ta">@string/qi_ta</item>
+    </string-array>
+    -->
+    <string-array name="merchant_card_function_type">
+        <item name="fragment_home_card_type_merchant_my_order">@string/fragment_home_card_type_merchant_my_order</item>
+        <item name="fragment_home_card_type_merchant_order_class">@string/fragment_home_card_type_merchant_order_class</item>
+        <item name="fragment_home_card_type_merchant_moments">@string/fragment_home_card_type_merchant_moments</item>
+        <!--<item name="fragment_home_card_type_merchant_PT">@string/fragment_home_card_type_merchant_PT</item>-->
+        <item name="fragment_home_card_type_merchant_shower">@string/fragment_home_card_type_merchant_shower_class</item>
+
+        <!--<item name="fragment_home_card_type_merchant_coaches">@string/fragment_home_card_type_merchant_coaches</item>
+        <item name="fragment_home_card_type_merchant_buy_vip">@string/fragment_home_card_type_merchant_buy_vip</item>
+        <item name="fragment_home_card_type_merchant_open_door">@string/fragment_home_card_type_merchant_open_door</item>-->
+    </string-array>
+
+    <string-array name="xx_special_card_function_type">
+        <item name="fragment_home_card_type_merchant_my_order">@string/fragment_home_card_type_merchant_my_order</item>
+        <item name="fragment_home_card_type_merchant_order_class">@string/fragment_home_card_type_merchant_order_class</item>
+        <item name="home_merchant_card_my_attention">@string/home_merchant_card_my_attention</item>
+        <item name="home_merchant_card_buy_vip">@string/home_merchant_card_buy_vip</item>
+    </string-array>
+
+    <string-array name="bd_gym_types">
+        <item name="gym_type_all">@string/gym_type_all</item>
+        <item name="gym_type_qi_xie">@string/gym_type_qi_xie</item>
+        <item name="gym_type_you_yong">@string/gym_type_you_yong</item>
+        <item name="gym_type_yu_jia">@string/gym_type_yu_jia</item>
+        <item name="gym_type_wu_dao">@string/gym_type_wu_dao</item>
+        <item name="gym_type_dan_che">@string/gym_type_dan_che_1</item>
+        <item name="gym_type_wu_shu">@string/gym_type_wu_shu</item>
+    </string-array>
+
+    <declare-styleable name="SelectableRoundedImageView">
+        <attr name="sriv_left_top_corner_radius" format="dimension" />
+        <attr name="sriv_right_top_corner_radius" format="dimension" />
+        <attr name="sriv_left_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_right_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <string-array name="user_info_age_types">
+        <item name="user_info_age_50s">@string/user_info_age_50</item>
+        <item name="user_info_age_60s">@string/user_info_age_60</item>
+        <item name="user_info_age_70s">@string/user_info_age_70</item>
+        <item name="user_info_age_80s">@string/user_info_age_80</item>
+        <item name="user_info_age_90s">@string/user_info_age_90</item>
+        <item name="user_info_age_00s">@string/user_info_age_00</item>
+    </string-array>
+
+    <string-array name="gym_choose_date">
+        <item name="gym_choose_date_all">@string/gym_choose_date_all</item>
+        <item name="gym_choose_date_shangwu">@string/gym_choose_date_shangwu</item>
+        <item name="gym_choose_date_zhongwu">@string/gym_choose_date_zhongwu</item>
+        <item name="gym_choose_date_xiawu">@string/gym_choose_date_xiawu</item>
+        <item name="gym_choose_date_wanshang">@string/gym_choose_date_wanshang</item>
+    </string-array>
+
+    <string-array name="city_name_beijing_array">
+        <item name="name0">@string/default_city</item>
+        <item name="name1">@string/city_name_beijing_1</item>
+        <item name="name2">@string/city_name_beijing_2</item>
+        <item name="name3">@string/city_name_beijing_3</item>
+        <item name="name4">@string/city_name_beijing_4</item>
+        <item name="name5">@string/city_name_beijing_5</item>
+        <item name="name6">@string/city_name_beijing_6</item>
+        <item name="name7">@string/city_name_beijing_7</item>
+        <item name="name8">@string/city_name_beijing_8</item>
+    </string-array>
+
+
+    <string-array name="city_name_shanghai_array">
+        <item name="name0">@string/city_shanghai</item>
+        <item name="name1">@string/city_name_shanghai_1</item>
+        <item name="name2">@string/city_name_shanghai_2</item>
+        <item name="name3">@string/city_name_shanghai_3</item>
+        <item name="name4">@string/city_name_shanghai_4</item>
+        <item name="name5">@string/city_name_shanghai_5</item>
+        <item name="name6">@string/city_name_shanghai_6</item>
+        <item name="name7">@string/city_name_shanghai_7</item>
+        <item name="name8">@string/city_name_shanghai_8</item>
+    </string-array>
+
+    <string-array name="city_name_shenzhen_array">
+        <item name="name0">@string/city_shenzhen</item>
+        <item name="name1">@string/city_name_shenzhen_1</item>
+        <item name="name2">@string/city_name_shenzhen_2</item>
+        <item name="name3">@string/city_name_shenzhen_3</item>
+        <item name="name4">@string/city_name_shenzhen_4</item>
+        <item name="name5">@string/city_name_shenzhen_5</item>
+        <item name="name6">@string/city_name_shenzhen_6</item>
+        <item name="name7">@string/city_name_shenzhen_7</item>
+        <item name="name8">@string/city_name_shenzhen_8</item>
+    </string-array>
+
+    <string-array name="city_name_guangzhou_array">
+        <item name="name0">@string/city_guangzhou</item>
+        <item name="name1">@string/city_name_guangzhou_1</item>
+        <item name="name2">@string/city_name_guangzhou_2</item>
+        <item name="name3">@string/city_name_guangzhou_3</item>
+        <item name="name4">@string/city_name_guangzhou_4</item>
+        <item name="name5">@string/city_name_guangzhou_5</item>
+        <item name="name6">@string/city_name_guangzhou_6</item>
+        <item name="name7">@string/city_name_guangzhou_7</item>
+        <item name="name8">@string/city_name_guangzhou_8</item>
+    </string-array>
+
+    <string-array name="city_name_nanjing_array">
+        <item name="name0">@string/city_nanjing</item>
+        <item name="name1">@string/city_name_nanjing_1</item>
+        <item name="name2">@string/city_name_nanjing_2</item>
+        <item name="name3">@string/city_name_nanjing_3</item>
+        <item name="name4">@string/city_name_nanjing_4</item>
+        <item name="name5">@string/city_name_nanjing_5</item>
+        <item name="name6">@string/city_name_nanjing_6</item>
+        <item name="name7">@string/city_name_nanjing_7</item>
+        <item name="name8">@string/city_name_nanjing_8</item>
+    </string-array>
+
+    <string-array name="city_name_chengdu_array">
+        <item name="name0">@string/city_chengdu</item>
+        <item name="name1">@string/city_name_chengdu_1</item>
+        <item name="name2">@string/city_name_chengdu_2</item>
+        <item name="name3">@string/city_name_chengdu_3</item>
+        <item name="name4">@string/city_name_chengdu_4</item>
+        <item name="name5">@string/city_name_chengdu_5</item>
+        <item name="name6">@string/city_name_chengdu_6</item>
+        <item name="name7">@string/city_name_chengdu_7</item>
+        <item name="name8">@string/city_name_chengdu_8</item>
+    </string-array>
+
+    <string-array name="city_name_xian_array">
+        <item name="name0">@string/city_xian</item>
+        <item name="name1">@string/city_name_xian_1</item>
+        <item name="name2">@string/city_name_xian_2</item>
+        <item name="name3">@string/city_name_xian_3</item>
+        <item name="name4">@string/city_name_xian_4</item>
+        <item name="name5">@string/city_name_xian_5</item>
+        <item name="name6">@string/city_name_xian_6</item>
+        <item name="name7">@string/city_name_xian_7</item>
+        <item name="name8">@string/city_name_xian_8</item>
+    </string-array>
+
+    <string-array name="city_name_wuhan_array">
+        <item name="name0">@string/city_wuhan</item>
+        <item name="name1">@string/city_name_wuhan_1</item>
+        <item name="name2">@string/city_name_wuhan_2</item>
+        <item name="name3">@string/city_name_wuhan_3</item>
+        <item name="name4">@string/city_name_wuhan_4</item>
+        <item name="name5">@string/city_name_wuhan_5</item>
+        <item name="name6">@string/city_name_wuhan_6</item>
+        <item name="name7">@string/city_name_wuhan_7</item>
+        <item name="name8">@string/city_name_wuhan_8</item>
+    </string-array>
+
+</resources>

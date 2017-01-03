@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="papaya_primary_color">#fffd6e37</color>
+    <color name="alpha_20_papaya_primary_color">#33ff510d</color>
+    <color name="alpha_80_papaya_primary_color">#ccff510d</color>
+    <color name="white">#ffffffff</color>
+    <color name="alpha_80_percent_white">#ceffffff</color>
+    <color name="alpha_30_percent_white">#4Dffffff</color>
+    <color name="black">#ff000000</color>
+
+    <color name="red">#ffff0000</color>
+    <color name="alpha_20_percent_black">#33000000</color>
+    <color name="alpha_30_percent_black">#4D000000</color>
+    <color name="alpha_50_percent_black">#80000000</color>
+    <color name="alpha_80_percent_black">#CC000000</color>
+    <color name="alpha_black">#88000000</color>
+    <color name="input_gray">#ffd9d9d9</color>
+    <color name="transparency">#00000000</color>
+    <color name="orange">#ffff510d</color>
+    <color name="qr_scan_gray">#fff5f5f5</color>
+    <color name="orange_pressed">#ffcd3f07</color>
+    <color name="gray">#ff5e6166</color>
+    <color name="dialog_gray">#ff777777</color>
+    <color name="line_green">#ff47b86f</color>
+    <color name="list_divider">#7ca4a4a4</color>
+    <color name="gray_pressed">#fff4f4f4</color>
+    <color name="gray_pressed_deeply">#ffcccccc</color>
+    <color name="dark_shadow">#ffbbbbbb</color>
+    <color name="gray_shadow">#ffe1e1e1</color>
+    <color name="blue_user_protocol">#00BBFF</color>
+    <color name="green">#ff45c01a</color>
+    <color name="green_pressed">#ff006600</color>
+    <color name="order_orange">#ffffb80d</color>
+    <!-- MyButton Default -->
+    <color name="paper_button_color">#ffffffff</color>
+    <color name="paper_button_shadow_color">#000000</color>
+    <!-- commen background color -->
+    <color name="trans_bg">#00000000</color>
+    <color name="text_color_gray">#ff999999</color>
+    <color name="text_color_gray_78">#ff787878</color>
+    <color name="text_color_blue">#ff3677c7</color>
+    <color name="text_color_net_btn">#ff666666</color>
+    <color name="text_color_gray_66">#ff666666</color>
+    <color name="text_color_deep_gray">#ff5e6166</color>
+    <color name="text_color_gray_black">#ff333333</color>
+    <color name="text_color_gray_dark_black">#ff121212</color>
+    <color name="text_color_gray_33">#ff333333</color>
+    <color name="text_color_gray_black2">#ff454545</color>
+    <color name="text_color_dec_gray">#ff888888</color>
+    <!-- commen background -->
+    <color name="layout_background">#fff4f4f4</color>
+    <color name="layout_background_alpha">#eee7e7e7</color>
+    <color name="edit_hint_gray">#ff999999</color>
+    <color name="hint_gray">#ffcccccc</color>
+    <!-- go gym -->
+    <color name="list_divider_gray">#ffe1e1e1</color>
+    <color name="merchant_logo_default_color">#ff333333</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ff510d</color>
+    <!-- share -->
+    <color name="share_act_bg">#fffef6e4</color>
+    <color name="share_act_text_color">#fff18800</color>
+    <color name="line_gray">#ffdddddd</color>
+    <!-- search GYM -->
+    <color name="search_white_gray">#ffeeeeee</color>
+    <color name="search_no_result_gray">#ff9a9a9a</color>
+    <!-- setting  Activity -->
+    <color name="setting_background_gray">#fff1f1f1</color>
+    <color name="dialog_gender_man">#ff4db4ee</color>
+    <color name="dialog_gender_woman">#ffff2323</color>
+    <color name="privilege_present_red">#ffff510d</color>
+    <color name="balance_divider_line_color">#ffc7c7c7</color>
+    <color name="order_warn_dlg_bg_color">#fffff194</color>
+    <color name="order_warn_dlg_text_color">#ff9a8600</color>
+    <!-- yearCardActivity -->
+    <color name="coach_bg">#fff9f9f9</color>
+    <!-- CircleActivity -->
+
+    <!--PersonalCoachCourse-->
+    <color name="personal_course_green">#ff68ca11</color>
+    <color name="personal_course_green_bg">#fff0f9e7</color>
+    <color name="personal_course_blue">#ff3daded</color>
+    <color name="personal_course_blue_bg">#ffebf7fd</color>
+    <color name="dot_red_color">#ffff2828</color>
+
+    <!--class Type Color-->
+    <color name="class_type_hickey">#ff56d8cd</color>
+    <color name="class_type_swimming">#ff49ccea</color>
+    <color name="class_type_yoga">#ff69d663</color>
+    <color name="class_type_dance">#ffbd66d3</color>
+    <color name="class_type_bike">#fffcce3e</color>
+    <color name="class_type_wushu">#fff26967</color>
+
+    <!--class Type 80 alpha Color-->
+
+    <color name="tab_user_today_pager_title_color">#ff513e36</color>
+    <color name="tab_circle_title_normal_color">#ffb83300</color>
+
+
+    <color name="choose_date_picker_bkg">#ffdcdcdc</color>
+    <color name="green_open_door">#ff58c658</color>
+    <!--MerchantTimeCountActivity-->
+    <color name="yellow_merchant_text_color">#fffff9c4</color>
+    <color name="yellow_merchant_top_view_bg">#fffdb556</color>
+    <!--BuyCardActivity-->
+    <color name="buy_card_season_card_title_color">#fffcdc6c</color>
+    <color name="title_red_color">#fffd6e37</color>
+    <color name="buy_card_half_year_card_title_color">#ff5bc1ed</color>
+    <color name="buy_card_season_card_deep_line_color">#fff9b900</color>
+    <color name="buy_card_month_card_deep_line_color">#fffc371b</color>
+    <color name="buy_card_half_year_card_deep_line_color">#ff249ce2</color>
+
+
+    <!--floatingActionButton-->
+    <color name="material_blue_500">#ff5677fc</color>
+
+    <color name="customer_name_background">#ffffbd1e</color>
+</resources>

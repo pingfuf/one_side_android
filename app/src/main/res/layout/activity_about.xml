@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/about_title_margin_top"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_setting_logo"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/about_version_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/logo_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_version_tv"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/introduce_title_margin"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/introduce_papaya_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_about"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/introduce_title_margin"
+            android:text="@string/introduce_papaya_card"
+            android:textColor="@color/papaya_primary_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/introduce_papaya_card_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/introduce_papaya_card"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/introduce_title_margin"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingLeft="33dp"
+            android:paddingRight="33dp"
+            android:text="@string/introduce_papaya_card_details"
+            android:textColor="@color/edit_hint_gray"
+            android:textSize="@dimen/text_size_describe" />
+
+        <TextView
+            android:id="@+id/papaya_card_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/introduce_papaya_card_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/introduce_title_margin"
+            android:text="@string/target_of_papaya_card"
+            android:textColor="@color/papaya_primary_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/papaya_card_target"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/introduce_title_margin"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingBottom="@dimen/introduce_title_margin"
+            android:paddingLeft="33dp"
+            android:paddingRight="33dp"
+            android:text="@string/target_of_papaya_card_details"
+            android:textColor="@color/edit_hint_gray"
+            android:textSize="@dimen/text_size_describe" />
+    </RelativeLayout>
+
+</ScrollView>

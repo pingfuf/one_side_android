@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myandroid="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/gym_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/papaya_primary_color">
+        <!--@color/search_white_gray-->
+
+        <ImageView
+            android:id="@+id/gym_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/base_title_horizontal_margin"
+            android:src="@drawable/btn_back_white" />
+
+        <FrameLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_toRightOf="@id/gym_search_back"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+            <!--@color/privilege_present_red-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_tv_height"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/corners_search_papaya_color_border_bg"
+                android:drawableLeft="@drawable/ic_search_white"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/gym_search_hint"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/alpha_30_percent_white"
+                android:textSize="13sp" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/gym_title_layout"
+        android:background="@color/line_gray" />
+
+    <ListView
+        android:id="@+id/gym_search_suggestions_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line1"
+        android:clickable="true"
+        android:divider="@null"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gym_search_suggestions_listview"
+        android:layout_centerHorizontal="true"
+        android:text="@string/gym_search_no_result"
+        android:textColor="@color/search_no_result_gray"
+        android:textSize="@dimen/text_size_normal"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/gym_title_layout"
+        android:fadingEdge="none"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line1">
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/line_gray" />
+
+            <com.kuaipao.ui.view.MeAddressView
+                android:id="@+id/gym_address_home"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@id/line2"
+                android:clickable="true"
+                myandroid:arraw_icon_visible="true"
+                myandroid:del_icon_visible="false"
+                myandroid:title_src="@drawable/ic_home"
+                myandroid:title_text="家" />
+
+            <com.kuaipao.ui.view.MeAddressView
+                android:id="@+id/gym_address_company"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@id/gym_address_home"
+                android:clickable="true"
+                myandroid:arraw_icon_visible="true"
+                myandroid:del_icon_visible="false"
+                myandroid:title_src="@drawable/ic_company"
+                myandroid:title_text="公司" />
+
+            <com.kuaipao.ui.view.MyListView
+                android:id="@+id/gym_search_address_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gym_address_company"
+                android:divider="@null"
+                android:listSelector="@color/white" />
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@id/gym_search_address_listview"
+                android:background="@color/line_gray" />
+
+            <com.kuaipao.ui.view.MyListView
+                android:id="@+id/gym_search_history_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line4"
+                android:divider="@null" />
+
+
+            <Button
+                android:layout_width="106dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/gym_search_history_listview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/btn_history_delete_bg"
+                android:gravity="center"
+                android:text="@string/gym_search_history_clear"
+                android:textColor="@color/papaya_primary_color" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

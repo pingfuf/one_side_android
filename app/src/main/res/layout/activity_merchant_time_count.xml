@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/merchant_time_count_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/yellow_merchant_top_view_bg"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            style="@style/mProgress_circle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:text="@string/merchant_time_count_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/merchant_time_count_real_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="00:00"
+            android:textColor="@color/yellow_merchant_text_color"
+            android:textSize="80sp" />
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/merchant_time_count_real_time"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="46"
+            android:textSize="30sp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/merchant_time_count_welcom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/merchant_time_count_top_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/merchant_time_welcome_title"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/merchant_time_count_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/merchant_time_count_welcom_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/merchant_time_welcome_desc"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/merchant_time_count_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/merchant_time_count_detail"
+        android:layout_centerHorizontal="true"
+        android:text="(如果您暂时离店，系统仍然为您计时)"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/merchant_time_count_hide"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/merchant_time_count_check_out"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_over_fitness" />
+
+        <ImageView
+            android:id="@+id/merchant_time_count_check_in"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_temporary_leave" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/merchant_time_count_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:text="@string/merchant_time_question_desc"
+        android:textColor="@color/text_color_net_btn"
+        android:textSize="@dimen/text_size_sub_title" />
+
+</RelativeLayout>

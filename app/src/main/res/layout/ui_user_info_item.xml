@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/user_info_item_height"
+                android:background="@drawable/item_trans_pressed_gray_bkg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/user_info_item_margin_left">
+
+    <TextView
+        android:id="@+id/user_info_item_tv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="60dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color_gray_black"
+        android:textSize="@dimen/text_size_list"/>
+
+    <View
+        android:id="@+id/user_info_item_view_horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ffdddddd"/>
+
+    <!--
+         <View
+        android:id="@+id/user_info_item_view_my_msg_circle"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/user_info_item_tv_left"
+        android:background="@drawable/circle_orange"
+        android:visibility="gone" />
+    -->
+
+    <ImageView
+        android:id="@+id/user_info_item_iv_right_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/user_info_item_margin_right"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow_right"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_toLeftOf="@id/user_info_item_iv_right_arrow"
+        android:layout_toRightOf="@id/user_info_item_tv_left">
+
+        <View
+            android:id="@+id/user_info_item_v_right_arrow_replace"
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/user_info_item_margin_right"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/user_info_item_tv_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/user_info_item_v_right_arrow_replace"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_size_list"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/user_info_item_iv_right"
+        android:layout_width="@dimen/user_info_item_right_image_height"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/user_info_item_iv_right_arrow"
+        android:scaleType="centerInside"
+        android:src="@drawable/question_mark"
+        android:visibility="gone"/>
+
+</RelativeLayout>

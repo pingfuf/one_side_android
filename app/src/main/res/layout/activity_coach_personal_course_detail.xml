@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="66dp"
+                android:layout_height="66dp">
+
+                <com.kuaipao.base.view.XRoundImageView
+                    android:id="@+id/iv_coach_header"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/default_pic_album" />
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:background="@color/title_red_color"
+                    android:text="教练"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="88dp"
+                android:layout_height="66dp"
+                android:src="@drawable/ic_exchange"
+                android:scaleType="centerInside"/>
+
+            <RelativeLayout
+                android:layout_width="66dp"
+                android:layout_height="66dp">
+
+                <com.kuaipao.base.view.XRoundImageView
+                    android:id="@+id/iv_student_header"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/default_pic_album" />
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:background="@color/customer_name_background"
+                    android:text="学生"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_header"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_coach_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="小明"
+                android:textColor="@color/text_color_gray_black"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="小明"
+                android:textSize="16sp"
+                android:textColor="@color/text_color_gray_black"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/ll_top"
+        android:background="#b8a9a4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_clock_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="预约上课时间"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_arrow_right_white"
+            android:layout_marginRight="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:background="@drawable/shape_border_gray_background"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_record"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上课记录"
+                android:textColor="@color/text_color_gray_black"
+                android:layout_weight="1"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_warn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_warn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传失败"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_record_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="详细记录"
+                android:textColor="@color/text_color_gray"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:src="@drawable/ic_arrow_right_black" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_gray" />
+
+        <LinearLayout
+            android:id="@+id/ll_record_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有氧训练："
+                    android:textColor="@color/text_color_gray_black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_aerobic_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray_66" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="力量训练："
+                    android:textColor="@color/text_color_gray_black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_power"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray_66" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="综合评价："
+                    android:textColor="@color/text_color_gray_black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_combined_train"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray_66" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:gravity="center"
+            android:text="点击添加上课记录"
+            android:textSize="16sp"
+            android:textColor="@color/title_red_color"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/gradient_btn_submit"
+        android:text="完成上课"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+</LinearLayout>

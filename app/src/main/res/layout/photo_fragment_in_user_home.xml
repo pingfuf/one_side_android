@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<GridView-->
+        <!--android:id="@+id/id_stickynavlayout_innerscrollview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:cacheColorHint="@android:color/transparent"-->
+        <!--android:clipChildren="true"-->
+        <!--android:gravity="center"-->
+        <!--android:horizontalSpacing="2dp"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:numColumns="3"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="2dp" />-->
+        <com.kuaipao.ui.view.XListView
+            android:id="@+id/id_stickynavlayout_innerscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:listSelector="@null" />
+
+        <RelativeLayout
+            android:id="@+id/usr_home_layout_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="70dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_photo_user_empty" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:text="@string/fit_data_photo_empty_others"
+                    android:textColor="@color/dark_shadow"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/usr_home_layout_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="70dp"
+                android:text="@string/hint_loading"
+                android:textColor="@color/text_color_deep_gray"
+                android:textSize="@dimen/text_size_describe" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/usr_homelayout_load_failed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/paper_button_color"
+            android:gravity="center_horizontal|top"
+            android:orientation="vertical"
+            android:paddingTop="70dp"
+            android:visibility="gone">
+
+            <include layout="@layout/widget_network_failed" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

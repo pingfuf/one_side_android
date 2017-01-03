@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="@color/alpha_20_papaya_primary_color" />
+
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/white" />
+
+    <corners
+        android:bottomLeftRadius="1.5dp"
+        android:bottomRightRadius="1.5dp"
+        android:topLeftRadius="1.5dp"
+        android:topRightRadius="1.5dp" />
+
+</shape>

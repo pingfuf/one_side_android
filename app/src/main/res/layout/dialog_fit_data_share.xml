@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:own="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_share_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_dialog_bg">
+
+        <FrameLayout
+            android:id="@+id/fit_data_share_top_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kuaipao.ui.view.SelectableRoundedImageView0
+                android:id="@+id/fit_data_share_dialog_top_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_dialog_bg"
+                android:scaleType="fitXY"
+                android:src="@drawable/share_data_up_bg"
+                own:sriv_left_top_corner_radius="10dp"
+                own:sriv_right_top_corner_radius="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/tab_user_viewpager_dialog_title_common"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/fit_data_share_dialog_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/corners_fit_data_text_white_bg"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="今日健身数据"
+                android:textColor="@color/papaya_primary_color"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/fit_data_share_usr_log_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_top_view_layout"
+            android:layout_marginTop="15dp">
+
+            <com.kuaipao.ui.view.RoundLazyImageView
+                android:id="@+id/fit_data_share_usr_logo_img"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/common_margin_left_right"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:scaleType="centerInside" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_margin_left_right"
+                android:layout_toLeftOf="@id/fit_data_share_usr_logo_img"
+                android:background="@color/setting_background_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/line1"
+                android:src="@drawable/ic_fit_data_gray_point" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/common_margin_left_right"
+                android:layout_toRightOf="@id/fit_data_share_usr_logo_img"
+                android:background="@color/setting_background_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/line2"
+                android:src="@drawable/ic_fit_data_gray_point" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_fit_data_share_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fit_data_share_usr_log_layout">
+
+        </RelativeLayout>
+
+       <!-- <ImageView
+            android:id="@+id/fit_data_share_bottom_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_fit_data_share_content"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/share_data_down_bg" />
+-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_fit_data_share_content"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/fit_data_share_bottom_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="@string/xxkuaipao_gongzhonghao"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_smallest" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fit_data_share_bottom_img"
+        android:background="@drawable/shape_dialog_bg"
+        android:paddingBottom="12dp"
+        android:paddingRight="7dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/tv_share_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="@string/user_today_fit_dialog_share_title"
+            android:textColor="@color/merchant_logo_default_color"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/wechat_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_wx_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+
+            android:src="@drawable/pyq_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="17dp"
+
+            android:src="@drawable/sina_mid_icon" />
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/qq_mid_icon" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

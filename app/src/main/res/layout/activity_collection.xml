@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:paddingBottom="10dp"
+    tools:context="com.kuaipao.ui.circle.MessageUnreadActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corners_search_white_border_bg"
+            android:drawableLeft="@drawable/ic_search_gym"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="搜索场馆名、地址或课程种类"
+            android:paddingLeft="8dp"
+            android:textColorHint="@color/line_gray"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/corners_delete_orange_border_bg"
+            android:text="搜索"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <com.kuaipao.ui.view.XListView
+        android:id="@+id/collection_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="105dp">
+
+            <ImageView
+                android:id="@+id/iv_no_reservation_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/guanzhu_no_pic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_no_reservation_2"
+                android:gravity="top|center_horizontal"
+                android:text="@string/no_fav_merchant_warn"
+                android:textColor="@color/text_color_gray"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
