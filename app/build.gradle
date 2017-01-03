@@ -32,14 +32,14 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("../xxoneside.keystore")
+            storeFile file("../xxoneside.keystore.jks")
             storePassword "oneside123"
             keyAlias "xxoneside"
             keyPassword "oneside123"
         }
 
         release {
-            storeFile file("../xxoneside.keystore")
+            storeFile file("../xxoneside.keystore.jks")
             storePassword "oneside123"
             keyAlias "xxoneside"
             keyPassword "oneside123"
