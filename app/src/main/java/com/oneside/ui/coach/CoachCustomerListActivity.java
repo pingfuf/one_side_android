@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.oneside.base.inject.From;
-import com.oneside.base.inject.XAnnotation;
-import com.oneside.base.model.BasePageParam;
 import com.oneside.base.net.model.BaseRequestParam;
 import com.oneside.base.utils.BusinessStateHelper;
 import com.oneside.manager.CardSessionManager;
@@ -22,15 +20,12 @@ import com.oneside.model.beans.XCustomer;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.net.XService;
 import com.oneside.base.net.model.BaseResult;
-import com.oneside.model.beans.XGym;
 import com.oneside.model.response.CustomerListResponse;
-import com.oneside.ui.customer.CustomerDetailActivity;
-import com.oneside.ui.customer.CustomerPageParam;
+import com.oneside.ui.user.CustomerDetailActivity;
+import com.oneside.ui.user.CustomerPageParam;
 import com.oneside.ui.view.XListView;
 import com.oneside.utils.Constant;
 import com.oneside.utils.LangUtils;
-import com.oneside.utils.LogUtils;
-import com.oneside.utils.ViewUtils;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.R;
 

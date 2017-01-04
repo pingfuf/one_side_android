@@ -82,8 +82,12 @@ public class WebUtils {
      */
     @CheckForNull
     public static URL createURL(String relativeString) {
+        URL baseUrl = CardConfig.getDefaultWebUrl();
+        if(relativeString.startsWith("http")) {
+            baseUrl = null;
+        }
 
-        return createURL(relativeString, CardConfig.getDefaultWebUrl());
+        return createURL(relativeString, baseUrl);
     }
 
     /**

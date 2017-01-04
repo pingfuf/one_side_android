@@ -33,8 +33,8 @@ import com.oneside.model.beans.Gender;
 import com.oneside.model.beans.XUser;
 import com.oneside.model.response.CoachReceiveCustomerListResponse;
 import com.oneside.ui.CustomDialog;
-import com.oneside.ui.customer.CustomerSourceActivity;
-import com.oneside.ui.customer.CustomerTypeActivity;
+import com.oneside.ui.user.CustomerSourceActivity;
+import com.oneside.ui.user.CustomerTypeActivity;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.ViewUtils;
 

@@ -5,13 +5,13 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,34 +21,37 @@ import com.oneside.base.BaseActivity;
 import com.oneside.base.model.BasePageParam;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.XService;
-import com.oneside.base.net.model.BaseResult;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.beans.Banner;
 import com.oneside.model.beans.XGym;
 import com.oneside.model.beans.XRole;
-import com.oneside.model.beans.XUser;
 import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.event.LoginStatusChangedEvent;
-import com.oneside.model.response.BannerListResponse;
+import com.oneside.model.request.BaseShowApiRequestParam;
+import com.oneside.model.response.BaseShowApiResponse;
 import com.oneside.model.response.CoachCourseDetailResponse;
-import com.oneside.model.response.UserInfoResponse;
 import com.oneside.ui.coach.CoachPersonalCustomerActivity;
 import com.oneside.ui.course.CoachCourseRecordDetailActivity;
 import com.oneside.ui.course.CoachPersonalCourseActivity;
 import com.oneside.ui.coach.CoachReceiveCustomerActivity;
 import com.oneside.ui.coach.CoachCustomerListActivity;
+import com.oneside.ui.home.MainViewPagerAdapter;
 import com.oneside.ui.home.OpenDoorActivity;
 import com.oneside.ui.home.AdvertisementView;
 import com.oneside.R;
 import com.oneside.ui.home.MainGridAdapter;
-import com.oneside.ui.view.NoScrollGridView;
-import com.oneside.ui.web.CardWebActivity;
+import com.oneside.hy.CardWebActivity;
+import com.oneside.ui.news.NewsFragment;
+import com.oneside.ui.view.MainViewPager;
+import com.oneside.ui.view.TabItemView;
+import com.oneside.ui.view.TabView;
 import com.oneside.utils.AppUpdateHelper;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
-import com.oneside.utils.SysUtils;
 import com.oneside.utils.ViewUtils;
+import com.show.api.ShowApiRequest;
+import com.sina.weibo.sdk.utils.LogUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -66,6 +69,14 @@ public class MainActivity extends BaseActivity
         implements AdvertisementView.IAdvertisementChosenHandler, MainGridAdapter.OnCoachCourseUploadFailedHandler {
     private static final long DELAY_TO_EXIT = 1500;
 
+    @From(R.id.tv_items)
+    private TabView tvItems;
+
+    @From(R.id.iv_temp)
+    private ImageView ivTemp;
+
+    private Fragment newsFragment;
+
     private boolean canExit;
     private MainGridAdapter mAdapter;
     private List<Banner> mBanners;
@@ -80,47 +91,49 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         EventBus.getDefault().register(this);
-
-        //展示加载动画
-        //必须当banner列表和用户信息都返回的时候，才能结束加载动画
-        showLoadingDialog();
         new AppUpdateHelper(this).checkUpdate(true);
+
+        initUI();
+        fetchTemp();
+    }
+
+    private void fetchTemp() {
+        final BaseShowApiRequestParam requestParam = new BaseShowApiRequestParam();
+        requestParam.addParam("page", 1);
+        requestParam.addParam("id", "/dp/18238.html");
+        startRequest(XService.Temp, requestParam);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String res=new ShowApiRequest("http://route.showapi.com/955-2",
+                        requestParam.appId, requestParam.secret)
+                        .addTextPara("id", "/dp/18238.html")
+                        .post();
+                LogUtils.e(res);
+            }
+        }).start();
+
     }
 
     private void initUI() {
+        TabItemView newsItemView = new TabItemView(this);
+        newsItemView.setIconText(new int[]{
+                R.drawable.ic_coupon_color_user, R.drawable.ic_coupon_color}, "新闻");
+        tvItems.addView(newsItemView);
 
+        ivTemp.setOnClickListener(this);
     }
 
     @Override
     protected void onResponseError(UrlRequest request, int code, String message) {
         super.onResponseError(request, code, message);
-        if (isSameUrl(XService.BannerList, request)) {
-            isBannerRequestFinished = true;
-        } else if (isSameUrl(XService.UserInfo, request)) {
-            isUserInfoRequestFinished = true;
-            freshGridView(CardSessionManager.getInstance().isAdmin(), null);
-        }
-
-        if (isBannerRequestFinished && isUserInfoRequestFinished) {
-            dismissLoadingDialog(500);
-        }
     }
 
     @Override
     protected void onNetError(UrlRequest request, int statusCode) {
         super.onNetError(request, statusCode);
-        if (isSameUrl(XService.BannerList, request)) {
-            isBannerRequestFinished = true;
-        } else if (isSameUrl(XService.UserInfo, request)) {
-            isUserInfoRequestFinished = true;
-            freshGridView(CardSessionManager.getInstance().isAdmin(), null);
-        }
-
-        if (isBannerRequestFinished && isUserInfoRequestFinished) {
-            dismissLoadingDialog(500);
-        }
     }
 
     /**
@@ -172,62 +185,21 @@ public class MainActivity extends BaseActivity
     /**
      * 加载首页模块，如果是管理员，显示全部模块；否则，显示前三个模块
      *
-     * @param isAdmin 是否是管理员
-     * @return 首页模块列表
      */
-    private List<MainItem> getFunctionData(boolean isAdmin) {
-        List<MainItem> items = new ArrayList<>();
-        MainItem item1 = new MainItem();
-        item1.resId = R.drawable.ic_open_door_icon;
-        item1.name = "扫码开门";
-        item1.clazz = OpenDoorActivity.class;
-        items.add(item1);
+    private List<Fragment> getFunctionData() {
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(createNewsFragment());
 
-        MainItem item2 = new MainItem();
-        item2.resId = R.drawable.ic_customer_reception;
-        item2.name = "顾客接待";
-        item2.clazz = CoachReceiveCustomerActivity.class;
-        items.add(item2);
+        return fragments;
+    }
 
-        MainItem item3 = new MainItem();
-        item3.resId = R.drawable.ic_coach_customer;
-        item3.name = "我的顾客";
-        item3.clazz = CoachCustomerListActivity.class;
-        items.add(item3);
+    private Fragment createNewsFragment() {
+        Fragment fragment = new NewsFragment();
 
-        if (isAdmin) {
-//            MainItem item4 = new MainItem();
-//            item4.resId = R.drawable.ic_physical_exam;
-//            item4.name = "会员体检";
-////            item4.clazz = TempActivity.class;
-//            if (CardConfig.isDevBuild()) {
-//                //dev环境下测试使用
-//                items.add(item4);
-//            }
+        TabView item = new TabView(this);
+        item.addView(null);
 
-            MainItem item5 = new MainItem();
-            item5.resId = R.drawable.ic_coach_personal_course;
-            item5.name = "私教课";
-            item5.clazz = CoachPersonalCourseActivity.class;
-
-            mDetailResponse = getLocalResponse();
-            if(mDetailResponse != null) {
-                item5.isFailed = true;
-            }
-            items.add(item5);
-
-            MainItem item6 = new MainItem();
-            item6.resId = R.drawable.ic_membership;
-            item6.name = "私教会员";
-            item6.clazz = CoachPersonalCustomerActivity.class;
-            items.add(item6);
-        }
-
-        if(items.size() % 2 == 1) {
-            items.add(new MainItem());
-        }
-
-        return items;
+        return fragment;
     }
 
     @Override
@@ -269,6 +241,14 @@ public class MainActivity extends BaseActivity
                 mAdapter.notifyDataSetChanged();
                 break;
             }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        if(v == ivTemp) {
+            fetchTemp();
         }
     }
 

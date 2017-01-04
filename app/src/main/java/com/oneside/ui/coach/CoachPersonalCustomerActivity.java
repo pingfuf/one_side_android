@@ -22,19 +22,12 @@ import com.oneside.manager.CardSessionManager;
 import com.oneside.R;
 import com.oneside.manager.XSoftKeyboardManager;
 import com.oneside.model.beans.CoachMember;
-import com.oneside.model.beans.XCustomer;
-import com.oneside.model.beans.XMember;
 import com.oneside.model.response.CoachMemberListResponse;
-import com.oneside.model.response.CoachMembersResponse;
-import com.oneside.model.response.CustomerListResponse;
-import com.oneside.ui.customer.CustomerDetailActivity;
-import com.oneside.ui.customer.CustomerPageParam;
+import com.oneside.ui.user.CustomerDetailActivity;
+import com.oneside.ui.user.CustomerPageParam;
 import com.oneside.ui.view.XListView;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.ViewUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 私教会员页面

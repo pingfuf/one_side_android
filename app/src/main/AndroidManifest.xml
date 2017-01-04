@@ -99,9 +99,9 @@
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseActivity" />
 
         <!-- 用户 -->
-        <activity android:name="com.oneside.ui.customer.UserPhysicalRecordActivity" />
-        <activity android:name="com.oneside.ui.customer.CustomerSourceActivity" />
-        <activity android:name="com.oneside.ui.customer.CustomerTypeActivity" />
+        <activity android:name="com.oneside.ui.user.UserPhysicalRecordActivity" />
+        <activity android:name="com.oneside.ui.user.CustomerSourceActivity" />
+        <activity android:name="com.oneside.ui.user.CustomerTypeActivity" />
 
         <!-- 课程 -->
         <activity android:name="com.oneside.ui.course.CourseTrainPartsOfBodyActivity"/>
@@ -110,13 +110,13 @@
         <activity android:name="com.umeng.fb.ConversationActivity" />
 
         <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
-        <activity android:name="com.oneside.ui.card.CustomerCardsActivity" />
-        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordMenuActivity" />
+        <activity android:name="com.oneside.ui.news.CustomerCardsActivity" />
+        <activity android:name="com.oneside.ui.user.AddPhysicalRecordMenuActivity" />
         <activity android:name="com.oneside.ui.coach.CoachReceiveSuccessActivity" />
-        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordDetailActivity" />
+        <activity android:name="com.oneside.ui.user.AddPhysicalRecordDetailActivity" />
         <activity android:name="com.oneside.ui.gym.MerchantTimeCountActivity" />
         <activity android:name="com.oneside.ui.home.OpenDoorActivity" />
-        <activity android:name="com.oneside.ui.web.CardWebActivity" />
+        <activity android:name="com.oneside.hy.CardWebActivity" />
         <activity
             android:name="com.oneside.ui.wxapi.WXEntryActivity"
             android:exported="true"
@@ -124,7 +124,7 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />
-        <activity android:name="com.oneside.ui.card.YearCardDescActivity" />
+        <activity android:name="com.oneside.ui.news.YearCardDescActivity" />
         <activity android:name="com.oneside.ui.course.CoachAddCourseActivity" />
         <!-- wechat pay -->
 
@@ -145,7 +145,7 @@
             android:process=":DownloadingService" />
 
         <activity android:name="com.umeng.update.UpdateDialogActivity" />
-        <activity android:name="com.oneside.ui.customer.CouponsRulesActivity" />
+        <activity android:name="com.oneside.ui.user.CouponsRulesActivity" />
         <!-- qq share -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -176,10 +176,10 @@
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewWhenPickActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewAfterPickActivity" />
         <activity android:name="com.oneside.ui.gym.MerchantFacilitiesActivity" />
-        <activity android:name="com.oneside.ui.customer.CustomerDetailActivity"
+        <activity android:name="com.oneside.ui.user.CustomerDetailActivity"
             android:launchMode="singleTask"/>
 
-        <activity android:name="com.oneside.ui.customer.FitDataDetailActivity" />
+        <activity android:name="com.oneside.ui.user.FitDataDetailActivity" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -190,11 +190,11 @@
 
         <activity android:name="com.oneside.ui.course.CoachCourseRecordDetailActivity"/>
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />
-        <activity android:name="com.oneside.ui.card.CardLeftDaysActivity" />
-        <activity android:name="com.oneside.ui.customer.AddPhysicalRecordPhotoActivity" />
+        <activity android:name="com.oneside.ui.news.CardLeftDaysActivity" />
+        <activity android:name="com.oneside.ui.user.AddPhysicalRecordPhotoActivity" />
 
         <activity
-            android:name="com.oneside.ui.customer.UserCommentActivity"
+            android:name="com.oneside.ui.user.UserCommentActivity"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
         <activity
             android:name="com.oneside.ui.JumpCenterActivity"
