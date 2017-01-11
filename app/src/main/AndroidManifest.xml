@@ -124,7 +124,7 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />
-        <activity android:name="com.oneside.ui.news.YearCardDescActivity" />
+        <activity android:name="com.oneside.ui.news.StoryDetailActivity" />
         <activity android:name="com.oneside.ui.course.CoachAddCourseActivity" />
         <!-- wechat pay -->
 
@@ -179,14 +179,7 @@
         <activity android:name="com.oneside.ui.user.CustomerDetailActivity"
             android:launchMode="singleTask"/>
 
-        <activity android:name="com.oneside.ui.user.FitDataDetailActivity" />
-        <!--
-             ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
-        <!-- <meta-data -->
-        <!-- android:name="com.google.android.gms.version" -->
-        <!-- android:value="@integer/google_play_services_version" /> -->
+        <activity android:name="com.oneside.hy.HyConfigActivity" />
 
         <activity android:name="com.oneside.ui.course.CoachCourseRecordDetailActivity"/>
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />

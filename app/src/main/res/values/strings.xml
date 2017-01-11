@@ -661,7 +661,7 @@
     <string name="ranking_care_tab">好友排名</string>
     <string name="ranking_merchant_title">场馆会员排名</string>
 
-    <!--FitDataDetailActivity-->
+    <!--HyConfigActivity-->
     <string name="fit_data_detail_tab_week">周</string>
     <string name="fit_data_detail_tab_month">月</string>
     <string name="fit_data_detail_fit_time">%1$s小时</string>

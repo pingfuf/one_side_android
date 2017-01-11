@@ -5,22 +5,15 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
-        <ImageView
-            android:id="@+id/iv_temp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_address_icon_red"/>
-    </RelativeLayout>
-
+        android:layout_weight="1"/>
 
     <com.oneside.ui.view.TabView
         android:id="@+id/tv_items"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        android:layout_height="55dp"
+        android:background="@color/white"/>
 
 </LinearLayout>

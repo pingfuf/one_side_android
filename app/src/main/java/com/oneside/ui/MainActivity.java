@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentManager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -21,6 +21,7 @@ import com.oneside.base.BaseActivity;
 import com.oneside.base.model.BasePageParam;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.XService;
+import com.oneside.hy.HyConfigActivity;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.beans.Banner;
@@ -29,33 +30,20 @@ import com.oneside.model.beans.XRole;
 import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.event.LoginStatusChangedEvent;
 import com.oneside.model.request.BaseShowApiRequestParam;
-import com.oneside.model.response.BaseShowApiResponse;
 import com.oneside.model.response.CoachCourseDetailResponse;
-import com.oneside.ui.coach.CoachPersonalCustomerActivity;
-import com.oneside.ui.course.CoachCourseRecordDetailActivity;
 import com.oneside.ui.course.CoachPersonalCourseActivity;
-import com.oneside.ui.coach.CoachReceiveCustomerActivity;
-import com.oneside.ui.coach.CoachCustomerListActivity;
-import com.oneside.ui.home.MainViewPagerAdapter;
 import com.oneside.ui.home.OpenDoorActivity;
-import com.oneside.ui.home.AdvertisementView;
 import com.oneside.R;
 import com.oneside.ui.home.MainGridAdapter;
-import com.oneside.hy.CardWebActivity;
 import com.oneside.ui.news.NewsFragment;
-import com.oneside.ui.view.MainViewPager;
-import com.oneside.ui.view.TabItemView;
 import com.oneside.ui.view.TabView;
 import com.oneside.utils.AppUpdateHelper;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 import com.oneside.utils.ViewUtils;
 import com.show.api.ShowApiRequest;
-import com.sina.weibo.sdk.utils.LogUtil;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,24 +53,18 @@ import java.util.List;
  * <p/>
  * Created by Guo Ming on 3/27/15
  */
-public class MainActivity extends BaseActivity
-        implements AdvertisementView.IAdvertisementChosenHandler, MainGridAdapter.OnCoachCourseUploadFailedHandler {
+public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     private static final long DELAY_TO_EXIT = 1500;
+    private static final int NEW_TYPE = 0;
+    private static final int DEV_TYPE = 2;
+    private static final int COLLECT_TYPE = 9;
 
     @From(R.id.tv_items)
     private TabView tvItems;
 
-    @From(R.id.iv_temp)
-    private ImageView ivTemp;
-
-    private Fragment newsFragment;
+    private NewsFragment newsFragment;
 
     private boolean canExit;
-    private MainGridAdapter mAdapter;
-    private List<Banner> mBanners;
-    private List<XGym> mGyms;
-    private boolean isBannerRequestFinished;
-    private boolean isUserInfoRequestFinished;
     private CoachCourseDetailResponse mDetailResponse;
 
     private Dialog mDialog;
@@ -91,11 +73,11 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
         new AppUpdateHelper(this).checkUpdate(true);
 
         initUI();
-        fetchTemp();
+        showNewFragment();
     }
 
     private void fetchTemp() {
@@ -107,7 +89,7 @@ public class MainActivity extends BaseActivity
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String res=new ShowApiRequest("http://route.showapi.com/955-2",
+                String res = new ShowApiRequest("http://route.showapi.com/955-2",
                         requestParam.appId, requestParam.secret)
                         .addTextPara("id", "/dp/18238.html")
                         .post();
@@ -118,12 +100,13 @@ public class MainActivity extends BaseActivity
     }
 
     private void initUI() {
-        TabItemView newsItemView = new TabItemView(this);
-        newsItemView.setIconText(new int[]{
-                R.drawable.ic_coupon_color_user, R.drawable.ic_coupon_color}, "新闻");
-        tvItems.addView(newsItemView);
+        tvItems.setOnItemClickListener(this);
+        tvItems.addItemView(R.drawable.ic_coupon_icon, R.drawable.ic_coupon_color_user,  "新闻资讯");
+        tvItems.addItemView(R.drawable.ic_fit_normal, R.drawable.ic_fit_pressed, "生活娱乐");
 
-        ivTemp.setOnClickListener(this);
+        if(CardConfig.isDevBuild()) {
+            tvItems.addItemView(R.drawable.ic_user_phto_tab_normal, R.drawable.ic_user_phto_tab_chosed, "mock");
+        }
     }
 
     @Override
@@ -148,6 +131,37 @@ public class MainActivity extends BaseActivity
     private void freshGridView(boolean isAdmin, List<XRole> roles) {
     }
 
+    private void showNewFragment() {
+        if (newsFragment == null) {
+            newsFragment = new NewsFragment();
+        }
+
+        showFragment(newsFragment);
+        tvItems.setSelectPosition(0);
+    }
+
+    private void showFragment(Fragment fragment) {
+        if (fragment == null || fragment.isVisible()) {
+            return;
+        }
+
+        FragmentManager fm = getSupportFragmentManager();
+        if (!fragment.isAdded()) {
+            fm.beginTransaction().add(R.id.rl_container, fragment).commitAllowingStateLoss();
+        }
+
+        fm.beginTransaction().show(fragment).commitAllowingStateLoss();
+    }
+
+    private void hideFragment(Fragment fragment) {
+        if (fragment == null || !fragment.isAdded() || !fragment.isVisible()) {
+            return;
+        }
+
+        FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction().hide(fragment).commitAllowingStateLoss();
+    }
+
     /**
      * 判断用户是否是管理员
      *
@@ -164,27 +178,12 @@ public class MainActivity extends BaseActivity
                 }
             }
         }
+
         return flag;
-    }
-
-    private void gotoItemPage(MainItem item) {
-        if (item == null || item.clazz == null) {
-            return;
-        }
-
-        BasePageParam pageParam = null;
-        if (item.clazz == OpenDoorActivity.class) {
-            OpenDoorActivity.OpenDoorPageParam param = new OpenDoorActivity.OpenDoorPageParam();
-            param.mGyms = mGyms;
-            pageParam = param;
-        }
-
-        xStartActivity(item.clazz, pageParam);
     }
 
     /**
      * 加载首页模块，如果是管理员，显示全部模块；否则，显示前三个模块
-     *
      */
     private List<Fragment> getFunctionData() {
         List<Fragment> fragments = new ArrayList<>();
@@ -200,17 +199,6 @@ public class MainActivity extends BaseActivity
         item.addView(null);
 
         return fragment;
-    }
-
-    @Override
-    public void onAdvertiseItemChosen(Banner banner) {
-        if (banner == null) {
-            return;
-        }
-
-        CardWebActivity.WebPageParam pageParam = new CardWebActivity.WebPageParam();
-        pageParam.url = banner.url;
-        xStartActivity(CardWebActivity.class, pageParam);
     }
 
     @Override
@@ -231,36 +219,20 @@ public class MainActivity extends BaseActivity
         }, DELAY_TO_EXIT);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onCourseDraftChangedEvent(CourseDraftChangedEvent event) {
-        LogUtils.d("courseDraftChangeEvent %s",event);
-        mDetailResponse = getLocalResponse();
-        for(MainItem item : mAdapter.getData()) {
-            if(item != null && item.clazz == CoachPersonalCourseActivity.class) {
-                item.isFailed = mDetailResponse != null;
-                mAdapter.notifyDataSetChanged();
-                break;
-            }
-        }
-    }
-
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        if(v == ivTemp) {
-            fetchTemp();
-        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == LoginActivity.LOGIN_PAGE_CODE) {
-            if(mDialog != null && mDialog.isShowing()) {
+        if (requestCode == LoginActivity.LOGIN_PAGE_CODE) {
+            if (mDialog != null && mDialog.isShowing()) {
                 mDialog.dismiss();
             }
 
-            if(resultCode != RESULT_OK) {
+            if (resultCode != RESULT_OK) {
                 finish();
             }
         }
@@ -278,7 +250,7 @@ public class MainActivity extends BaseActivity
         dialogWindow.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         TextView tvTitle = (TextView) mDialog.findViewById(R.id.tv_title);
         tvTitle.setText(CardSessionManager.getInstance().getUser().name);
-        TextView tvExist  = (TextView) mDialog.findViewById(R.id.tv_exist);
+        TextView tvExist = (TextView) mDialog.findViewById(R.id.tv_exist);
         tvExist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -286,7 +258,7 @@ public class MainActivity extends BaseActivity
             }
         });
 
-        if(CardSessionManager.getInstance().isLogin()) {
+        if (CardSessionManager.getInstance().isLogin()) {
             tvExist.setText("退出登录");
         } else {
             tvExist.setText("请登录");
@@ -324,17 +296,20 @@ public class MainActivity extends BaseActivity
     }
 
     @Override
-    public void uploadCoachCourseDetail() {
-        if(mDetailResponse == null) {
-            return;
-        }
+    public void onItemClick(int position) {
+        LogUtils.e("tabView %s", position);
+        switch (position) {
+            case 0:
+                showNewFragment();
+                break;
+            case 1:
+                break;
+            case 2:
+                xStartActivity(HyConfigActivity.class);
+            default:
+                break;
 
-        Bundle bundle = new Bundle();
-        bundle.putLong("arrangement_id", mDetailResponse.id);
-        bundle.putLong("user_id", mDetailResponse.member.id);
-        bundle.putSerializable("course_detail", mDetailResponse);
-        bundle.putBoolean("from_draft", true);
-        xStartActivity(CoachCourseRecordDetailActivity.class, bundle, 1);
+        }
     }
 
     /**
@@ -356,7 +331,7 @@ public class MainActivity extends BaseActivity
 
     @Override
     protected void onDestroy() {
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 }

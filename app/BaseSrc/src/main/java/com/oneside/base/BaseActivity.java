@@ -711,8 +711,19 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
      * @param hasBack WebActivity是否有返回键
      */
     public void startWebActivity(String url, boolean hasBack) {
+        startWebActivity(url, null, hasBack);
+    }
+
+    /**
+     * 跳转到WebActivity
+     *
+     * @param url     H5页面的URL
+     * @param hasBack WebActivity是否有返回键
+     */
+    public void startWebActivity(String url, String action, boolean hasBack) {
         CardWebActivity.WebPageParam pageParam = new CardWebActivity.WebPageParam();
         pageParam.url = url;
+        pageParam.action = action;
         pageParam.hasBack = hasBack;
 
         xStartActivity(CardWebActivity.class, pageParam);

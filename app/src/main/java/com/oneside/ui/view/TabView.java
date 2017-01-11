@@ -1,12 +1,9 @@
 package com.oneside.ui.view;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -19,12 +16,7 @@ import com.oneside.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabView extends LinearLayout implements View.OnClickListener {
-
-
-    private ViewPager mViewPager;
-    private ViewPager.OnPageChangeListener mOnPageChangeListener;
-    private PagerAdapter mPagerAdapter;
+public class TabView extends LinearLayout {
     private int mChildSize;
     private List<TabItemView> mTabItemViews;
     private OnItemIconTextSelectListener mListener;
@@ -35,6 +27,7 @@ public class TabView extends LinearLayout implements View.OnClickListener {
     private int mTextColorNormal/* = 0xff777777*/;
     private int mPadding = 10;
     private int imageMargin = 3;
+    private int mSelectedPosition = 0;
 
     public TabView(Context context) {
         this(context, null);
@@ -85,69 +78,40 @@ public class TabView extends LinearLayout implements View.OnClickListener {
         mTabItemViews = new ArrayList<TabItemView>();
     }
 
-    public void setOnPageChangeListener(ViewPager.OnPageChangeListener mOnPageChangeListener) {
-        this.mOnPageChangeListener = mOnPageChangeListener;
+    public void addItemView(int resId, int res2Id, String text) {
+        final TabItemView tabItemView = new TabItemView(getContext());
+        int i = getChildCount();
+        LayoutParams params = new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+        tabItemView.setPadding(mPadding, mPadding, mPadding, mPadding);
+        tabItemView.setData(resId, res2Id, text);
+        tabItemView.setTag(i);
+        tabItemView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = (int) tabItemView.getTag();
+                if(position != mSelectedPosition) {
+                    mTabItemViews.get(mSelectedPosition).setSelectedState(false);
+                    mSelectedPosition = position;
+                    mTabItemViews.get(mSelectedPosition).setSelectedState(true);
+
+                    if(itemCLickListener != null) {
+                        itemCLickListener.onItemClick(position);
+                    }
+                }
+            }
+        });
+        mTabItemViews.add(tabItemView);
+
+        addView(tabItemView, params);
     }
 
-    private void initItem() {
-        for (int i = 0; i < mChildSize; i++) {
-            TabItemView tabItemView = new TabItemView(getContext());
-            LayoutParams params = new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
-            tabItemView.setPadding(mPadding, mPadding, mPadding, mPadding);
-            tabItemView.setIconText(mListener.onIconSelect(i), mListener.onTextSelect(i));
-            tabItemView.setTextSize(mTextSize);
-            tabItemView.setTextColorNormal(mTextColorNormal);
-            tabItemView.setTextColorSelect(mTextColorSelect);
-            tabItemView.setLayoutParams(params);
-            tabItemView.setTag(i);
-            tabItemView.setOnClickListener(this);
-            tabItemView.setMargin(imageMargin);
-            mTabItemViews.add(tabItemView);
-            addView(tabItemView);
-        }
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    public void setCurrentPage(int index) {
-        for (TabItemView tabItemView : mTabItemViews) {
-            tabItemView.setTabAlpha(0);
-        }
-        mTabItemViews.get(index).setTabAlpha(1);
-        mViewPager.setCurrentItem(index, false);
-    }
-
-    public void setCircleVisible(boolean bVisible, int index) {
-        mTabItemViews.get(index).setCircleVisible(bVisible);
-        ;
-    }
-
-
-    public void setCircleDigitVisible(boolean bVisible, int index) {
-        mTabItemViews.get(index).setCircleDigitVisible(bVisible);
-        ;
+    public void setSelectPosition(int position) {
+        mSelectedPosition = position;
+        mTabItemViews.get(mSelectedPosition).setSelectedState(true);
     }
 
     public void setOnItemClickListener(OnItemClick onItemClickListener) {
         this.itemCLickListener = onItemClickListener;
-    }
-
-    @Override
-    public void onClick(View v) {
-        int position = (Integer) v.getTag();
-        if (mViewPager.getCurrentItem() == position) {
-            return;
-        }
-        for (TabItemView tabItemView : mTabItemViews) {
-            tabItemView.setTabAlpha(0);
-        }
-        mTabItemViews.get(position).setTabAlpha(1);
-        mViewPager.setCurrentItem(position, false);
-        if (itemCLickListener != null)
-            itemCLickListener.onItemClick(position);
     }
 
     public interface OnItemClick {
@@ -155,7 +119,6 @@ public class TabView extends LinearLayout implements View.OnClickListener {
     }
 
     public interface OnItemIconTextSelectListener {
-
         int[] onIconSelect(int position);
 
         String onTextSelect(int position);

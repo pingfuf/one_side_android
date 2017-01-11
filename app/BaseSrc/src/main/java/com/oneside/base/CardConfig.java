@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.oneside.BuildConfig;
 import com.oneside.utils.IOUtils;
+import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 
 import java.net.MalformedURLException;
@@ -47,8 +48,8 @@ public class CardConfig {
         URL url = null;
         if(isDevBuild()) {
             boolean isMock = "true".equals(IOUtils.getPreferenceValue(IS_MOCK));
-            if(isMock) {
-                String serverUrl = IOUtils.getPreferenceValue(SERVER_URL);
+            String serverUrl = IOUtils.getPreferenceValue(SERVER_URL);
+            if(isMock && !LangUtils.isEmpty(serverUrl)) {
                 try {
                     url = new URL(serverUrl);
                 } catch (MalformedURLException e) {
