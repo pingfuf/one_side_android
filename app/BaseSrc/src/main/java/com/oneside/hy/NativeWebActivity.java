@@ -1,7 +1,12 @@
 package com.oneside.hy;
 
+import com.oneside.base.BaseActivity;
+import com.oneside.R;
+import com.oneside.base.inject.XAnnotation;
+import com.oneside.base.model.BasePageParam;
+import com.oneside.utils.LogUtils;
+
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -10,25 +15,14 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import android.webkit.JavascriptInterface;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-import com.oneside.base.inject.XAnnotation;
-import com.oneside.base.model.BasePageParam;
-import com.oneside.base.BaseActivity;
-import com.oneside.manager.CardActivityManager;
-import com.oneside.utils.LogUtils;
-
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.util.EncodingUtils;
 
 import java.io.UnsupportedEncodingException;
 
 import static com.oneside.utils.LangUtils.isNotEmpty;
 
-public class CardWebActivity extends BaseActivity {
+public class NativeWebActivity extends BaseActivity {
     WebView mWebView;
 
     @XAnnotation
@@ -41,8 +35,6 @@ public class CardWebActivity extends BaseActivity {
         mWebView = new WebView(this);
         setContentView(mWebView);
         initWebView();
-
-        CookieManager cookieManager = CookieManager.getInstance();
     }
 
     @Override
@@ -65,7 +57,11 @@ public class CardWebActivity extends BaseActivity {
     private void initWebView() {
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setBuiltInZoomControls(false);
-        mWebView.setWebViewClient(new HyWebClient(this, mPageParam.action));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+            mWebView.getSettings().setAllowFileAccessFromFileURLs(true);
+        }
+        mWebView.setWebViewClient(new HyWebClient(NativeWebActivity.this, mPageParam.action));
         mWebView.getSettings().setDefaultTextEncodingName("UTF-8");
         mWebView.setWebChromeClient(new HyChromeClient());
 
@@ -94,17 +90,6 @@ public class CardWebActivity extends BaseActivity {
         if(mJavascriptClient == null) {
             mJavascriptClient = new HyJavascriptClient(this);
         }
-    }
-
-    private boolean syncCookie(String url, String cookie) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            CookieSyncManager.createInstance(this);
-        }
-        CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.setCookie(url, cookie);//如果没有特殊需求
-        String newCookie = cookieManager.getCookie(url);
-
-        return !TextUtils.isEmpty(newCookie);
     }
 
     @Override

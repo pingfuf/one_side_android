@@ -6,6 +6,7 @@ import com.oneside.base.net.model.BaseResponseData;
 import com.oneside.base.net.model.BaseResult;
 import com.oneside.model.beans.MembershipCard;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -17,18 +18,31 @@ import java.util.List;
  * Author: pingfu
  * FIXME
  */
-public class GymMembershipCardListResponse extends BaseResult {
+public class StoryDetailResponse extends BaseShowApiResponse {
     private static long serialVersionUID = 42L;
 
-    public GymMembershipCardListData data;
+    @JSONField(name = "showapi_res_body")
+    public Data data;
 
-    public static class GymMembershipCardListData extends BaseResponseData {
-        @JSONField(name = "is_erp")
-        public boolean isErp;
+    public Data getData() {
+        return data;
+    }
 
-        //卡片列表
-        @JSONField(name = "service")
-        public List<MembershipCard> cardList;
+    public void setData(Data data) {
+        this.data = data;
+    }
+
+    public static class Data extends BaseShowApiResponse.BaseShowApiData {
+        private static final long serialVersionUID = 1l;
+
+        @JSONField(name = "ret_code")
+        public int retCode;
+
+        public String text;
+
+        public String content;
+
+        public String answer;
     }
 
     @Override

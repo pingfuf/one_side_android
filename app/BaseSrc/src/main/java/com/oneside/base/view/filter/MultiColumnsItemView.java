@@ -55,7 +55,7 @@ public class MultiColumnsItemView extends FilterItemView<List<MultiColumnItemDat
 
     private void initLeftListView() {
         mLeftListItems = new ArrayList<String>();
-        mLeftListAdapter = new SingleColumnListAdapter(getContext());
+        mLeftListAdapter = new SingleColumnListAdapter(getContext(), mLeftListItems);
         mLeftListView.setAdapter(mLeftListAdapter);
         mLeftListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class MultiColumnsItemView extends FilterItemView<List<MultiColumnItemDat
 
     private void initRightListView() {
         mRightListItems = new ArrayList<String>();
-        mRightListAdapter = new SingleColumnListAdapter(getContext());
+        mRightListAdapter = new SingleColumnListAdapter(getContext(), mRightListItems);
         mRightListView.setAdapter(mRightListAdapter);
         mRightListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

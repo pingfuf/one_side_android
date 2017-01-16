@@ -1,4 +1,4 @@
-package com.oneside.ui.news;
+package com.oneside.ui.story;
 
 import android.graphics.Color;
 import android.support.v4.app.FragmentManager;

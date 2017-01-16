@@ -39,6 +39,14 @@ public class CardConfig {
         return "debug".equals(BuildConfig.BUILD_TYPE) || "beta".equals(BuildConfig.BUILD_TYPE);
     }
 
+    public static boolean isMock() {
+        return "true".equals(IOUtils.getPreferenceValue(IS_MOCK));
+    }
+
+    public static String getMockServerUrl() {
+        return IOUtils.getPreferenceValue(SERVER_URL);
+    }
+
     /**
      * 获取WebURL
      *

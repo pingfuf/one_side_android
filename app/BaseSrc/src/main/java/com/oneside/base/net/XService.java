@@ -2,7 +2,7 @@ package com.oneside.base.net;
 
 import com.android.volley.Request;
 import com.oneside.base.net.model.BaseResult;
-import com.oneside.model.response.AddCourseResponse;
+import com.oneside.model.response.JokeListResponse;
 import com.oneside.model.response.BaseShowApiResponse;
 import com.oneside.model.response.BusinessListResponse;
 import com.oneside.model.response.CardTypeFilterResponse;
@@ -16,7 +16,7 @@ import com.oneside.model.response.CoachReceiveRecordsResponse;
 import com.oneside.model.response.MemberDetailInfoResponse;
 import com.oneside.model.response.MembershipCardsResponse;
 import com.oneside.model.response.UserInfoResponse;
-import com.oneside.model.response.GymMembershipCardListResponse;
+import com.oneside.model.response.StoryDetailResponse;
 import com.oneside.model.response.BannerListResponse;
 import com.oneside.model.response.LoginResponse;
 import com.oneside.model.response.CustomerListResponse;
@@ -76,7 +76,7 @@ public enum XService implements IService {
     CareGym("client/user/collect", BaseResult.class),
 
     //场馆会员卡列表
-    GymMemberShipCardList("client/gym/%s/vip-service", GymMembershipCardListResponse.class),
+    GymMemberShipCardList("client/gym/%s/vip-service", StoryDetailResponse.class),
 
     //商圈列表
     BusinessDistrict("client/business_block_list", BusinessListResponse.class),
@@ -130,7 +130,7 @@ public enum XService implements IService {
     CoachCourseDetail("ic-arrangement/arrangement/%s", CoachCourseDetailResponse.class),
 
     //添加课程
-    AddCourse("ic-arrangement/arrangement/", POST, AddCourseResponse.class),
+    AddCourse("ic-arrangement/arrangement/", POST, JokeListResponse.class),
 
     //更新课程
     UpdateCourse("ic-arrangement/arrangement/%s", Request.Method.PUT, BaseResult.class),

@@ -1,4 +1,4 @@
-package com.oneside.ui.news;
+package com.oneside.ui.story;
 
 import android.content.Context;
 import android.view.View;
@@ -16,9 +16,9 @@ import java.util.List;
  * 新闻类
  * Created by fupingfu on 2017/1/5.
  */
-public class NewsAdapter extends XSimpleAdapter<ArticleSummary> {
+public class StoriesAdapter extends XSimpleAdapter<ArticleSummary> {
 
-    public NewsAdapter(Context context, List<ArticleSummary> summaries) {
+    public StoriesAdapter(Context context, List<ArticleSummary> summaries) {
         super(context, summaries);
     }
 

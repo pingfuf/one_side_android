@@ -16,5 +16,5 @@ public class FilterData implements Serializable {
      */
     public String name;
 
-    public int itemType;
+    public int type;
 }

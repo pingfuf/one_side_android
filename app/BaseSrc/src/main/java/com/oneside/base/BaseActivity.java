@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.oneside.base.net.RequestDelegate;
 import com.oneside.base.net.XService;
+import com.oneside.hy.WebPageParam;
 import com.oneside.model.event.LoginStatusChangedEvent;
 import com.oneside.ui.LoginActivity;
 import com.oneside.base.inject.InjectUtils;
@@ -721,7 +722,7 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
      * @param hasBack WebActivity是否有返回键
      */
     public void startWebActivity(String url, String action, boolean hasBack) {
-        CardWebActivity.WebPageParam pageParam = new CardWebActivity.WebPageParam();
+        WebPageParam pageParam = new WebPageParam();
         pageParam.url = url;
         pageParam.action = action;
         pageParam.hasBack = hasBack;

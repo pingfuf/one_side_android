@@ -1,4 +1,4 @@
-package com.oneside.ui.news;
+package com.oneside.ui.story;
 
 import android.os.Bundle;
 import android.view.View;

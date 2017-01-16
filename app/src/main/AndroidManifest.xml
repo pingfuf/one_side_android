@@ -110,7 +110,7 @@
         <activity android:name="com.umeng.fb.ConversationActivity" />
 
         <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
-        <activity android:name="com.oneside.ui.news.CustomerCardsActivity" />
+        <activity android:name="com.oneside.ui.story.CustomerCardsActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordMenuActivity" />
         <activity android:name="com.oneside.ui.coach.CoachReceiveSuccessActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordDetailActivity" />
@@ -124,7 +124,7 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />
-        <activity android:name="com.oneside.ui.news.StoryDetailActivity" />
+        <activity android:name="com.oneside.ui.story.StoryDetailActivity" />
         <activity android:name="com.oneside.ui.course.CoachAddCourseActivity" />
         <!-- wechat pay -->
 
@@ -145,7 +145,7 @@
             android:process=":DownloadingService" />
 
         <activity android:name="com.umeng.update.UpdateDialogActivity" />
-        <activity android:name="com.oneside.ui.user.CouponsRulesActivity" />
+        <activity android:name="com.oneside.hy.NativeWebActivity" />
         <!-- qq share -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -183,7 +183,7 @@
 
         <activity android:name="com.oneside.ui.course.CoachCourseRecordDetailActivity"/>
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />
-        <activity android:name="com.oneside.ui.news.CardLeftDaysActivity" />
+        <activity android:name="com.oneside.ui.story.CardLeftDaysActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordPhotoActivity" />
 
         <activity

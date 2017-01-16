@@ -22,9 +22,7 @@ public class NewsListResponse extends BaseShowApiResponse {
 
     }
 
-    public static class NewsListResponsePage {
-        public int allPages;
-        public int currentPage;
+    public static class NewsListResponsePage extends BaseShowApiResponse.BaseShowApiData {
         public int maxResult;
 
         public List<ArticleSummary> contentList;

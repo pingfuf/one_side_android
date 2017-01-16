@@ -20,6 +20,7 @@ import com.oneside.base.net.XResponse;
 import com.oneside.base.net.model.BaseRequestParam;
 import com.oneside.base.net.model.BaseResult;
 import com.oneside.hy.CardWebActivity;
+import com.oneside.hy.WebPageParam;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.ui.LoginActivity;
 import com.oneside.utils.LangUtils;
@@ -429,7 +430,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param hasBack WebActivity是否有返回键
      */
     public void startWebActivity(String url, boolean hasBack) {
-        CardWebActivity.WebPageParam pageParam = new CardWebActivity.WebPageParam();
+        WebPageParam pageParam = new WebPageParam();
         pageParam.url = url;
         pageParam.hasBack = hasBack;
 

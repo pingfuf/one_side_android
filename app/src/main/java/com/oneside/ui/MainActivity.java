@@ -10,32 +10,26 @@ import android.support.v4.app.FragmentManager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.oneside.base.CardConfig;
 import com.oneside.base.inject.From;
 import com.oneside.base.BaseActivity;
-import com.oneside.base.model.BasePageParam;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.XService;
 import com.oneside.hy.HyConfigActivity;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
-import com.oneside.model.beans.Banner;
-import com.oneside.model.beans.XGym;
 import com.oneside.model.beans.XRole;
-import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.event.LoginStatusChangedEvent;
 import com.oneside.model.request.BaseShowApiRequestParam;
 import com.oneside.model.response.CoachCourseDetailResponse;
-import com.oneside.ui.course.CoachPersonalCourseActivity;
-import com.oneside.ui.home.OpenDoorActivity;
 import com.oneside.R;
-import com.oneside.ui.home.MainGridAdapter;
-import com.oneside.ui.news.NewsFragment;
+import com.oneside.ui.home.TabFavorFragment;
+import com.oneside.ui.pic.TabPicFragment;
+import com.oneside.ui.story.TabStoriesFragment;
+import com.oneside.ui.user.TabUserFragment;
 import com.oneside.ui.view.TabView;
 import com.oneside.utils.AppUpdateHelper;
 import com.oneside.utils.LangUtils;
@@ -62,7 +56,11 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     @From(R.id.tv_items)
     private TabView tvItems;
 
-    private NewsFragment newsFragment;
+    private List<Fragment> mFragments;
+    private TabStoriesFragment tabStoriesFragment;
+    private TabPicFragment mPicFragment;
+    private TabFavorFragment mFavorFragment;
+    private TabUserFragment mUserFragment;
 
     private boolean canExit;
     private CoachCourseDetailResponse mDetailResponse;
@@ -77,7 +75,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
         new AppUpdateHelper(this).checkUpdate(true);
 
         initUI();
-        showNewFragment();
+        showFragment(0);
     }
 
     private void fetchTemp() {
@@ -101,12 +99,24 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
 
     private void initUI() {
         tvItems.setOnItemClickListener(this);
-        tvItems.addItemView(R.drawable.ic_coupon_icon, R.drawable.ic_coupon_color_user,  "新闻资讯");
-        tvItems.addItemView(R.drawable.ic_fit_normal, R.drawable.ic_fit_pressed, "生活娱乐");
 
-        if(CardConfig.isDevBuild()) {
-            tvItems.addItemView(R.drawable.ic_user_phto_tab_normal, R.drawable.ic_user_phto_tab_chosed, "mock");
-        }
+        mFragments = new ArrayList<>();
+
+        tabStoriesFragment = new TabStoriesFragment();
+        tvItems.addItemView(R.drawable.ic_fit_pressed, R.drawable.ic_fit_normal, "故事汇");
+        mFragments.add(tabStoriesFragment);
+
+        mPicFragment = new TabPicFragment();
+        tvItems.addItemView(R.drawable.ic_coupon_color_user, R.drawable.ic_coupon_icon, "欢乐图");
+        mFragments.add(mPicFragment);
+
+        mFavorFragment = new TabFavorFragment();
+        tvItems.addItemView(R.drawable.ic_fav_chosen, R.drawable.ic_fav_normal, "我的收藏");
+        mFragments.add(mFavorFragment);
+
+        mUserFragment = new TabUserFragment();
+        tvItems.addItemView( R.drawable.ic_user_phto_tab_chosed, R.drawable.ic_user_phto_tab_normal,"个人中心");
+        mFragments.add(mUserFragment);
     }
 
     @Override
@@ -131,13 +141,16 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     private void freshGridView(boolean isAdmin, List<XRole> roles) {
     }
 
-    private void showNewFragment() {
-        if (newsFragment == null) {
-            newsFragment = new NewsFragment();
+    private void showFragment(int index) {
+        if(index >= mFragments.size()) {
+            return;
         }
 
-        showFragment(newsFragment);
-        tvItems.setSelectPosition(0);
+        for(int i = 0; i < mFragments.size(); i++) {
+            hideFragment(mFragments.get(i));
+        }
+
+        showFragment(mFragments.get(index));
     }
 
     private void showFragment(Fragment fragment) {
@@ -193,10 +206,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     }
 
     private Fragment createNewsFragment() {
-        Fragment fragment = new NewsFragment();
-
-        TabView item = new TabView(this);
-        item.addView(null);
+        Fragment fragment = new TabStoriesFragment();
 
         return fragment;
     }
@@ -298,18 +308,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     @Override
     public void onItemClick(int position) {
         LogUtils.e("tabView %s", position);
-        switch (position) {
-            case 0:
-                showNewFragment();
-                break;
-            case 1:
-                break;
-            case 2:
-                xStartActivity(HyConfigActivity.class);
-            default:
-                break;
-
-        }
+        showFragment(position);
     }
 
     /**

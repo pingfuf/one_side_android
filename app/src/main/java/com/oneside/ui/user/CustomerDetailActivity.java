@@ -18,7 +18,7 @@ import com.oneside.base.view.XImageView;
 import com.oneside.base.view.XRoundImageView;
 import com.oneside.model.response.MemberDetailInfoResponse;
 import com.oneside.model.response.MemberRecordInfoResponse;
-import com.oneside.ui.news.CustomerCardsActivity;
+import com.oneside.ui.story.CustomerCardsActivity;
 import com.oneside.ui.coach.AddReceiveRecordActivity;
 import com.oneside.ui.coach.CoachReceiveRecordListActivity;
 import com.oneside.R;

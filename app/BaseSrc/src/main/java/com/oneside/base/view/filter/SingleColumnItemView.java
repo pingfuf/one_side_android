@@ -36,7 +36,7 @@ public class SingleColumnItemView extends FilterItemView <List<SingleColumnItemD
         inflate(context, R.layout.filter_single_column_item, this);
         mListView = (ListView) findViewById(R.id.list_item);
         mItems = new ArrayList<String>();
-        mListAdapter = new SingleColumnListAdapter(context);
+        mListAdapter = new SingleColumnListAdapter(context, mItems);
         mListAdapter.setSelectTextColorId(R.color.papaya_primary_color);
         mListView.setAdapter(mListAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

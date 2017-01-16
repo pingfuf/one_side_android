@@ -24,7 +24,7 @@ public class MultiColumnItemData extends FilterData {
     /**
      *
      */
-    public int type;
+    public int itemType;
 
     public MultiColumnItemData parentData;
 

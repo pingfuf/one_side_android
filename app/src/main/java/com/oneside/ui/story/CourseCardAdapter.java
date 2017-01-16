@@ -1,4 +1,4 @@
-package com.oneside.ui.news;
+package com.oneside.ui.story;
 
 import android.content.Context;
 import android.graphics.Color;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">小熊助手</string>
+    <string name="app_name">身边</string>
     <string name="loading"></string>
     <string name="main_setting">设置</string>
     <!-- DetailInfActivity -->
@@ -341,7 +341,7 @@
     <string name="coupons_input_code">输入优惠码</string>
     <string name="coupons_add_coupon_code_is_null">优惠码不能为空</string>
     <string name="coupons_cannot_use">(不可用)</string>
-    <!-- CouponsRulesActivity -->
+    <!-- NativeWebActivity -->
     <string name="coupon_help">代金券使用帮助</string>
     <string name="coupon_help_title_1">1、什么是优惠码?</string>
     <string name="coupon_help_title_2">2、什么是代金券?</string>

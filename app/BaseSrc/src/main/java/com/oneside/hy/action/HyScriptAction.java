@@ -1,7 +1,5 @@
 package com.oneside.hy.action;
 
-import com.oneside.base.CardConfig;
-
 import java.io.Serializable;
 
 /**
