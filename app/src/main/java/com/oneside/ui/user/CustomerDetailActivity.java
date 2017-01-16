@@ -19,8 +19,6 @@ import com.oneside.base.view.XRoundImageView;
 import com.oneside.model.response.MemberDetailInfoResponse;
 import com.oneside.model.response.MemberRecordInfoResponse;
 import com.oneside.ui.story.CustomerCardsActivity;
-import com.oneside.ui.coach.AddReceiveRecordActivity;
-import com.oneside.ui.coach.CoachReceiveRecordListActivity;
 import com.oneside.R;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
@@ -205,12 +203,6 @@ public class CustomerDetailActivity extends BaseActivity {
             gotoCustomerCardsPage(1);
         } else if(v == llPhone){
             XXUtils.callTelephone(tvPhone.getText().toString());
-        } else if (v == llRecord) {
-            xStartActivity(CoachReceiveRecordListActivity.class, mPageParam);
-        } else if (v == llPhysical) {
-            xStartActivity(UserPhysicalRecordActivity.class, mPageParam);
-        } else if (v == llAddRecord) {
-            xStartActivity(AddReceiveRecordActivity.class, mPageParam);
         } else if (v == llAddPhysical) {
             xStartActivity(AddPhysicalRecordMenuActivity.class, mPageParam);
         }

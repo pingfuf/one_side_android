@@ -1,7 +1,5 @@
 package com.oneside.base.model.bean;
 
-import com.oneside.model.LocationCoordinate2D;
-
 /**
  * 小熊快跑城市信息的数据结果
  *
@@ -85,5 +83,4 @@ public class XLocation {
     /**
      * 经纬度信息
      */
-    public LocationCoordinate2D coordiante;
 }

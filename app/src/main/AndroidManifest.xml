@@ -91,15 +91,9 @@
             android:launchMode="singleTask" />
 
         <!-- 教练 -->
-        <activity android:name="com.oneside.ui.coach.CoachPersonalCustomerActivity" />
-        <activity android:name="com.oneside.ui.coach.CoachCustomerListActivity" />
-        <activity android:name="com.oneside.ui.coach.CoachReceiveCustomerActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name="com.oneside.ui.coach.CoachReceiveRecordListActivity" />
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseActivity" />
 
         <!-- 用户 -->
-        <activity android:name="com.oneside.ui.user.UserPhysicalRecordActivity" />
         <activity android:name="com.oneside.ui.user.CustomerSourceActivity" />
         <activity android:name="com.oneside.ui.user.CustomerTypeActivity" />
 
@@ -112,16 +106,9 @@
         <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
         <activity android:name="com.oneside.ui.story.CustomerCardsActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordMenuActivity" />
-        <activity android:name="com.oneside.ui.coach.CoachReceiveSuccessActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordDetailActivity" />
-        <activity android:name="com.oneside.ui.gym.MerchantTimeCountActivity" />
         <activity android:name="com.oneside.ui.home.OpenDoorActivity" />
         <activity android:name="com.oneside.hy.CardWebActivity" />
-        <activity
-            android:name="com.oneside.ui.wxapi.WXEntryActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />
         <activity android:name="com.oneside.ui.story.StoryDetailActivity" />
@@ -171,19 +158,15 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name="com.oneside.ui.MapOfMerchantsActivity" />
         <activity android:name="com.oneside.ui.course.CoachCourseListActivity" />
-        <activity android:name="com.oneside.ui.coach.AddReceiveRecordActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPickerActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewWhenPickActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewAfterPickActivity" />
-        <activity android:name="com.oneside.ui.gym.MerchantFacilitiesActivity" />
         <activity android:name="com.oneside.ui.user.CustomerDetailActivity"
             android:launchMode="singleTask"/>
 
         <activity android:name="com.oneside.hy.HyConfigActivity" />
 
-        <activity android:name="com.oneside.ui.course.CoachCourseRecordDetailActivity"/>
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />
-        <activity android:name="com.oneside.ui.story.CardLeftDaysActivity" />
         <activity android:name="com.oneside.ui.user.AddPhysicalRecordPhotoActivity" />
 
         <activity

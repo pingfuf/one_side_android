@@ -1,7 +1,6 @@
 package com.oneside.model.request;
 
 import com.oneside.base.net.model.BaseRequestParam;
-import com.oneside.model.LocationCoordinate2D;
 
 /**
  * 场馆列表页请求参数
@@ -16,7 +15,6 @@ public class GymListRequestParam extends BaseRequestParam {
     private static long serialVersionUID = 42L;
 
     //经纬度
-    public LocationCoordinate2D location;
 
     //当前城市
     public String city;
@@ -44,12 +42,6 @@ public class GymListRequestParam extends BaseRequestParam {
 
     @Override
     protected void addRequestParams() {
-        if(location != null) {
-            addParam("lat", location.getLatitude());
-            addParam("lng", location.getLongitude());
-            //一直使用高德地图，这一个参数写死
-            addParam("coordsys", "gaode");
-        }
 
         addParam("city", city);
         addParam("category", gymsType);

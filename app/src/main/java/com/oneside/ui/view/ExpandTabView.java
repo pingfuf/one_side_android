@@ -36,8 +36,6 @@ public class ExpandTabView extends LinearLayout implements OnDismissListener {
     private int mPopupViewDisplayHeight;
 
     private ArrayList<String> mTitleStrArray = new ArrayList<String>();
-    private ExpandBusinessDistrictView mPopupViewBd;
-    private ExpandTimeView mPopupViewTime;
 
     private RelativeLayout mPopupViewLayout;
     private PopupWindow mPopupWindow;
@@ -78,8 +76,6 @@ public class ExpandTabView extends LinearLayout implements OnDismissListener {
 
         mTitleStrArray = titleArray;
 
-        mPopupViewBd = (ExpandBusinessDistrictView) popviewArray.get(INDEX_OF_BD);
-        mPopupViewTime = (ExpandTimeView) popviewArray.get(INDEX_OF_TIME);
         mPopupViewLayout = new RelativeLayout(getContext());
         LayoutInflater inflater =
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -242,8 +238,6 @@ public class ExpandTabView extends LinearLayout implements OnDismissListener {
         mPopupViewLayout.getChildAt(mSelectPosition).setVisibility(View.VISIBLE);
         if (mSelectPosition == INDEX_OF_GYM_TYPE) {
         } else if (mSelectPosition == INDEX_OF_BD) {
-            if (mPopupViewBd != null)
-                mPopupViewBd.defaultChooseListView();
         } else if (mSelectPosition == INDEX_OF_TIME) {
 //      if(mPopupViewTime != null)
 //        mPopupViewTime.defaultChooseListView();

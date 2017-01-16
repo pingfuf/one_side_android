@@ -4,11 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 
-import com.alibaba.fastjson.JSONObject;
-import com.oneside.base.net.RequestDelegate;
-import com.oneside.base.net.UrlRequest;
-import com.oneside.model.data.BaseDataSource;
-
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;

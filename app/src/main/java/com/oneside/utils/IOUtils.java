@@ -41,7 +41,6 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -52,7 +51,6 @@ import android.graphics.BitmapFactory;
 import android.os.ParcelFileDescriptor;
 
 import com.alibaba.fastjson.JSONArray;
-import com.oneside.model.LocationCoordinate2D;
 import com.oneside.manager.CardManager;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
@@ -1172,37 +1170,6 @@ public class IOUtils {
             return upperBound;
         }
     }
-
-    /**
-     * @param dict
-     * @param sql
-     * @param args
-     * @param query true : with = false: without =
-     */
-    public static void parseSqlAndArgs(HashMap<String, Object> dict, StringBuilder sql,
-                                       Object[] args, boolean query) {
-        if (sql == null || args == null || dict == null || args.length != dict.size()) {
-            return;
-        }
-
-        Set<Entry<String, Object>> entrys = dict.entrySet();
-        int i = 0;
-        for (Entry<String, Object> entry : entrys) {
-            String key = entry.getKey();
-            Object o = entry.getValue();
-            // LogUtils.e(" key %s value %s",key,o);
-            if (query) {
-                sql.append((i > 0 ? ", " : "") + key + " = ? ");
-            } else {
-                sql.append((i > 0 ? ", " : "") + " ? ");
-            }
-            if (o instanceof HashMap || o instanceof ArrayList || o instanceof LocationCoordinate2D) {
-                o = serialize(o);
-            }
-            args[i++] = o;
-        }
-    }
-
 
     public static ArrayList<?> parseSqlArray(Object o) {
         if (o instanceof ArrayList) {

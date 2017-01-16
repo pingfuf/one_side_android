@@ -1,10 +1,13 @@
 package com.oneside.model;
 
+import java.util.ArrayList;
+
+import android.content.Context;
+
 import com.android.volley.Request;
 import com.oneside.base.net.IService;
 import com.oneside.base.net.model.BaseResult;
 import com.oneside.model.response.BaseShowApiResponse;
-import com.oneside.model.response.JokeListResponse;
 import com.oneside.model.response.NewsListResponse;
 import com.oneside.model.response.StoryDetailResponse;
 
@@ -18,8 +21,7 @@ public enum ShowApiService implements IService{
     //鬼故事详情
     GhostStoryDetail("http://route.showapi.com/955-2", StoryDetailResponse.class),
 
-    //笑话大全
-    JokesList("http://route.showapi.com/341-1", JokeListResponse.class)
+    JokesList("http://route.showapi.com/341-1", BaseShowApiResponse.class)
     ;
 
     private final String mUrl;

@@ -1,6 +1,5 @@
 package com.oneside.base.utils;
 
-import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 
@@ -10,7 +9,6 @@ import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
 import com.oneside.base.CardApplication;
 import com.oneside.base.model.bean.XLocation;
-import com.oneside.model.LocationCoordinate2D;
 
 /**
  * 定位辅助工具，提供开始定位，结束定位的功能
@@ -150,9 +148,6 @@ public class XLocationHelper {
             location.poiName = mapLocation.getPoiName();
             location.floor = mapLocation.getFloor();
             location.adCode = mapLocation.getAdCode();
-            location.coordiante = new LocationCoordinate2D(
-                    mapLocation.getLatitude(), mapLocation.getLongitude()
-            );
 
             return location;
         }

@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oneside.base.CardApplication;
-import com.oneside.manager.CardDataManager.DataResultListener;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.event.SessionChangedEvent;
@@ -74,43 +73,6 @@ public class LoginInputView extends RelativeLayout implements View.OnClickListen
     }
 
     public void onClick(View v) {
-
-        if (v == mSendButton) {
-            String phone = mPhoneEdit.getEditableText().toString();
-            if (isNotEmpty(phone) && isMobileNO(phone)) {
-                if (CardSessionManager.getInstance().isLogin() && CardManager.getCardUser() != null
-                        && phone.equals(CardManager.getCardUser().getPhoneNumber())) {
-                    this.showToast(getString(R.string.phone_input_same_as_current), Toast.LENGTH_LONG);
-                    return;
-                }
-
-            } else {
-                this.showToast(getString(R.string.phone_input_error), Toast.LENGTH_SHORT);
-            }
-        } else if (v == mLoginButton) {
-            String phone = mPhoneEdit.getEditableText().toString();
-            String code = mInputEdit.getEditableText().toString();
-            if (isNotEmpty(phone) && isMobileNO(phone)) {
-                if (CardSessionManager.getInstance().isLogin() && CardManager.getCardUser() != null
-                        && phone.equals(CardManager.getCardUser().getPhoneNumber())) {
-                    this.showToast(getString(R.string.phone_input_same_as_current), Toast.LENGTH_SHORT);
-                    return;
-                }
-                if (isNotEmpty(code)) {
-                    // showLoadingDialog();
-                    if (mStatusChangedListener != null) {
-                        mStatusChangedListener.onStatusChanged(0);
-                    }
-                } else {
-                    this.showToast(getString(R.string.code_not_empty), Toast.LENGTH_SHORT);
-                }
-            } else {
-                this.showToast(getString(R.string.phone_input_error), Toast.LENGTH_SHORT);
-            }
-        } else if (v == mUserAttention) {
-            mStatusChangedListener.onStatusChanged(3);
-        }
-
     }
 
     private void showLoginToast(String msg, int duration) {

@@ -31,12 +31,7 @@ import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.VisibleRegion;
 import com.oneside.base.BaseActivity;
 import com.oneside.R;
-import com.oneside.model.LocationCoordinate2D;
-import com.oneside.manager.CardDataManager;
-import com.oneside.manager.CardDataManager.DataResultListener;
-import com.oneside.manager.CardLocationManager;
 import com.oneside.utils.Constant;
-import com.oneside.utils.JumpCenter;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 import com.oneside.utils.ViewUtils;
@@ -81,12 +76,6 @@ public class MapOfMerchantsActivity extends BaseActivity implements OnMapLoadedL
             this.finish();
             return;
         }
-
-        LocationCoordinate2D location = CardLocationManager.getInstance().getLocation();
-        if (location != null)
-            mUserLocation = LocationCoordinate2D.toMapData(location);
-
-        mCity = CardLocationManager.getInstance().getCityName();
 
         initUI();
         mMapView.onCreate(savedInstanceState);
@@ -322,85 +311,6 @@ public class MapOfMerchantsActivity extends BaseActivity implements OnMapLoadedL
     private long lastTime;
 
     private void fetchAllMerchants(final LatLng userLocation, final VisibleRegion visibleRegion) {
-//    showLoadingDialog();
-
-        LocationCoordinate2D location;
-        if (userLocation == null)
-            location = null;
-            //new LocationCoordinate2D(WU_DAO_KOU_POSTION.latitude, WU_DAO_KOU_POSTION.longitude);// default: WuDaoKou
-        else
-            location = new LocationCoordinate2D(userLocation.latitude, userLocation.longitude);
-
-        lastTime = System.currentTimeMillis();
-        if (visibleRegion == null)
-            return;
-
-        CardDataManager
-                .fetchMerchantsInMapData(location, mCity, new LocationCoordinate2D(
-                                visibleRegion.nearLeft.latitude, visibleRegion.nearLeft.longitude),
-                        new LocationCoordinate2D(visibleRegion.farRight.latitude,
-                                visibleRegion.farRight.longitude), new DataResultListener() {
-                            @SuppressWarnings("unchecked")
-                            @Override
-                            public void onFinish(boolean ret, Object... params) {
-                                LogUtils.d(">>>> passed ＝ %s ms", System.currentTimeMillis() - lastTime);
-
-                                if (ret) {
-                                    if (mVisibleRegion.nearLeft.latitude != visibleRegion.nearLeft.latitude
-                                            || mVisibleRegion.nearLeft.longitude != visibleRegion.nearLeft.longitude
-                                            || mVisibleRegion.farRight.latitude != visibleRegion.farRight.latitude
-                                            || mVisibleRegion.farRight.longitude != visibleRegion.farRight.longitude) {
-                                        LogUtils.d(">>>> out of date!");
-                                        return;
-                                    }
-
-                                    if (params != null && params.length >= 1) {
-                                        // @SuppressWarnings("unchecked")
-                                        final List<MerchantMapModel> merchantList = new ArrayList<MerchantMapModel>();
-                                        LogUtils.d(">>>> merchantList ＝ %s", merchantList.size());
-                                        final JSONArray data = (JSONArray) params[0];
-                                        if (!LangUtils.isEmpty(data)) {
-                                            int len = data.size();
-                                            for (int i = 0; i < len; i++) {
-                                                JSONObject json = data.getJSONObject(i);
-                                                merchantList.add(MerchantMapModel.fromJson(json));
-                                            }
-                                        }
-                                        ViewUtils.post(new Runnable() {
-                                            @Override
-                                            public void run() {
-
-                                                updateMarkersToMap(merchantList);
-                                                // if (mVisibleRegion != null) {
-                                                // LatLngBounds latLngBounds = mVisibleRegion.latLngBounds;
-                                                // if (mSelectedMarker != null) {
-                                                // LatLng location = mSelectedMarker.getPosition();
-                                                // if(location == null)
-                                                // location = new LatLng(mSelectedLocationLat, mSelectedLocationLng);
-                                                // if (!latLngBounds.contains(location)) {
-                                                hideMerchantInfoLayout();
-                                                // }
-                                                // }
-                                                // }
-                                            }
-                                        });
-                                    }
-
-                                } else {
-                                    // network failed!
-                                    ViewUtils.showToast(getResources().getString(R.string.fetch_merchants_fail_tip),
-                                            Toast.LENGTH_LONG);
-                                }
-
-//                ViewUtils.post(new Runnable() {
-//                  @Override
-//                  public void run() {
-//                    dismissLoadingDialog();
-//                  }
-//                });
-                            }
-                        });
-
     }
 
     @Override

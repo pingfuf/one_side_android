@@ -549,7 +549,6 @@ public class CoachPersonalCourseDetailActivity extends BaseActivity {
 
         bundle.putBoolean("from_draft", isDraft);
 
-        xStartActivity(CoachCourseRecordDetailActivity.class, bundle, COURSE_DETAIL_PAGE);
     }
 
     private boolean hasDraft() {

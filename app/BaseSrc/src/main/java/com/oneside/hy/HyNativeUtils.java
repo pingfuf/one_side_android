@@ -14,7 +14,6 @@ import java.net.URLEncoder;
 /**
  * Created by fupingfu on 2017/1/12.
  */
-
 public class HyNativeUtils {
     public static void gotoStoryDetailWebPage(BaseActivity activity, String title, String storyId) {
         StoryDetailAction action = new StoryDetailAction();
