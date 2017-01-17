@@ -33,7 +33,6 @@ import com.oneside.model.beans.XMember;
 import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.response.CoachCourseDetailResponse;
 import com.oneside.ui.CustomDialog;
-import com.oneside.ui.user.CustomerDetailActivity;
 import com.oneside.ui.user.CustomerPageParam;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.ViewUtils;
@@ -179,7 +178,6 @@ public class CoachPersonalCourseDetailActivity extends BaseActivity {
                 pageParam.name = mPageParam.member.name;
                 pageParam.memberId = mPageParam.member.id;
             }
-            xStartActivity(CustomerDetailActivity.class, pageParam);
         } else if (v == tvNoData) {
             if (hasDraft()) {
                 gotoRecordDetailPage(CardManager.getFailedCourseDetail(), true);

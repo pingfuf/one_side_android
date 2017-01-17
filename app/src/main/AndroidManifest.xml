@@ -105,8 +105,6 @@
 
         <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
         <activity android:name="com.oneside.ui.story.CustomerCardsActivity" />
-        <activity android:name="com.oneside.ui.user.AddPhysicalRecordMenuActivity" />
-        <activity android:name="com.oneside.ui.user.AddPhysicalRecordDetailActivity" />
         <activity android:name="com.oneside.ui.home.OpenDoorActivity" />
         <activity android:name="com.oneside.hy.CardWebActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
@@ -114,8 +112,6 @@
         <activity android:name="com.oneside.ui.story.StoryDetailActivity" />
         <activity android:name="com.oneside.ui.course.CoachAddCourseActivity" />
         <!-- wechat pay -->
-
-
 
         <receiver android:name="com.oneside.base.CardNetWorkReceiver">
             <intent-filter>
@@ -161,13 +157,10 @@
         <activity android:name="com.oneside.ui.photopicker.PhotoPickerActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewWhenPickActivity" />
         <activity android:name="com.oneside.ui.photopicker.PhotoPreviewAfterPickActivity" />
-        <activity android:name="com.oneside.ui.user.CustomerDetailActivity"
-            android:launchMode="singleTask"/>
 
         <activity android:name="com.oneside.hy.HyConfigActivity" />
 
         <activity android:name="com.oneside.ui.course.CoachPersonalCourseDetailActivity" />
-        <activity android:name="com.oneside.ui.user.AddPhysicalRecordPhotoActivity" />
 
         <activity
             android:name="com.oneside.ui.user.UserCommentActivity"

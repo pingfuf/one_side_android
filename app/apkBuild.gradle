@@ -1,0 +1,29 @@
+
+task hello(type:Exec) {
+
+    //commandLine "gradlew", "assembleXiaomiDebug"
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'assembleXiaomiDebug') {
+        installApkFiles.dependsOn assembleXiaomiDebug
+    }
+}
+
+task installApkFiles(type: Exec){
+    def  purposeDir = "$buildDir/outputs/apk/"
+    workingDir  =  "$purposeDir"
+    def myCommand = ['adb', 'install', '-r', getApkName('xiaomi')]
+    commandLine  myCommand
+}
+
+task installDebug(type:Exec, dependsOn:installApkFiles){
+    def packageName ='com.oneside'
+
+    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.ui.SplashActivity"
+}
+
+def getApkName(buildType) {
+    println "assistant_v1.1_" + buildType + ".apk";
+    return "assistant_v1.1_" + buildType + ".apk";
+}
