@@ -114,6 +114,7 @@ public class BusinessStateHelper {
                 showView(mContentView);
                 break;
             case NET_ERROR:
+            case NO_NETWORK:
                 if(mNetErrorView == null) {
                     mNetErrorView = new XNetErrorView(mContext);
                 }
@@ -144,6 +145,7 @@ public class BusinessStateHelper {
         LOADING,
         NET_ERROR,
         NO_DATA,
+        NO_NETWORK,
         FINISHED,
         SUCCESS
     }

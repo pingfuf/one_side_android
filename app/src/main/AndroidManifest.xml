@@ -105,7 +105,7 @@
 
         <activity android:name="com.oneside.ui.CustomQuestionsDetailsActivity" />
         <activity android:name="com.oneside.ui.story.CustomerCardsActivity" />
-        <activity android:name="com.oneside.ui.home.OpenDoorActivity" />
+        <activity android:name="com.oneside.ui.story.JokeDetailActivity" />
         <activity android:name="com.oneside.hy.CardWebActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanningActivity" />
         <activity android:name="com.oneside.ui.QRCodeScanResultActivity" />

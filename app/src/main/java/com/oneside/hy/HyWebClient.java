@@ -46,8 +46,6 @@ public class HyWebClient extends WebViewClient {
             view.loadUrl("javascript:initPage('" + mAction + "')");
             isFinished = true;
         }
-
-        mActivity.dismissLoadingDialog();
         mActivity.setTitle(view.getTitle(), true);
     }
 

@@ -15,10 +15,6 @@ import com.oneside.utils.ViewUtils;
 public class HyJavascriptClient {
     private BaseActivity mActivity;
 
-    public HyJavascriptClient() {
-
-    }
-
     public HyJavascriptClient(BaseActivity context) {
         mActivity = context;
     }
@@ -29,24 +25,41 @@ public class HyJavascriptClient {
     }
 
     @JavascriptInterface
-    public void setTitle(String title) {
-        LogUtils.e("js set title->" + title);
-        if(mActivity != null) {
-            mActivity.setTitle(title, true);
+    public void setTitle(final String title) {
+        if(!validActivity()) {
+            return;
         }
+
+        ViewUtils.post(new Runnable() {
+            @Override
+            public void run() {
+                mActivity.setTitle(title, true);
+            }
+        });
     }
 
     @JavascriptInterface
     public void showLoadingDialog() {
-        if(mActivity != null) {
-            mActivity.showLoadingDialog();
+        if(!validActivity()) {
+            return;
         }
+        mActivity.showLoadingDialog();
     }
 
     @JavascriptInterface
-    public void dissmissLoadingDialog() {
-        if(mActivity != null) {
-            mActivity.dismissLoadingDialog();
+    public void dismissLoadingDialog() {
+        if(!validActivity()) {
+            return;
         }
+        mActivity.dismissLoadingDialog();
+    }
+
+    @JavascriptInterface
+    public void temp() {
+        ViewUtils.showToast("This is javascript", Toast.LENGTH_LONG);
+    }
+
+    private boolean validActivity() {
+        return mActivity != null && !mActivity.isFinishing();
     }
 }

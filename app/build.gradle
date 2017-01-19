@@ -9,8 +9,8 @@ android {
         applicationId "com.oneside"
         minSdkVersion 14      //14(ICE_CREAM_SANDWICH Android4.0)
         targetSdkVersion 22   //must below 23(M Android6.0)
-        versionCode 2
-        versionName "1.1"
+        versionCode getLocalVersionCode()
+        versionName getLocalVersionName()
 
         // dex突破65535的限制
         multiDexEnabled true
@@ -164,4 +164,32 @@ dependencies {
     compile 'com.umeng:fb:5.4.0'
 
     testCompile 'junit:junit:4.12'
+}
+
+def getLocalVersionCode() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionCode = versionProps['versionCode'].toInteger();
+
+        return versionCode;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getLocalVersionName() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionName = versionProps['versionName'].toString();
+
+        return versionName;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
 }

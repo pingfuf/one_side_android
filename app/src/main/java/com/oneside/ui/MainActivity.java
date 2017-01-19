@@ -78,25 +78,6 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
         showFragment(0);
     }
 
-    private void fetchTemp() {
-        final BaseShowApiRequestParam requestParam = new BaseShowApiRequestParam();
-        requestParam.addParam("page", 1);
-        requestParam.addParam("id", "/dp/18238.html");
-        startRequest(XService.Temp, requestParam);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                String res = new ShowApiRequest("http://route.showapi.com/955-2",
-                        requestParam.appId, requestParam.secret)
-                        .addTextPara("id", "/dp/18238.html")
-                        .post();
-                LogUtils.e(res);
-            }
-        }).start();
-
-    }
-
     private void initUI() {
         tvItems.setOnItemClickListener(this);
 

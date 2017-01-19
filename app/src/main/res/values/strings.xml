@@ -10,7 +10,7 @@
     <string name="login_pass_hint"><font size="13">请输入登录密码</font></string>
 
     <!-- MainActivity -->
-    <string name="exit_warn">再按一次返回退出小熊管家</string>
+    <string name="exit_warn">再按一次返回退出身边</string>
     <!-- TabOrderFragment -->
     <string name="coach_personal_member">私教会员</string>
     <string name="no_data">无相关信息</string>

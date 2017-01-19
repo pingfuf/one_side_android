@@ -1,7 +1,6 @@
 
-task hello(type:Exec) {
-
-    //commandLine "gradlew", "assembleXiaomiDebug"
+task hello() {
+    println getVersionName()
 }
 
 tasks.whenTaskAdded { task ->
@@ -24,6 +23,33 @@ task installDebug(type:Exec, dependsOn:installApkFiles){
 }
 
 def getApkName(buildType) {
-    println "assistant_v1.1_" + buildType + ".apk";
-    return "assistant_v1.1_" + buildType + ".apk";
+    def name = "assistant_v" + getVersionName() + "_" + buildType + ".apk";
+
+    return name;
+}
+
+def getVersionCode() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionCode = versionProps['versionCode'].toInteger();
+        return versionCode;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getVersionName() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionName = versionProps['versionName'].toString();
+        return versionName;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
 }

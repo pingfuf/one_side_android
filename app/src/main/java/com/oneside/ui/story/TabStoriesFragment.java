@@ -82,7 +82,10 @@ public class TabStoriesFragment extends BaseFragment
 
                     } else {
                         JokeListResponse.JokeArticle article = (JokeListResponse.JokeArticle)parent.getAdapter().getItem(position);
-                        HyNativeUtils.gotoJokeDetailWebPage((BaseActivity) getActivity(), article.title, article.text);
+                        JokeDetailPageParam pageParam = new JokeDetailPageParam();
+                        pageParam.title = article.title;
+                        pageParam.content = article.text;
+                        xStartActivity(JokeDetailActivity.class, pageParam);
                     }
                 }
             }
@@ -222,6 +225,7 @@ public class TabStoriesFragment extends BaseFragment
         mMenuType = menuType;
         mContentType = contentType;
         mType = content;
-        lvItems.startRefresh();
+        mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        fetchContent(true, mType);
     }
 }

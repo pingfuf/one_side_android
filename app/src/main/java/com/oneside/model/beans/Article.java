@@ -10,4 +10,6 @@ public class Article implements Serializable {
     private static final long serialVersionUID = 4117251956057845067L;
     public String title;
     public String content;
+    public String url;
+    public String id;
 }

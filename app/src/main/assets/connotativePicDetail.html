@@ -4,15 +4,17 @@
     <link rel="stylesheet" href="jqmobile/jquery.mobile-1.3.2.min.css">
     <script src="jqmobile/jquery-1.8.3.min.js"></script>
     <script src="jqmobile/jquery.mobile-1.3.2.min.js"></script>
+    <style type="text/css">
+        #img {
+            width:100%;
+        }
+    </style>
 </head>
 
 <body>
     <div data-role="page">
         <div data-role="content">
-            <label id="text"></label>
-            <p/>
-            <input id="show_answer" type="button" text="点击我查看答案">
-            <label id="answer" style="display:none"></label>
+            <img id="img" src=""/>
         </div>
     </div>
     <script language="JavaScript">
@@ -23,10 +25,10 @@
             }
 
             mAction = eval ("(" + action.toString() + ")");
-            window.hyScript.setTitle(mAction.title);
             //mAction = JSON.parse(action);
+            window.hyScript.setTitle(mAction.title);
             var tempDate = new Date();
-            var url = "http://route.showapi.com/955-2?t=" + tempDate.getTime();
+            var url = "http://route.showapi.com/978-1?t=" + tempDate.getTime();
             $.getJSON(url, {
                     showapi_appid: mAction.appId,
                     showapi_sign: mAction.secret,
@@ -38,8 +40,10 @@
                     if(code != 0) {
                         return;
                     }
-                    var text = data.showapi_res_body.text;
-                    $("#text").html(text);
+                    var imageUrl = data.showapi_res_body.img;
+                    var title = data.showapi_res_body.title;
+                    var d = new Date();
+                    $("#img").attr("src", imageUrl + "?" + d.getTime());
                 }
             );
 

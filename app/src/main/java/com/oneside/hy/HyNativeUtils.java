@@ -1,5 +1,7 @@
 package com.oneside.hy;
 
+import android.support.v4.app.FragmentActivity;
+
 import com.alibaba.fastjson.JSON;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.CardConfig;
@@ -23,6 +25,16 @@ public class HyNativeUtils {
         action.title = title;
 
         startWebActivity(activity, "storyDetail.html", action);
+    }
+
+    public static void gotoConnotativePicDetailWebPage(BaseActivity activity, String title, String id) {
+        StoryDetailAction action = new StoryDetailAction();
+        action.url = "pic/detail";
+        action.type = 101;
+        action.storyId = id;
+        action.title = title;
+
+        startWebActivity(activity, "connotativePicDetail.html", action);
     }
 
     public static void gotoJokeDetailWebPage(BaseActivity activity, String title, String text) {
