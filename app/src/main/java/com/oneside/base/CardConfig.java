@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.oneside.BuildConfig;
 import com.oneside.utils.IOUtils;
+import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 
 import java.net.MalformedURLException;
@@ -19,6 +20,7 @@ public class CardConfig {
     public static final boolean DEV_BUILD = BuildConfig.LOG_DEBUG;
     public static final int MIN_LOG_LEVEL = DEV_BUILD ? Log.DEBUG : Log.INFO;
     public static final boolean LOG_LINE_NUMBER = false;
+    public static final String KEY = "8f00d7d21c6645719b4d4f47713b4030";
 
     public static final String DEFAULT_URL = BuildConfig.serverUrl;
 
@@ -37,6 +39,14 @@ public class CardConfig {
         return "debug".equals(BuildConfig.BUILD_TYPE) || "beta".equals(BuildConfig.BUILD_TYPE);
     }
 
+    public static boolean isMock() {
+        return "true".equals(IOUtils.getPreferenceValue(IS_MOCK));
+    }
+
+    public static String getMockServerUrl() {
+        return IOUtils.getPreferenceValue(SERVER_URL);
+    }
+
     /**
      * 获取WebURL
      *
@@ -46,8 +56,8 @@ public class CardConfig {
         URL url = null;
         if(isDevBuild()) {
             boolean isMock = "true".equals(IOUtils.getPreferenceValue(IS_MOCK));
-            if(isMock) {
-                String serverUrl = IOUtils.getPreferenceValue(SERVER_URL);
+            String serverUrl = IOUtils.getPreferenceValue(SERVER_URL);
+            if(isMock && !LangUtils.isEmpty(serverUrl)) {
                 try {
                     url = new URL(serverUrl);
                 } catch (MalformedURLException e) {

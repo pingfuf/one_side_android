@@ -63,7 +63,6 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@id/vip_renew_btn"
             android:layout_toRightOf="@id/iv_class_type"
             android:orientation="vertical">
 

@@ -1,7 +1,6 @@
 package com.oneside.base.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.oneside.manager.CardDataManager;
 import com.oneside.utils.IOUtils;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.WebUtils;
@@ -9,8 +8,6 @@ import com.oneside.utils.WebUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
-import edu.umd.cs.findbugs.annotations.CheckForNull;
 
 
 /**

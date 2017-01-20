@@ -1,9 +1,6 @@
 package com.oneside.base.model.request;
 
 import com.oneside.base.net.model.BaseRequestParam;
-import com.oneside.model.LocationCoordinate2D;
-
-import java.util.HashMap;
 
 /**
  * User: XXoneside(www.xxoneside.com)
@@ -13,10 +10,7 @@ import java.util.HashMap;
  * FIXME
  */
 public class LocationRequestParam extends BaseRequestParam {
-    public LocationCoordinate2D usrLocation;
     public String city;
-    public LocationCoordinate2D leftTop;
-    public LocationCoordinate2D rightBottom;
 
     @Override
     public void addRequestParams() {

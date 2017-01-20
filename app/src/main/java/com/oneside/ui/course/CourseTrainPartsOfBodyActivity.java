@@ -4,21 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.inject.From;
 import com.oneside.R;
-import com.oneside.ui.customer.CustomerTypeAdapter;
 import com.oneside.ui.view.NoScrollGridView;
 import com.oneside.utils.LangUtils;
-import com.oneside.utils.LogUtils;
 import com.oneside.utils.ViewUtils;
 
 import java.util.ArrayList;

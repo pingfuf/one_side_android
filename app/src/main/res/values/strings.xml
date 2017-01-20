@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">小熊助手</string>
+    <string name="app_name">身边</string>
     <string name="loading"></string>
     <string name="main_setting">设置</string>
     <!-- DetailInfActivity -->
@@ -10,7 +10,7 @@
     <string name="login_pass_hint"><font size="13">请输入登录密码</font></string>
 
     <!-- MainActivity -->
-    <string name="exit_warn">再按一次返回退出小熊管家</string>
+    <string name="exit_warn">再按一次返回退出身边</string>
     <!-- TabOrderFragment -->
     <string name="coach_personal_member">私教会员</string>
     <string name="no_data">无相关信息</string>
@@ -341,7 +341,7 @@
     <string name="coupons_input_code">输入优惠码</string>
     <string name="coupons_add_coupon_code_is_null">优惠码不能为空</string>
     <string name="coupons_cannot_use">(不可用)</string>
-    <!-- CouponsRulesActivity -->
+    <!-- NativeWebActivity -->
     <string name="coupon_help">代金券使用帮助</string>
     <string name="coupon_help_title_1">1、什么是优惠码?</string>
     <string name="coupon_help_title_2">2、什么是代金券?</string>
@@ -661,7 +661,7 @@
     <string name="ranking_care_tab">好友排名</string>
     <string name="ranking_merchant_title">场馆会员排名</string>
 
-    <!--FitDataDetailActivity-->
+    <!--HyConfigActivity-->
     <string name="fit_data_detail_tab_week">周</string>
     <string name="fit_data_detail_tab_month">月</string>
     <string name="fit_data_detail_fit_time">%1$s小时</string>

@@ -3,7 +3,7 @@ package com.oneside.base.utils;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.utils.LangUtils;
 
 /**

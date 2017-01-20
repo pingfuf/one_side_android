@@ -1,0 +1,55 @@
+
+task hello() {
+    //println getVersionName()
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'assembleXiaomiDebug') {
+        installApkFiles.dependsOn assembleXiaomiDebug
+    }
+}
+
+task installApkFiles(type: Exec){
+    def  purposeDir = "$buildDir/outputs/apk/"
+    workingDir  =  "$purposeDir"
+    def myCommand = ['adb', 'install', '-r', getApkName('xiaomi')]
+    commandLine  myCommand
+}
+
+task installDebug(type:Exec, dependsOn:installApkFiles){
+    def packageName ='com.oneside'
+
+    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.SplashActivity"
+}
+
+def getApkName(buildType) {
+    def name = "assistant_v" + getVersionName() + "_" + buildType + ".apk";
+
+    return name;
+}
+
+def getVersionCode() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionCode = versionProps['versionCode'].toInteger();
+        return versionCode;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getVersionName() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        def Properties versionProps = new Properties();
+        versionProps.load(new FileInputStream(versionFile));
+        def versionName = versionProps['versionName'].toString();
+        return versionName;
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}

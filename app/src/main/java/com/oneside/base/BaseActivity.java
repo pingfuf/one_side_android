@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.oneside.base.net.RequestDelegate;
 import com.oneside.base.net.XService;
+import com.oneside.hy.WebPageParam;
 import com.oneside.model.event.LoginStatusChangedEvent;
 import com.oneside.ui.LoginActivity;
 import com.oneside.base.inject.InjectUtils;
@@ -36,7 +37,7 @@ import com.oneside.manager.CardActivityManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.R;
 import com.oneside.ui.MainActivity;
-import com.oneside.ui.web.CardWebActivity;
+import com.oneside.hy.CardWebActivity;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 import com.oneside.utils.StatusBarCompat;
@@ -44,7 +45,6 @@ import com.oneside.utils.SystemBarTintManager;
 import com.oneside.utils.ViewUtils;
 import com.oneside.ui.view.CustomProgressDialog;
 import com.oneside.base.net.UrlRequest;
-import com.oneside.utils.WebUtils;
 import com.umeng.analytics.MobclickAgent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -270,12 +270,7 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
             return;
         }
 
-        if(service != XService.LOGIN && !CardSessionManager.getInstance().isLogin()) {
-            ViewUtils.showToast("请登录", Toast.LENGTH_LONG);
-            xStartActivity(MainActivity.class);
-        } else {
-            XRequest.startRequest(this, service, param, requestCode, requestTag);
-        }
+        XRequest.startRequest(this, service, param, requestCode, requestTag);
     }
 
     /**
@@ -717,8 +712,19 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
      * @param hasBack WebActivity是否有返回键
      */
     public void startWebActivity(String url, boolean hasBack) {
-        CardWebActivity.WebPageParam pageParam = new CardWebActivity.WebPageParam();
+        startWebActivity(url, null, hasBack);
+    }
+
+    /**
+     * 跳转到WebActivity
+     *
+     * @param url     H5页面的URL
+     * @param hasBack WebActivity是否有返回键
+     */
+    public void startWebActivity(String url, String action, boolean hasBack) {
+        WebPageParam pageParam = new WebPageParam();
         pageParam.url = url;
+        pageParam.action = action;
         pageParam.hasBack = hasBack;
 
         xStartActivity(CardWebActivity.class, pageParam);

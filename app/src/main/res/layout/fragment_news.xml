@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.oneside.base.view.filter.FilterView
+        android:id="@+id/v_filter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <com.oneside.ui.view.XListView
+        android:id="@+id/lv_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_filter"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+</RelativeLayout>

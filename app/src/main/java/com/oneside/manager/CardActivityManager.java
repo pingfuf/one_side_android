@@ -2,7 +2,6 @@ package com.oneside.manager;
 
 import android.app.Activity;
 
-import com.oneside.ui.coach.CoachCustomerListActivity;
 import com.oneside.ui.MainActivity;
 
 import com.oneside.utils.LogUtils;
@@ -121,16 +120,7 @@ public class CardActivityManager {
         cow.addAll(live_activities);
         int size = cow.size();
         for (int i = 0; i < size; i++) {
-
             WeakReference<Activity> a = cow.get(i);
-            if (a != null && a.get() != null && a.get() instanceof CoachCustomerListActivity)
-                try {
-                    // a.get().finish();
-//                    ((CoachStudentsActivity) a.get()).showBuySuccDialog();
-                    break;
-                } catch (Exception e) {
-                    LogUtils.e(e, "Failed to finish activity: " + a);
-                }
         }
     }
 

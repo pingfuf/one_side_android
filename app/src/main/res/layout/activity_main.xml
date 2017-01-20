@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.oneside.ui.view.XListView
-        android:id="@+id/lv_items"
+    <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_bottom"/>
+        android:layout_weight="1"/>
 
-
-    <LinearLayout
-        android:id="@+id/ll_bottom"
+    <com.oneside.ui.view.TabView
+        android:id="@+id/tv_items"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_height="55dp"
+        android:background="@color/white"/>
 
-
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

@@ -66,7 +66,7 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
         });
     }
 
-    public void refreshTitle(){
+    public void refreshTitle() {
         llContent.removeAllViews();
     }
 
@@ -103,17 +103,24 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
         addPopupWindowContent(filterItemView);
     }
 
+    public void updateFilterTitle(Object tag, String title) {
+        FilterTitleItemView itemView = (FilterTitleItemView) findViewWithTag(tag);
+        if (itemView != null) {
+            itemView.setTitle(title);
+        }
+    }
+
     private void updateTitleStates(String tag, boolean isChecked) {
-        if(LangUtils.isEmpty(tag)) {
+        if (LangUtils.isEmpty(tag)) {
             return;
         }
 
         View child = findViewWithTag(tag);
-        if(child == null || !(child instanceof FilterTitleItemView)) {
+        if (child == null || !(child instanceof FilterTitleItemView)) {
             return;
         }
         FilterTitleItemView itemView = (FilterTitleItemView) child;
-        if(mCurrentCheckTitleTag != null && !tag.equals(mCurrentCheckTitleTag)) {
+        if (mCurrentCheckTitleTag != null && !tag.equals(mCurrentCheckTitleTag)) {
             FilterTitleItemView itemView1 = (FilterTitleItemView) findViewWithTag(mCurrentCheckTitleTag);
             itemView1.resetTitleItem();
         }
@@ -121,6 +128,7 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
         itemView.onItemClick(!isChecked);
         mCurrentCheckTitleTag = tag;
     }
+
     /**
      * 生成filterTitle
      *
@@ -140,11 +148,11 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
      * @param itemView filterItemView
      */
     private void addPopupWindowContent(FilterItemView itemView) {
-        if(mPopupWindowContent == null || itemView == null) {
+        if (mPopupWindowContent == null || itemView == null) {
             return;
         }
         int itemHeight = itemView.getItemHeight();
-        if(itemHeight > MAX_CONTENT_HEIGHT) {
+        if (itemHeight > MAX_CONTENT_HEIGHT) {
             itemHeight = MAX_CONTENT_HEIGHT;
         }
         itemView.setOnItemClickListener(this);
@@ -174,23 +182,23 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
 
     @Override
     public void onFilterItemClick(String tag, FilterData data, int type) {
-        if(LangUtils.isEmpty(tag) || data == null) {
+        if (LangUtils.isEmpty(tag) || data == null) {
             return;
         }
 
         LogUtils.e("itemClick -> " + tag);
 
-        FilterTitleItemView titleItemView = (FilterTitleItemView)findViewWithTag(tag);
-        if(type == FilterItemView.MULTI_COLUMN_TYPE) {
+        FilterTitleItemView titleItemView = (FilterTitleItemView) findViewWithTag(tag);
+        if (type == FilterItemView.MULTI_COLUMN_TYPE) {
             MultiColumnItemData itemData = (MultiColumnItemData) data;
-            if(isDefaultName(itemData.name) && itemData.parentData != null) {
+            if (isDefaultName(itemData.name) && itemData.parentData != null) {
                 String name = itemData.parentData.name + "/" + itemData.name;
                 titleItemView.setTitle(name);
             } else {
                 titleItemView.setTitle(data.name);
             }
         } else {
-            if(DEFAULT_ALL_TITLE.equals(data.name)) {
+            if (DEFAULT_ALL_TITLE.equals(data.name)) {
                 titleItemView.setTitle(tag);
             } else {
                 titleItemView.setTitle(data.name);
@@ -244,16 +252,16 @@ public class FilterView extends LinearLayout implements FilterItemView.OnFilterI
         }
 
         private void setItemViewLayoutParams(FilterItemView itemView) {
-            if(itemView == null) {
+            if (itemView == null) {
                 return;
             }
 
             int height = itemView.getItemHeight();
-            if(height > MAX_CONTENT_HEIGHT) {
+            if (height > MAX_CONTENT_HEIGHT) {
                 height = MAX_CONTENT_HEIGHT;
             }
             ViewGroup.LayoutParams params = itemView.getLayoutParams();
-            if(params == null) {
+            if (params == null) {
                 params = new RelativeLayout.LayoutParams(-1, height);
             }
             params.height = height;

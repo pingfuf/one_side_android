@@ -26,13 +26,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
@@ -63,12 +61,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.oneside.base.BaseActivity;
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.base.CardConfig;
 import com.oneside.manager.CardManager;
 import com.oneside.R;
-import com.oneside.ui.photopicker.ImageCaptureManager;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

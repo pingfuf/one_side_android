@@ -1,7 +1,7 @@
 package com.oneside.utils;
 
 import com.oneside.base.BaseActivity;
-import com.oneside.ui.web.CardWebActivity;
+import com.oneside.hy.CardWebActivity;
 
 import android.app.Activity;
 import android.content.Context;

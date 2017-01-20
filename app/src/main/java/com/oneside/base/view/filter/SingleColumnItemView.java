@@ -36,7 +36,7 @@ public class SingleColumnItemView extends FilterItemView <List<SingleColumnItemD
         inflate(context, R.layout.filter_single_column_item, this);
         mListView = (ListView) findViewById(R.id.list_item);
         mItems = new ArrayList<String>();
-        mListAdapter = new SingleColumnListAdapter(context);
+        mListAdapter = new SingleColumnListAdapter(context, mItems);
         mListAdapter.setSelectTextColorId(R.color.papaya_primary_color);
         mListView.setAdapter(mListAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,15 +62,14 @@ public class SingleColumnItemView extends FilterItemView <List<SingleColumnItemD
 
     @Override
     public void update(List<SingleColumnItemData> items) {
-        if(LangUtils.isEmpty(items)) {
-            return;
+        mItems.clear();
+        itemDatas = items;
+        if(!LangUtils.isEmpty(items)) {
+            for(int i = 0; i < items.size(); i++) {
+                mItems.add(items.get(i).name);
+            }
         }
 
-        mItems.clear();
-        for(int i = 0; i < items.size(); i++) {
-            mItems.add(items.get(i).name);
-        }
-        itemDatas = items;
         mListAdapter.notifyDataSetChanged();
     }
 

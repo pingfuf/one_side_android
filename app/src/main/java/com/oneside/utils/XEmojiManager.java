@@ -10,7 +10,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
 import android.util.LruCache;
 
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.model.beans.XEmoji;
 import com.oneside.R;
 

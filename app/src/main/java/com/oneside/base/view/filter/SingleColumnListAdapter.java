@@ -30,8 +30,8 @@ public class SingleColumnListAdapter extends XSimpleAdapter<String> {
      */
     private int backgroundColorId = 0;
 
-    public SingleColumnListAdapter(Context context) {
-        super(context);
+    public SingleColumnListAdapter(Context context, List<String> items) {
+        super(context, items);
     }
 
     public void setChosenPosition(int p) {

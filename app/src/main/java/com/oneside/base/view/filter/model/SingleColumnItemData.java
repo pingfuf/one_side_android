@@ -8,7 +8,7 @@ package com.oneside.base.view.filter.model;
  * FIXME
  */
 public class SingleColumnItemData extends FilterData {
-    public int type;
+    public int itemType;
 
     public int position;
 }

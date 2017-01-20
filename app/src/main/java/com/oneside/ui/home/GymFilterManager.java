@@ -318,7 +318,7 @@ public class GymFilterManager {
         //卡片类型筛选缓存
         FilterData cardTypeData = mChosenFilterDataMap.get(CART_TYPE_TAG);
         if(cardTypeData != null) {
-            mChosenFilterData.cardType = cardTypeData.itemType;
+            mChosenFilterData.cardType = cardTypeData.type;
         } else {
             mChosenFilterData.cardType = -1;
         }
@@ -326,7 +326,7 @@ public class GymFilterManager {
         //场馆类型筛选缓存
         FilterData sortTypeData = mChosenFilterDataMap.get(SORT_TYPE_TAG);
         if(sortTypeData != null) {
-            mChosenFilterData.sortType = sortTypeData.itemType;
+            mChosenFilterData.sortType = sortTypeData.type;
         } else {
             mChosenFilterData.sortType = -1;
         }

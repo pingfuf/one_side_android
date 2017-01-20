@@ -48,4 +48,6 @@ public class BasePageParam implements Serializable {
      * 会员id
      */
     public long memberId;
+
+    public String id;
 }

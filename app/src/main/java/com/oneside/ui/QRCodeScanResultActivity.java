@@ -12,11 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oneside.base.BaseActivity;
-import com.oneside.manager.CardDataManager;
-import com.oneside.manager.CardDataManager.DataResultListener;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.manager.CardSessionManager.NetworkStatus;
-import com.oneside.model.CardOrder;
 import com.oneside.model.event.QRScanResultEvent;
 import com.oneside.utils.Constant;
 import com.oneside.utils.JumpCenter;
@@ -34,7 +31,6 @@ import java.util.Locale;
 public class QRCodeScanResultActivity extends BaseActivity {
 
     private String mStrScanResult;
-    private CardOrder mCurrentOrder;
 
     private ImageView ivCheckImg;
     private TextView tvCheckResult;
@@ -80,7 +76,6 @@ public class QRCodeScanResultActivity extends BaseActivity {
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
                 mStrScanResult = bundle.getString(Constant.SCAN_QR_CODE_RESULT);
-                mCurrentOrder = (CardOrder) bundle.getSerializable(Constant.SCAN_QR_CODE_ORDER);
 //        ViewUtils.showToast(mStrScanResult, Toast.LENGTH_LONG);
             }
         }
@@ -128,36 +123,12 @@ public class QRCodeScanResultActivity extends BaseActivity {
             ivCheckImg.setImageResource(R.drawable.image_success_icon);
             tvCheckResult.setText(R.string.scan_success_tip);
             QRScanResultEvent event = new QRScanResultEvent(true);
-            event.setOrderID(mCurrentOrder.getOrderID());
             EventBus.getDefault().post(event);
             tvCheckResult.setTextColor(getResources().getColor(R.color.green));
             tvCheckResultTip.setVisibility(View.GONE);
 
             layoutSuccess.setVisibility(View.VISIBLE);
-            if (mCurrentOrder != null) {
-                tvSuccessCode.setText(mCurrentOrder.getOrderCode());
-                tvSuccessCourse.setText(mCurrentOrder.getClassName());
 
-                Date startTime = mCurrentOrder.getStartTime();
-                Date endTime = mCurrentOrder.getEndTime();
-                if (startTime != null && endTime != null) {
-                    SimpleDateFormat dateFormat =
-                            new SimpleDateFormat(getString(R.string.format_ignore_year_month_hour),
-                                    Locale.getDefault());
-                    StringBuilder sbTime = new StringBuilder(dateFormat.format(startTime));
-
-                    SimpleDateFormat timeFormat =
-                            new SimpleDateFormat(getString(R.string.fomat_ignore_year_month_day_week),
-                                    Locale.getDefault());
-                    sbTime.append(" ");
-                    sbTime.append(timeFormat.format(startTime));
-                    sbTime.append("-");
-                    sbTime.append(timeFormat.format(endTime));
-                    tvSuccessTime.setText(sbTime.toString());
-                } else
-                    tvSuccessTime.setText(" ");
-                tvSuccessMerchant.setText(mCurrentOrder.getMerchantName());
-            }
 
             layoutSuggestion.setVisibility(View.GONE);
             layoutHorizontalButtons.setVisibility(View.GONE);
@@ -208,45 +179,12 @@ public class QRCodeScanResultActivity extends BaseActivity {
             return;
         }
         showLoadingDialog(getString(R.string.scaning_tip));
-        CardDataManager.checkinScanCode(mCurrentOrder.getOrderCode(), mStrScanResult,
-                new DataResultListener() {
-                    @Override
-                    public void onFinish(boolean ret, Object... params) {
-
-                        LogUtils.d(">>>> ret=%s", ret);
-                        if (params != null)
-                            LogUtils.d(">>>> params.length=%s", params.length);
-                        if (ret) {// success
-                            bSuccess = true;
-                            alert_html = (String) params[0];
-                            alert_proportion = (String) params[1];
-                        } else {// failed
-                            bSuccess = false;
-                            if (params != null && params.length > 0) {
-                                mStrFailTip = (String) params[0];
-                                mFailCode = (Integer) params[1];
-                                LogUtils.d(">>>> mStrFailTip=%s, mFailCode=%s", mStrFailTip, mFailCode);
-                            } else {// unknow reason
-                                mFailCode = FAIL_CODE_NETWORK;
-                                mStrFailTip = "";
-                            }
-                        }
-                        ViewUtils.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                dismissLoadingDialog();
-                                updateUI();
-                            }
-                        });
-                    }
-                });
     }
 
     @Override
     public void onClick(View v) {
         if (v.equals(tvButtonLeft)) {
             Bundle bundle = new Bundle();
-            bundle.putSerializable(Constant.SINGLE_CARD_CLASS_ID, mCurrentOrder.getClassID());
         } else if (v.equals(tvButtonRight)) {
             Intent intent =
                     new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"
@@ -264,7 +202,6 @@ public class QRCodeScanResultActivity extends BaseActivity {
         else if (v.equals(tvButtonBottom)) {
             Bundle bundle = new Bundle();
             bundle.putBoolean(Constant.REGISTER_SUCC_CODE, bSuccess);
-            bundle.putSerializable(Constant.SCAN_QR_CODE_ORDER, mCurrentOrder);
             bundle.putString(Constant.GIFT_XX_COURSE_ALERT_HTML, alert_html);
             bundle.putString(Constant.GIFT_XX_COURSE_ALERT_PROPORTION, alert_proportion);
             bundle.putBoolean(Constant.EXTRA_JUMP_FROM_SCAN_OR_ORDER_RESULT, true);

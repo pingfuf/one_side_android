@@ -21,11 +21,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/ic_logo" />
 
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_login_word" />
+            android:layout_marginTop="30dp"
+            android:text="在你身边，永远陪伴"
+            android:textSize="20sp"
+            android:textColor="@color/text_color_gray"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:gravity="center"
-            android:text="guanjia.xxoneside.com"
+            android:text="http://www.oneside.com"
             android:textColor="@color/text_color_gray"
             android:textSize="16sp" />
 

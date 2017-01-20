@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/layout_background"
-    tools:context="com.oneside.ui.customer.UserCommentActivity">
+    tools:context="com.oneside.ui.user.UserCommentActivity">
 
     <EditText
         android:id="@+id/edt_comment"

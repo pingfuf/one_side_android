@@ -13,11 +13,9 @@ import android.util.LongSparseArray;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.oneside.base.CardApplication;
-import com.oneside.model.CardUser;
+import com.oneside.CardApplication;
 import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.response.CoachCourseDetailResponse;
-import com.oneside.utils.Constant;
 import com.oneside.utils.IOUtils;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
@@ -50,15 +48,6 @@ public class CardManager {
         ViewUtils.initialize();
         initManager(context);
 //        clearPreRes();
-    }
-
-    /**
-     * Self user in session manager
-     *
-     * @return
-     */
-    public static CardUser getCardUser() {
-        return null;
     }
 
 
@@ -194,18 +183,6 @@ public class CardManager {
         } catch (IllegalAccessException e) {
             LogUtils.e("清理系统资源sPreLoadedDrawables  %s", e);
         }
-    }
-
-    public static String getPhone() {
-        return getCardUser() != null ? getCardUser().getPhoneNumber() : "";
-    }
-
-    public static String getName() {
-        return getCardUser() != null ? getCardUser().getNickname() : "";
-    }
-
-    public static int getUID() {
-        return getCardUser() != null ? getCardUser().getUserID() : 0;
     }
 
     public static void saveFailedDetail(CoachCourseDetailResponse model) {

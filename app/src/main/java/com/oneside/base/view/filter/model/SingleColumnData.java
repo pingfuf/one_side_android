@@ -11,5 +11,6 @@ import java.util.List;
  */
 public class SingleColumnData {
     public String title;
+    public String tag;
     public List<SingleColumnItemData> items;
 }

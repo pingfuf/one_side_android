@@ -75,9 +75,7 @@ public class CardSessionManager {
 
     public void updateFromServer() {
         if (isOnLine()) {
-            if (isLogin()) {
-                CardCommentPostManager.getInstance().autoPostComment();
-            }
+
         }
     }
 

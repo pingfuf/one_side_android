@@ -80,8 +80,5 @@ public class MeItemView extends RelativeLayout {
             setRightText(rightText);
             typeArray.recycle();
         }
-
     }
-
-
 }

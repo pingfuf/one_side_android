@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.oneside.base.QRScanBaseActivity;
-import com.oneside.model.CardOrder;
 import com.oneside.utils.Constant;
 import com.oneside.utils.JumpCenter;
 import com.oneside.utils.ViewUtils;
@@ -42,7 +41,6 @@ public class QRCodeScanningActivity extends QRScanBaseActivity implements Callba
     private static final float BEEP_VOLUME = 0.10f;
     private boolean vibrate;
 
-    private CardOrder mCurrentOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +58,6 @@ public class QRCodeScanningActivity extends QRScanBaseActivity implements Callba
         if (getIntent() != null) {
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
-                mCurrentOrder = (CardOrder) bundle.getSerializable(Constant.SCAN_QR_CODE_ORDER);
             }
         }
     }
@@ -119,7 +116,6 @@ public class QRCodeScanningActivity extends QRScanBaseActivity implements Callba
             // Intent resultIntent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString(Constant.SCAN_QR_CODE_RESULT, resultString);
-            bundle.putSerializable(Constant.SCAN_QR_CODE_ORDER, mCurrentOrder);
             // ViewUtils.showToast(resultString, Toast.LENGTH_LONG);
             // bundle.putParcelable("bitmap", barcode);
             // resultIntent.putExtras(bundle);

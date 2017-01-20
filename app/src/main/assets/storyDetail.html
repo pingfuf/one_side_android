@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="jqmobile/jquery.mobile-1.3.2.min.css">
+    <script src="jqmobile/jquery-1.8.3.min.js"></script>
+    <script src="jqmobile/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="content">
+            <label id="text"></label>
+            <p/>
+            <input id="show_answer" type="button" text="点击我查看答案">
+            <label id="answer" style="display:none"></label>
+        </div>
+    </div>
+    <script language="JavaScript">
+        var mAction;
+        function initPage(action) {
+            if(mAction != null){
+                return;
+            }
+
+            mAction = eval ("(" + action.toString() + ")");
+            window.hyScript.setTitle(mAction.title);
+            //mAction = JSON.parse(action);
+            var tempDate = new Date();
+            var url = "http://route.showapi.com/955-2?t=" + tempDate.getTime();
+            $.getJSON(url, {
+                    showapi_appid: mAction.appId,
+                    showapi_sign: mAction.secret,
+                    id: mAction.storyId,
+                },
+                function(data) {
+                    window.hyScript.dismissLoadingDialog();
+                    var code = data.showapi_res_code;
+                    if(code != 0) {
+                        return;
+                    }
+                    var text = data.showapi_res_body.text;
+                    $("#text").html(text);
+                }
+            );
+
+            var $dom = $("#answer");
+            $dom.click(function(){
+                var display = $dom.css("display");
+                if(display == "none") {
+                    $dom.css("display", "block");
+                } else {
+                    $dom.css("display", "none");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
