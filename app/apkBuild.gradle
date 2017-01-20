@@ -1,6 +1,6 @@
 
 task hello() {
-    println getVersionName()
+    //println getVersionName()
 }
 
 tasks.whenTaskAdded { task ->
@@ -19,7 +19,7 @@ task installApkFiles(type: Exec){
 task installDebug(type:Exec, dependsOn:installApkFiles){
     def packageName ='com.oneside'
 
-    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.ui.SplashActivity"
+    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.SplashActivity"
 }
 
 def getApkName(buildType) {

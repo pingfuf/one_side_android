@@ -16,24 +16,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.manager.CardManager;
-import com.oneside.manager.CardSessionManager;
-import com.oneside.model.event.SessionChangedEvent;
-import com.oneside.utils.Constant;
-import com.oneside.utils.IOUtils;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.ViewUtils;
 import com.oneside.R;
-
-import org.greenrobot.eventbus.EventBus;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 
 import static com.oneside.utils.LangUtils.isNotEmpty;
 import static com.oneside.utils.ViewUtils.find;
 import static com.oneside.utils.ViewUtils.getString;
-import static com.oneside.utils.WebUtils.isMobileNO;
 
 public class LoginInputView extends RelativeLayout implements View.OnClickListener {
     public interface LoginStatusListener {

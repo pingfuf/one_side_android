@@ -53,7 +53,7 @@
         android:smallScreens="true" />
 
     <application
-        android:name="com.oneside.base.CardApplication"
+        android:name="com.oneside.CardApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -76,7 +76,7 @@
             android:value="880072a66e414e72b7ded49d" />
 
         <activity
-            android:name="com.oneside.ui.SplashActivity"
+            android:name="com.oneside.SplashActivity"
             android:theme="@style/AppFullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

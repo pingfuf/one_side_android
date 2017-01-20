@@ -7,7 +7,7 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.base.model.bean.XLocation;
 
 /**

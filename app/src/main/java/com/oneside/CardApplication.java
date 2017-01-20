@@ -1,4 +1,4 @@
-package com.oneside.base;
+package com.oneside;
 
 import android.app.ActivityManager;
 import android.app.Application;

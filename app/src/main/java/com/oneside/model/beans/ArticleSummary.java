@@ -1,6 +1,7 @@
 package com.oneside.model.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public class ArticleSummary implements Serializable {
     public String img;
     public String link;
     public String title;
+    public List<String> thumbnailList;
 }

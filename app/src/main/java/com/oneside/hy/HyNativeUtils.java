@@ -27,6 +27,16 @@ public class HyNativeUtils {
         startWebActivity(activity, "storyDetail.html", action);
     }
 
+    public static void gotoStoryPicDetailWebPage(BaseActivity activity, String title, String id) {
+        StoryDetailAction action = new StoryDetailAction();
+        action.url = "pic/storyDetail";
+        action.type = 102;
+        action.storyId = id;
+        action.title = title;
+
+        startWebActivity(activity, "storyPicDetail.html", action);
+    }
+
     public static void gotoConnotativePicDetailWebPage(BaseActivity activity, String title, String id) {
         StoryDetailAction action = new StoryDetailAction();
         action.url = "pic/detail";

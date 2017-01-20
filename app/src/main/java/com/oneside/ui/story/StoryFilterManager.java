@@ -120,22 +120,28 @@ public class StoryFilterManager {
     }
 
     private void freshContentTypeView(String tag, FilterData data, int dataType) {
-        if(TextUtils.equals("鬼故事", tag)) {
-            contentData = new SingleColumnData();
-            contentData.title = "短篇";
-            contentData.items = new ArrayList<>();
-            for(int i = 0; i < mStoryFilterItems.size(); i++) {
-                SingleColumnItemData itemData = new SingleColumnItemData();
-                itemData.itemType = mStoryFilterItems.get(i).type;
-                itemData.type = MENU_TYPE;
-                itemData.name = mStoryFilterItems.get(i).name;
-                itemData.position = i;
-                contentData.items.add(itemData);
+        if(dataType == FilterItemView.SINGLE_COLUMN_TYPE) {
+            SingleColumnItemData itemData = (SingleColumnItemData) data;
+            if(itemData != null && itemData.itemType == 0) {
+                contentData = new SingleColumnData();
+                contentData.title = "短篇";
+                contentData.items = new ArrayList<>();
+                for(int i = 0; i < mStoryFilterItems.size(); i++) {
+                    SingleColumnItemData item = new SingleColumnItemData();
+                    item.itemType = mStoryFilterItems.get(i).type;
+                    item.type = MENU_TYPE;
+                    item.name = mStoryFilterItems.get(i).name;
+                    item.position = i;
+                    contentData.items.add(item);
+                }
+                mFilterView.updateFilterTitle("短篇", "短篇");
+            } else {
+                contentData = new SingleColumnData();
+                contentData.title = "默认";
+                contentData.items = new ArrayList<>();
+                contentData.items.clear();
+                mFilterView.updateFilterTitle("短篇", "默认");
             }
-        } else {
-            contentData = new SingleColumnData();
-            contentData.title = "默认";
-            contentData.items = new ArrayList<>();
         }
 
         mContentTypeView.update(contentData.items);

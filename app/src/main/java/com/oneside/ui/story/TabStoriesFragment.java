@@ -191,7 +191,6 @@ public class TabStoriesFragment extends BaseFragment
             mItems.clear();
         }
 
-        lvItems.setAdapter(mAdapter);
         mItems.addAll(response.data.page.contentList);
         mAdapter.notifyDataSetChanged();
         lvItems.setPullLoadEnable(response.data.page.hasMore());
@@ -205,7 +204,7 @@ public class TabStoriesFragment extends BaseFragment
         if(mPage == 1) {
             mJokeArticles.clear();
         }
-        lvItems.setAdapter(mJokeAdapter);
+
         mJokeArticles.addAll(response.data.contentlist);
         mAdapter.notifyDataSetChanged();
         lvItems.setPullLoadEnable(response.data.hasMore());
@@ -225,6 +224,11 @@ public class TabStoriesFragment extends BaseFragment
         mMenuType = menuType;
         mContentType = contentType;
         mType = content;
+        if(mMenuType == 0) {
+            lvItems.setAdapter(mAdapter);
+        } else {
+            lvItems.setAdapter(mJokeAdapter);
+        }
         mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
         fetchContent(true, mType);
     }

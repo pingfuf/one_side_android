@@ -12,6 +12,7 @@ import com.oneside.model.response.ConnotativePicsResponse;
 import com.oneside.model.response.JokeListResponse;
 import com.oneside.model.response.NewsListResponse;
 import com.oneside.model.response.StoryDetailResponse;
+import com.oneside.model.response.StoryPicsResponse;
 
 public enum ShowApiService implements IService{
     /**
@@ -30,7 +31,8 @@ public enum ShowApiService implements IService{
      * 漫画系列
      */
     //内涵漫画
-    ConnotativePics("http://route.showapi.com/978-2", ConnotativePicsResponse.class)
+    ConnotativePics("http://route.showapi.com/978-2", ConnotativePicsResponse.class),
+    StoryPics("http://route.showapi.com/958-1", StoryPicsResponse.class)
     ;
 
     private final String mUrl;

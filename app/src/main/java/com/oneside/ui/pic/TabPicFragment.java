@@ -19,6 +19,7 @@ import com.oneside.model.ShowApiService;
 import com.oneside.model.beans.ArticleSummary;
 import com.oneside.model.request.BaseShowApiRequestParam;
 import com.oneside.model.response.ConnotativePicsResponse;
+import com.oneside.model.response.StoryPicsResponse;
 import com.oneside.ui.view.XListView;
 import com.oneside.utils.LogUtils;
 import com.oneside.utils.ViewUtils;
@@ -42,8 +43,13 @@ public class TabPicFragment extends BaseFragment
     private ConnotativePicAdapter mConnotativePicAdapter;
     private List<ArticleSummary> mConnotativePics;
 
+    private StoryPicAdapter mStoryPicAdapter;
+    private List<ArticleSummary> mStoryPics;
+
     private int mType;
     private int mPage = 1;
+    private int mContentType;
+    private String mContent;
 
     private BusinessStateHelper mStateHelper;
 
@@ -66,23 +72,46 @@ public class TabPicFragment extends BaseFragment
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(mType == 0) {
                     ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
+                    HyNativeUtils.gotoStoryPicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
+                } else {
+                    ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
                     HyNativeUtils.gotoConnotativePicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
                 }
             }
         });
+
+        mStoryPics = new ArrayList<>();
+        mStoryPicAdapter = new StoryPicAdapter(getActivity(), mStoryPics);
 
         mConnotativePics = new ArrayList<>();
         mConnotativePicAdapter = new ConnotativePicAdapter(getActivity(), mConnotativePics);
 
         mStateHelper = BusinessStateHelper.build(getActivity(), lvItem);
         mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
-        fetchContent(true);
+
+        initData();
+
+        fetchContent(true, mContent);
     }
 
-    private void fetchContent(boolean isReset) {
+    private void initData() {
+        mType = 0;
+        mContent = "/category/weimanhua/kbmh";
+        lvItem.setAdapter(mStoryPicAdapter);
+    }
+
+    private void fetchContent(boolean isReset, String content) {
         LogUtils.e("TabPicFragment fetchContent");
         switch (mType) {
             case 0:
+                BaseShowApiRequestParam requestParam = new BaseShowApiRequestParam();
+                mPage = isReset ? 1 : mPage + 1;
+                requestParam.addParam("page", mPage);
+                requestParam.addParam("type", mContent);
+
+                startRequest(ShowApiService.StoryPics, requestParam);
+                break;
+            case 1:
                 fetchConnotativePics(isReset);
                 break;
             default:
@@ -99,13 +128,27 @@ public class TabPicFragment extends BaseFragment
     }
 
     @Override
-    public void onFilterChosen(int menuType, int contentType) {
+    public void onFilterChosen(int menuType, int contentType, String content) {
+        if(menuType == mType && contentType == mContentType) {
+            return;
+        }
+        mType = menuType;
+        mContentType = contentType;
+        mContent = content;
 
+        if(mType == 0) {
+            lvItem.setAdapter(mStoryPicAdapter);
+        } else {
+            lvItem.setAdapter(mConnotativePicAdapter);
+        }
+
+        mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        fetchContent(true, content);
     }
 
     @Override
     public void onRefresh() {
-        fetchContent(true);
+        fetchContent(true, mContent);
         ViewUtils.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -116,7 +159,7 @@ public class TabPicFragment extends BaseFragment
 
     @Override
     public void onLoadMore() {
-        fetchContent(false);
+        fetchContent(false, mContent);
         ViewUtils.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -131,7 +174,22 @@ public class TabPicFragment extends BaseFragment
         mStateHelper.setState(BusinessStateHelper.BusinessState.SUCCESS);
         if(isSameUrl(ShowApiService.ConnotativePics, request)) {
             freshConnotativePicsListView((ConnotativePicsResponse) result);
+        } else if(isSameUrl(ShowApiService.StoryPics, request)) {
+            freshStoryPicsListView((StoryPicsResponse) result);
         }
+    }
+
+    private void freshStoryPicsListView(StoryPicsResponse result) {
+        if(result == null || result.data == null || result.data.pagebean == null) {
+            return;
+        }
+
+        if(mPage == 1) {
+            mStoryPics.clear();
+        }
+        mStoryPics.addAll(result.data.pagebean.contentlist);
+        lvItem.setPullLoadEnable(result.data.hasMore);
+        mStoryPicAdapter.notifyDataSetChanged();
     }
 
     private void freshConnotativePicsListView(ConnotativePicsResponse result) {
@@ -139,7 +197,6 @@ public class TabPicFragment extends BaseFragment
             return;
         }
 
-        lvItem.setAdapter(mConnotativePicAdapter);
         if(mPage == 1) {
             mConnotativePics.clear();
         }

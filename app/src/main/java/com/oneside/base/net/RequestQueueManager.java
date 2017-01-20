@@ -11,10 +11,9 @@ import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HttpStack;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageLoader;
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.manager.CardCacheManager;
 import com.oneside.manager.CardSessionManager;
-import com.oneside.utils.IOUtils;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 

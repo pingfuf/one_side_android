@@ -1,4 +1,4 @@
-package com.oneside.ui;
+package com.oneside;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import com.oneside.base.BaseActivity;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
+import com.oneside.ui.LoginActivity;
+import com.oneside.ui.MainActivity;
 import com.oneside.utils.Constant;
 import com.oneside.utils.ViewUtils;
 import com.oneside.R;
@@ -36,7 +38,7 @@ public class SplashActivity extends BaseActivity implements ViewPager.OnPageChan
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
-        }, 500);
+        }, 1500);
     }
 
     @Override

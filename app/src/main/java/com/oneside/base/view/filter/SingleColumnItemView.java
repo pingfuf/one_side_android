@@ -62,15 +62,14 @@ public class SingleColumnItemView extends FilterItemView <List<SingleColumnItemD
 
     @Override
     public void update(List<SingleColumnItemData> items) {
-        if(LangUtils.isEmpty(items)) {
-            return;
+        mItems.clear();
+        itemDatas = items;
+        if(!LangUtils.isEmpty(items)) {
+            for(int i = 0; i < items.size(); i++) {
+                mItems.add(items.get(i).name);
+            }
         }
 
-        mItems.clear();
-        for(int i = 0; i < items.size(); i++) {
-            mItems.add(items.get(i).name);
-        }
-        itemDatas = items;
         mListAdapter.notifyDataSetChanged();
     }
 

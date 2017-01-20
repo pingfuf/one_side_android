@@ -54,11 +54,6 @@ public class HyJavascriptClient {
         mActivity.dismissLoadingDialog();
     }
 
-    @JavascriptInterface
-    public void temp() {
-        ViewUtils.showToast("This is javascript", Toast.LENGTH_LONG);
-    }
-
     private boolean validActivity() {
         return mActivity != null && !mActivity.isFinishing();
     }

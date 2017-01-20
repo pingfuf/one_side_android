@@ -13,7 +13,7 @@ import android.util.LongSparseArray;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.oneside.base.CardApplication;
+import com.oneside.CardApplication;
 import com.oneside.model.event.CourseDraftChangedEvent;
 import com.oneside.model.response.CoachCourseDetailResponse;
 import com.oneside.utils.IOUtils;
