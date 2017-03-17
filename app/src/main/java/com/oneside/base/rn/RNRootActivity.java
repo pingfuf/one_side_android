@@ -10,6 +10,7 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.oneside.base.BaseActivity;
+import com.oneside.base.CardConfig;
 
 public class RNRootActivity extends BaseActivity implements DefaultHardwareBackBtnHandler {
     private static final String RN_SERVER = "http://localhost:8081/index.android.bundle?platform=android";
@@ -31,12 +32,15 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .addPackage(new MainReactPackage())
-                .setUseDeveloperSupport(true)
+                .setUseDeveloperSupport(CardConfig.isDevBuild())
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
+
         mReactRootView.startReactApplication(mReactInstanceManager, "RNOneside", null);
 
-        mReactInstanceManager.getDevSupportManager().reloadJSFromServer(RN_SERVER);
+        if (RNConfig.shouldUpdate) {
+            mReactInstanceManager.getDevSupportManager().reloadJSFromServer(RN_SERVER);
+        }
         setContentView(mReactRootView);
     }
 
@@ -63,7 +67,7 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
         super.onDestroy();
 
         if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostDestroy();
+            mReactInstanceManager.onHostDestroy(this);
         }
     }
 
@@ -71,7 +75,7 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
     public void onBackPressed() {
         if(mReactInstanceManager != null){
             mReactInstanceManager.onBackPressed();
-        }else{
+        } else{
             super.onBackPressed();
         }
     }

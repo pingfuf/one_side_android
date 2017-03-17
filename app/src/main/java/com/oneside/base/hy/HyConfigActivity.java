@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.CardConfig;
 import com.oneside.base.inject.From;
+import com.oneside.base.rn.RNConfig;
 import com.oneside.base.rn.RNRootActivity;
 import com.oneside.R;
 import com.oneside.utils.IOUtils;
@@ -40,6 +41,15 @@ public class HyConfigActivity extends BaseActivity {
     @From(R.id.btn_test_rn)
     private Button btnTestRn;
 
+    @From(R.id.edt_rn)
+    private EditText edtRn;
+
+    @From(R.id.btn_rn)
+    private Button btnRn;
+
+    @From(R.id.cbx_rn)
+    private CheckBox cbxRn;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -53,6 +63,10 @@ public class HyConfigActivity extends BaseActivity {
         cbxMock.setOnClickListener(this);
         btnTemp.setOnClickListener(this);
         btnTestRn.setOnClickListener(this);
+
+        btnRn.setOnClickListener(this);
+        edtRn.setText(IOUtils.getPreferenceValue(RNConfig.RN_SERVER));
+        cbxRn.setOnClickListener(this);
     }
 
     @Override
@@ -77,6 +91,11 @@ public class HyConfigActivity extends BaseActivity {
         } else if(v == btnTestRn) {
             Intent intent = new Intent(this, RNRootActivity.class);
             startActivity(intent);
+        } else if (v == btnRn) {
+            String ip = edtIp.getText().toString();
+            IOUtils.savePreferenceValue(RNConfig.RN_SERVER, ip);
+        } else if (v == cbxRn) {
+            RNConfig.shouldUpdate = cbxRn.isChecked();
         }
     }
 }
