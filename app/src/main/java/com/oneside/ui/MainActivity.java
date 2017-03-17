@@ -17,13 +17,10 @@ import android.widget.Toast;
 import com.oneside.base.inject.From;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.net.UrlRequest;
-import com.oneside.base.net.XService;
-import com.oneside.hy.HyConfigActivity;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.beans.XRole;
 import com.oneside.model.event.LoginStatusChangedEvent;
-import com.oneside.model.request.BaseShowApiRequestParam;
 import com.oneside.model.response.CoachCourseDetailResponse;
 import com.oneside.R;
 import com.oneside.ui.home.TabFavorFragment;
@@ -35,7 +32,6 @@ import com.oneside.utils.AppUpdateHelper;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
 import com.oneside.utils.ViewUtils;
-import com.show.api.ShowApiRequest;
 
 import org.greenrobot.eventbus.EventBus;
 

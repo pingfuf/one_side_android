@@ -8,7 +8,7 @@ import com.oneside.R;
 import com.oneside.base.BaseFragment;
 import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
-import com.oneside.hy.HyConfigActivity;
+import com.oneside.base.hy.HyConfigActivity;
 
 /**
  * Created by fupingfu on 2017/1/12.

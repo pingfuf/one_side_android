@@ -16,6 +16,11 @@ allprojects {
     repositories {
         jcenter()
         maven { url "https://raw.githubusercontent.com/umeng/mvn-repo-umeng/master/repository" }
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url "$rootDir/react_android"
+        }
+
     }
 }
 
