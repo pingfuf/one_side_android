@@ -89,23 +89,8 @@ android {
     }
 
     productFlavors {
-        tencent {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "tencent"]
-        }
-        xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
-        }
-        _360 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]
-        }
         inhouse {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "inhouse"]
-        }
-        baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
-        }
-        wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
         }
     }
 

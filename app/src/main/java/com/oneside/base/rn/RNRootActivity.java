@@ -4,17 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.CardConfig;
 
-public class RNRootActivity extends BaseActivity implements DefaultHardwareBackBtnHandler {
+import javax.annotation.Nullable;
+
+public class RNRootActivity extends ReactActivity {
     private static final String RN_SERVER = "http://localhost:8081/index.android.bundle?platform=android";
-    private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
 
     public static void startActivity(Context context){
@@ -23,25 +26,17 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        mReactInstanceManager = getReactInstanceManager();
 
-        mReactRootView = new ReactRootView(this);
-        mReactInstanceManager = ReactInstanceManager.builder()
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index.android")
-                .addPackage(new MainReactPackage())
-                .setUseDeveloperSupport(CardConfig.isDevBuild())
-                .setInitialLifecycleState(LifecycleState.RESUMED)
-                .build();
+        //mReactInstanceManager.getDevSupportManager().reloadJSFromServer(RN_SERVER);
+    }
 
-        mReactRootView.startReactApplication(mReactInstanceManager, "RNOneside", null);
-
-        if (RNConfig.shouldUpdate) {
-            mReactInstanceManager.getDevSupportManager().reloadJSFromServer(RN_SERVER);
-        }
-        setContentView(mReactRootView);
+    @Nullable
+    @Override
+    protected String getMainComponentName() {
+        return "RNOneside";
     }
 
     @Override
@@ -58,7 +53,7 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
         super.onPause();
 
         if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostPause();
+            mReactInstanceManager.onHostPause(this);
         }
     }
 
