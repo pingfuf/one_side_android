@@ -47,8 +47,11 @@ public class HyConfigActivity extends BaseActivity {
     @From(R.id.btn_rn)
     private Button btnRn;
 
-    @From(R.id.cbx_rn)
-    private CheckBox cbxRn;
+    @From(R.id.cbx_rn_update)
+    private CheckBox cbxRnUpdate;
+
+    @From(R.id.cbx_rn_server)
+    private CheckBox cbxRnServer;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -66,7 +69,8 @@ public class HyConfigActivity extends BaseActivity {
 
         btnRn.setOnClickListener(this);
         edtRn.setText(IOUtils.getPreferenceValue(RNConfig.RN_SERVER));
-        cbxRn.setOnClickListener(this);
+        cbxRnUpdate.setOnClickListener(this);
+        cbxRnServer.setOnClickListener(this);
     }
 
     @Override
@@ -94,8 +98,10 @@ public class HyConfigActivity extends BaseActivity {
         } else if (v == btnRn) {
             String ip = edtIp.getText().toString();
             IOUtils.savePreferenceValue(RNConfig.RN_SERVER, ip);
-        } else if (v == cbxRn) {
-            RNConfig.shouldUpdate = cbxRn.isChecked();
+        } else if (v == cbxRnUpdate) {
+            RNConfig.ReactNativeShouldUpdate = cbxRnUpdate.isChecked();
+        } else if (v == cbxRnServer) {
+            RNConfig.ReactNativeServerUsed = cbxRnServer.isChecked();
         }
     }
 }

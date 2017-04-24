@@ -16,7 +16,8 @@ public class RNConfig {
     private static final String DEFAULT_URL = "localhost:8081";
     public static final String RN_SERVER = "RN_SERVER";
 
-    public static boolean shouldUpdate = false;
+    public static boolean ReactNativeShouldUpdate = false;
+    public static boolean ReactNativeServerUsed = false;
 
     public static String getServerUrl() {
         String url = null;

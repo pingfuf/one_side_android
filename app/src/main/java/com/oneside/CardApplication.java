@@ -9,28 +9,28 @@ import android.support.multidex.MultiDex;
 import com.facebook.react.*;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.oneside.base.CardConfig;
 import com.oneside.manager.CardManager;
 import com.oneside.utils.LogUtils;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import javax.annotation.Nullable;
 
 /**
  * Created by Guo Ming on 3/31/15.
  */
-public class CardApplication extends Application implements ReactApplication {
+public class CardApplication extends Application {
     public static CardApplication application;
     public static boolean isInit = false;
-    private ReactNativeHost mReactNativeHost;
 
     @Override
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
-        SoLoader.init(this, false);
         //在使用SDK各组间之前初始化context 信息，传入 ApplicationContext
         application = this;
 
@@ -80,48 +80,18 @@ public class CardApplication extends Application implements ReactApplication {
         return null;
     }
 
-    @Override
-    public ReactNativeHost getReactNativeHost() {
-        if (mReactNativeHost == null) {
-            mReactNativeHost = new ReactNativeHost(this) {
-                @Override
-                protected boolean getUseDeveloperSupport() {
-                    return BuildConfig.DEBUG;
-                }
-
-                @Override
-                protected List<ReactPackage> getPackages() {
-                    return Arrays.<ReactPackage>asList(
-                            new MainReactPackage()
-                    );
-                }
-
-                @Nullable
-                @Override
-                protected String getJSBundleFile() {
-                    String path = Environment.getExternalStorageDirectory().getPath();
-                    path = path + "/card";
-                    path = path + "/index.android.bundle";
-                    File file = new File(path);
-
-                    if (!file.canRead()) {
-                        //如果文件不存在，仍然读取asset总得bundle
-                        path = null;
-                    }
-
-                    return path;
-                }
-            };
-        }
-
-        return mReactNativeHost;
-    }
-
     private void initReactJsBundleFile() {
         String path = Environment.getExternalStorageDirectory().getPath() + "/card";
         File file = new File(path);
         if (!file.exists()) {
-            file.mkdir();
+            boolean flag = file.mkdir();
+            if (!flag) {
+                try {
+                    throw new Throwable("no sdcard");
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }
         }
     }
 }
