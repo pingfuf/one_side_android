@@ -1,11 +1,8 @@
 package com.oneside.base.rn;
 
-import com.facebook.react.shell.MainPackageConfig;
 import com.oneside.base.CardConfig;
 import com.oneside.utils.IOUtils;
 import com.oneside.utils.LangUtils;
-
-import java.io.File;
 
 /**
  * Created by fupingfu on 2017/3/17.

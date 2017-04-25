@@ -7,41 +7,33 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
 
-import com.facebook.react.ReactActivity;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.facebook.react.ReactInstanceManager;
-import com.facebook.react.ReactNativeHost;
-import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
-import com.facebook.react.cxxbridge.CatalystInstanceImpl;
-import com.facebook.react.cxxbridge.JSBundleLoader;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
-import com.oneside.CardApplication;
 import com.oneside.R;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.CardConfig;
 import com.oneside.base.inject.From;
+import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.utils.BusinessStateHelper;
+import com.oneside.utils.LangUtils;
 
 import java.io.File;
-import java.util.List;
-
-import javax.annotation.Nullable;
 
 public class RNRootActivity extends BaseActivity implements DefaultHardwareBackBtnHandler{
-    private static final String RN_SERVER = "http://localhost:8081/index.android.bundle?platform=android";
+    private static final int SET_PERMISSION_PAGE_CODE = 101;
     @From(R.id.rn_root)
     private ReactRootView mReactRootView;
 
     private BusinessStateHelper mStateHelper;
     private ReactInstanceManager mReactInstanceManager;
 
-    public static void startActivity(Context context){
-        Intent intent = new Intent(context, RNRootActivity.class);
-        context.startActivity(intent);
-    }
+    @XAnnotation
+    RNPageParam mParams;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -52,30 +44,64 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
             // Get permission to show redbox in dev builds.
             if (!Settings.canDrawOverlays(this)) {
                 Intent serviceIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-                startActivityForResult(serviceIntent, 0);
+                startActivityForResult(serviceIntent, SET_PERMISSION_PAGE_CODE);
             }
         }
         mStateHelper = BusinessStateHelper.build(this, mReactRootView);
         //mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        initReactRootView();
 
-        mReactInstanceManager = ReactInstanceManager.builder()
-                .addPackage(new MainReactPackage())
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index.android")
-                .setDefaultHardwareBackBtnHandler(this)
-                .setJSBundleFile(getJSBundleFile())
-                .setUseDeveloperSupport(CardConfig.isDevBuild())
-                .setInitialLifecycleState(LifecycleState.RESUMED)
-                .build();
-        //ReactModule需要和index.android.js中的组件名称一致
-        mReactRootView.startReactApplication(mReactInstanceManager, "RNOneside", null);
         mReactRootView.setEventListener(new ReactRootView.ReactRootViewEventListener() {
             @Override
             public void onAttachedToReactInstance(ReactRootView rootView) {
                mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(mReactInstanceManager != null){
+            mReactInstanceManager.onHostResume(this, this);
+        }
+    }
+
+    private void initReactRootView() {
+        ReactInstanceManager.Builder builder = ReactInstanceManager.builder()
+                .addPackage(new MainReactPackage())
+                .setApplication(getApplication())
+                .setBundleAssetName("index.android.bundle")
+                .setJSMainModuleName("index.android")
+                .setDefaultHardwareBackBtnHandler(this)
+                .setUseDeveloperSupport(CardConfig.isDevBuild())
+                .setInitialLifecycleState(LifecycleState.RESUMED);
+        if (!RNConfig.ReactNativeShouldUpdate || !RNConfig.ReactNativeServerUsed) {
+            builder.setJSBundleFile(getJSBundleFile());
+        }
+        mReactInstanceManager = builder.build();
+        //ReactModule需要和index.android.js中的组件名称一致
+
+        Bundle bundle = initRnParams();
+        mReactRootView.startReactApplication(mReactInstanceManager, "RNOneside", bundle);
+
+        updateJsBundle();
+    }
+
+    private Bundle initRnParams() {
+        Bundle bundle = new Bundle();
+        if (mParams != null && !LangUtils.isEmpty(mParams.scheme)) {
+            bundle.putString("scheme", mParams.scheme);
+        } else {
+            bundle.putString("scheme", "rn://android/main");
+        }
+
+        if (mParams != null && mParams.params != null) {
+            bundle.putString("p", JSON.toJSONString(mParams.params));
+        }
+
+        return bundle;
     }
 
     /**
@@ -90,21 +116,36 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
         path = path + "/index.android.bundle";
         File file = new File(path);
 
-        if (!file.canRead()) {
+        if (!file.canRead() || RNConfig.ReactNativeShouldUpdate) {
             //如果文件不存在，仍然读取asset总得bundle
-            path = null;
+            path = "assets://index.android.js";
         }
 
         return path;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostResume(this, this);
+    private void updateJsBundle() {
+        if (RNConfig.ReactNativeShouldUpdate) {
+            if (RNConfig.ReactNativeServerUsed) {
+                updateServerBundle();
+            } else {
+                updateLocalBundle();
+            }
         }
+    }
+
+    /**
+     * 从react服务器更新bundle
+     */
+    private void updateServerBundle() {
+        mReactInstanceManager.getDevSupportManager().reloadJSFromServer(RNConfig.getServerUrl());
+    }
+
+    /**
+     * 下载文件，更新bundle
+     */
+    private void updateLocalBundle() {
+
     }
 
     @Override
