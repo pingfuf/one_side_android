@@ -1,82 +1,54 @@
 package com.oneside.base.rn;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.Settings;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.oneside.R;
-import com.oneside.base.BaseActivity;
+import com.oneside.base.BaseFragment;
 import com.oneside.base.CardConfig;
 import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
-import com.oneside.base.rn.lib.RCTSwipeRefreshLayoutPackage;
-import com.oneside.base.utils.BusinessStateHelper;
+import com.oneside.base.net.UrlRequest;
 import com.oneside.utils.LangUtils;
 
 import java.io.File;
 
-import static com.facebook.react.common.ApplicationHolder.setApplication;
-
-public class RNRootActivity extends BaseActivity implements DefaultHardwareBackBtnHandler{
-    private static final int SET_PERMISSION_PAGE_CODE = 101;
+/**
+ * Created by fupingfu on 2017/4/26.
+ */
+@XAnnotation(layoutId = R.layout.fragment_rn_root)
+public class RNRootFragment extends BaseFragment implements DefaultHardwareBackBtnHandler{
     @From(R.id.rn_root)
     private ReactRootView mReactRootView;
-
-    private BusinessStateHelper mStateHelper;
     private ReactInstanceManager mReactInstanceManager;
 
     @XAnnotation
-    RNPageParam mParams;
+    private RNPageParam mParams;
 
     @Override
-    protected void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        setContentView(R.layout.activity_rn_root);
-        setTitle("测试RN", true);
-        if (Build.VERSION.SDK_INT >= 23) {
-            // Get permission to show redbox in dev builds.
-            if (!Settings.canDrawOverlays(this)) {
-                Intent serviceIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-                startActivityForResult(serviceIntent, SET_PERMISSION_PAGE_CODE);
-            }
-        }
-        mStateHelper = BusinessStateHelper.build(this, mReactRootView);
-        //mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
-        initReactRootView();
-
-        mReactRootView.setEventListener(new ReactRootView.ReactRootViewEventListener() {
-            @Override
-            public void onAttachedToReactInstance(ReactRootView rootView) {
-               mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED);
-            }
-        });
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostResume(this, this);
-        }
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initReactRootView();
     }
 
     private void initReactRootView() {
         ReactInstanceManager.Builder builder = ReactInstanceManager.builder()
                 .addPackage(new MainReactPackage())
                 .addPackage(new NavigatorPackage())
-                .addPackage(new RCTSwipeRefreshLayoutPackage())
-                .setApplication(getApplication())
+                .setApplication(getActivity().getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .setDefaultHardwareBackBtnHandler(this)
@@ -154,39 +126,27 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-
-        if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostPause(this);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if(mReactInstanceManager != null){
-            mReactInstanceManager.onBackPressed();
-        } else{
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostDestroy(this);
-        }
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
     public void invokeDefaultOnBackPressed() {
-        super.onBackPressed();
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onResponseError(UrlRequest request, int code, String message) {
+        super.onResponseError(request, code, message);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }

@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 /**
  * Created by Guo Ming on 3/31/15.
  */
-public class CardApplication extends Application {
+public class CardApplication extends Application implements ReactApplication{
     public static CardApplication application;
     public static boolean isInit = false;
 
@@ -93,5 +93,26 @@ public class CardApplication extends Application {
                 }
             }
         }
+    }
+
+    @Override
+    public ReactNativeHost getReactNativeHost() {
+        return new ReactNativeHost(this) {
+            @Override
+            protected boolean getUseDeveloperSupport() {
+                return false;
+            }
+
+            @Override
+            protected List<ReactPackage> getPackages() {
+                return null;
+            }
+
+            @Nullable
+            @Override
+            protected String getJSBundleFile() {
+                return super.getJSBundleFile();
+            }
+        };
     }
 }
