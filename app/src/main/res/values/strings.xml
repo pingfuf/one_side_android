@@ -857,5 +857,6 @@
 
     <string name="coach_course_upload">提 交</string>
     <string name="coach_course_modify">修 改</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

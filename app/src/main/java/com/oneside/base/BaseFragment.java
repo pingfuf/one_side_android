@@ -253,7 +253,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         //点击事件相应的时候，应该判断当前页面是否有效
         if(!isValidFragment() || v == null) {
-            return;
+            onBackPressed();
         }
     }
 

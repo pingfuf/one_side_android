@@ -12,20 +12,24 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.uimanager.ViewManager;
+import com.oneside.base.rn.lib.RCTLazyLoadViewManager;
+import com.oneside.base.rn.lib.RCTSwipeRefreshLayoutManager;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by fupingfu on 2017/4/26.
+ * Created by fupingfu on 2017/5/5.
  */
+
 public class NavigatorPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> list = new ArrayList<>();
         list.add(new NavigatorModule(reactContext));
+        list.add(new RCTSwipeRefreshLayoutManager());
+        list.add(new RCTLazyLoadViewManager());
 
         return list;
     }

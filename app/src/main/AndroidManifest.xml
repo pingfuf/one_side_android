@@ -165,7 +165,12 @@
             android:name=".ui.JumpCenterActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".base.rn.RNRootActivity"></activity>
+        <activity android:name=".base.rn.RNRootActivity" />
+        <activity
+            android:name=".ui.study.StudyActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.study.RxStudyActivity"></activity>
     </application>
 
 </manifest>

@@ -2,20 +2,14 @@ package com.oneside;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.oneside.base.BaseActivity;
 import com.oneside.manager.CardManager;
-import com.oneside.manager.CardSessionManager;
 import com.oneside.ui.LoginActivity;
 import com.oneside.ui.MainActivity;
 import com.oneside.utils.Constant;
 import com.oneside.utils.ViewUtils;
-import com.oneside.R;
-
-import java.util.List;
 
 public class SplashActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
     public void onCreate(Bundle bundle) {
