@@ -637,6 +637,24 @@ public class LangUtils {
     }
 
     /**
+     * 格式化时间
+     *
+     * @param timeLong
+     * @return
+     */
+    public static String formatTime(long timeLong) {
+        final long time = timeLong / 1000;
+        long hour = time / 3600;
+        long min = time / 60 % 60;
+        long s = time % 60;
+        StringBuffer sb = new StringBuffer();
+        sb.append(hour < 10 ? "0" + hour + ":" : hour + ":");
+        sb.append(min < 10 ? "0" + min + ":" : min + ":");
+        sb.append(s < 10 ? "0" + s : s);
+        return sb.toString();
+    }
+
+    /**
      * @param date     the date to format
      * @param timeZone the timeZone used
      * @return

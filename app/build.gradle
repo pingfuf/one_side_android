@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply from: 'apkBuild.gradle'
 
 android {
@@ -101,6 +103,7 @@ android {
             //add base src dir
             java.srcDirs = [
                     'src/main/java',
+                    'src/main/kotlin',
                     'AssistantSrc/src/main/java',
                     'BaseSrc/src/main/java'
             ]
@@ -110,6 +113,13 @@ android {
                     'src/main/res',
                     'AssistantSrc/src/main/res',
                     'BaseSrc/src/main/res'
+            ]
+        }
+
+        test {
+            java.srcDirs = [
+                    'src/test/java',
+                    'src/text/kotlin'
             ]
         }
     }

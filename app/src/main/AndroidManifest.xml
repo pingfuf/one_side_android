@@ -170,7 +170,13 @@
             android:name=".ui.study.StudyActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.study.RxStudyActivity"></activity>
+        <activity android:name=".ui.study.RxStudyActivity" />
+        <activity android:name=".ui.study.ui.VideoActivity" />
+        <activity android:name=".base.rn.RnActivity" />
+        <activity android:name=".base.rn.MyRnActivity" />
+        <activity android:name=".base.rn.RnTempActivity" />
+        <activity android:name=".ui.RnKotlinActivity" />
+        <activity android:name=".ui.TempKotlinActivity"></activity>
     </application>
 
 </manifest>

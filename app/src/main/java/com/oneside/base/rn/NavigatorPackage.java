@@ -20,9 +20,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 导航模块
+ *
  * Created by fupingfu on 2017/5/5.
  */
-
 public class NavigatorPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {

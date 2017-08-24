@@ -7,6 +7,7 @@ import android.os.Environment;
 
 import com.alibaba.fastjson.JSON;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
@@ -45,7 +46,7 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
     }
 
     private void initReactRootView() {
-        ReactInstanceManager.Builder builder = ReactInstanceManager.builder()
+        ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
                 .addPackage(new MainReactPackage())
                 .addPackage(new NavigatorPackage())
                 .setApplication(getActivity().getApplication())
@@ -55,13 +56,13 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
                 .setUseDeveloperSupport(CardConfig.isDevBuild())
                 .setInitialLifecycleState(LifecycleState.RESUMED);
         if (!RNConfig.ReactNativeShouldUpdate || !RNConfig.ReactNativeServerUsed) {
-            builder.setJSBundleFile(getJSBundleFile());
+            builder.setJSBundleFile(RNConfig.getJSBundleFile());
         }
         mReactInstanceManager = builder.build();
         //ReactModule需要和index.android.js中的组件名称一致
 
         Bundle bundle = initRnParams();
-        mReactRootView.startReactApplication(mReactInstanceManager, "RNOneside", bundle);
+        mReactRootView.startReactApplication(mReactInstanceManager, RNConfig.MAIN_COMPONENT_NAME, bundle);
 
         updateJsBundle();
     }
@@ -79,26 +80,6 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
         }
 
         return bundle;
-    }
-
-    /**
-     * 读取bundle文件路径
-     * 如果路径不存在，表明客户端不能使用react native模块，只能使用native
-     *
-     * @return bundle文件的路径
-     */
-    private String getJSBundleFile() {
-        String path = Environment.getExternalStorageDirectory().getPath();
-        path = path + "/card";
-        path = path + "/index.android.bundle";
-        File file = new File(path);
-
-        if (!file.canRead() || RNConfig.ReactNativeShouldUpdate) {
-            //如果文件不存在，仍然读取asset总得bundle
-            path = "assets://index.android.js";
-        }
-
-        return path;
     }
 
     private void updateJsBundle() {
@@ -132,7 +113,7 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
 
     @Override
     public void invokeDefaultOnBackPressed() {
-
+        onBackPressed();
     }
 
     @Override
@@ -143,6 +124,16 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
     @Override
     protected void onResponseError(UrlRequest request, int code, String message) {
         super.onResponseError(request, code, message);
+    }
+
+    @Override
+    protected boolean onBackPressed() {
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onBackPressed();
+            return true;
+        }
+
+        return false;
     }
 
     @Override

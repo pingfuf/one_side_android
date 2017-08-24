@@ -33,12 +33,11 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 
 import com.oneside.R;
-import com.nineoldandroids.view.ViewHelper;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-public class FloatingActionButton extends ImageButton {
+public class FloatingActionButton extends android.support.v7.widget.AppCompatImageButton {
     private static final int TRANSLATE_DURATION_MILLIS = 200;
 
     @Retention(RetentionPolicy.SOURCE)
@@ -91,8 +90,7 @@ public class FloatingActionButton extends ImageButton {
         }
         setMeasuredDimension(size, size);
     }
-
-    @SuppressLint("NewApi")
+    
     private void init(Context context, AttributeSet attributeSet) {
         mVisible = true;
         mColorNormal = getColor(R.color.material_blue_500);
@@ -342,7 +340,7 @@ public class FloatingActionButton extends ImageButton {
                         .translationY(translationY);
                 animator.start();
             } else {
-                ViewHelper.setTranslationY(this, translationY);
+                setTranslationY(translationY);
             }
 
             // On pre-Honeycomb a translated view is still clickable, so we need to disable clicks manually

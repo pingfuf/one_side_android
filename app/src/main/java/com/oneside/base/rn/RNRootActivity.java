@@ -10,6 +10,7 @@ import android.provider.Settings;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
@@ -24,8 +25,6 @@ import com.oneside.base.utils.BusinessStateHelper;
 import com.oneside.utils.LangUtils;
 
 import java.io.File;
-
-import static com.facebook.react.common.ApplicationHolder.setApplication;
 
 public class RNRootActivity extends BaseActivity implements DefaultHardwareBackBtnHandler{
     private static final int SET_PERMISSION_PAGE_CODE = 101;
@@ -72,7 +71,7 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
     }
 
     private void initReactRootView() {
-        ReactInstanceManager.Builder builder = ReactInstanceManager.builder()
+        ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
                 .addPackage(new MainReactPackage())
                 .addPackage(new NavigatorPackage())
                 .addPackage(new RCTSwipeRefreshLayoutPackage())

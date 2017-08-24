@@ -72,8 +72,6 @@ public class XGlideUtils {
             return;
         }
 
-
-
         try {
             if (uri != null) {
                 if (definedWidth == -1 && definedHeight == -1) {

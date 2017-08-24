@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.oneside.base.inject.From;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.net.UrlRequest;
+import com.oneside.base.rn.RNRootFragment;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.beans.XRole;
@@ -55,7 +56,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     private List<Fragment> mFragments;
     private TabStoriesFragment tabStoriesFragment;
     private TabPicFragment mPicFragment;
-    private TabFavorFragment mFavorFragment;
+    private RNRootFragment mFavorFragment;
     private TabUserFragment mUserFragment;
 
     private boolean canExit;
@@ -87,7 +88,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
         tvItems.addItemView(R.drawable.ic_coupon_color_user, R.drawable.ic_coupon_icon, "欢乐图");
         mFragments.add(mPicFragment);
 
-        mFavorFragment = new TabFavorFragment();
+        mFavorFragment = new RNRootFragment();
         tvItems.addItemView(R.drawable.ic_fav_chosen, R.drawable.ic_fav_normal, "我的收藏");
         mFragments.add(mFavorFragment);
 

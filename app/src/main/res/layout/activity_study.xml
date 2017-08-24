@@ -36,9 +36,10 @@
         android:layout_height="40dp"
         android:text="btn_goto_rx"/>
 
-    <View
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/btn_go_to_video"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="btn_goto_video"/>
 
 </com.oneside.ui.study.ui.StudyLinearLayout>

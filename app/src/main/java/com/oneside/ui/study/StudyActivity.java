@@ -9,6 +9,7 @@ import com.oneside.R;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.inject.From;
 import com.oneside.ui.study.ui.CanvasStudyView;
+import com.oneside.ui.study.ui.VideoActivity;
 
 public class StudyActivity extends BaseActivity {
     @From(R.id.btn_test)
@@ -26,6 +27,9 @@ public class StudyActivity extends BaseActivity {
     @From(R.id.btn_go_to_rx)
     private Button btnGotoRx;
 
+    @From(R.id.btn_go_to_video)
+    private Button btnGotoVideo;
+
     private float mProcess = 0.1f;
 
     @Override
@@ -36,6 +40,7 @@ public class StudyActivity extends BaseActivity {
         btnTest.setOnClickListener(this);
         btnCanvas.setOnClickListener(this);
         btnGotoRx.setOnClickListener(this);
+        btnGotoVideo.setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +56,8 @@ public class StudyActivity extends BaseActivity {
             mProcess = mProcess + 0.1f;
         } else if (v == btnGotoRx) {
             xStartActivity(RxStudyActivity.class);
+        } else if (v == btnGotoVideo) {
+            xStartActivity(VideoActivity.class);
         }
     }
 }

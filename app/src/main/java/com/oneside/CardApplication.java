@@ -10,10 +10,14 @@ import com.facebook.react.*;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.oneside.base.CardConfig;
+import com.oneside.base.rn.NavigatorPackage;
+import com.oneside.base.rn.RNConfig;
+import com.oneside.base.rn.lib.RCTSwipeRefreshLayoutPackage;
 import com.oneside.manager.CardManager;
 import com.oneside.utils.LogUtils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -23,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Created by Guo Ming on 3/31/15.
  */
-public class CardApplication extends Application implements ReactApplication{
+public class CardApplication extends Application implements ReactApplication {
     public static CardApplication application;
     public static boolean isInit = false;
 
@@ -99,19 +103,24 @@ public class CardApplication extends Application implements ReactApplication{
     public ReactNativeHost getReactNativeHost() {
         return new ReactNativeHost(this) {
             @Override
-            protected boolean getUseDeveloperSupport() {
-                return false;
+            public boolean getUseDeveloperSupport() {
+                return true;
             }
 
             @Override
-            protected List<ReactPackage> getPackages() {
-                return null;
+            public List<ReactPackage> getPackages() {
+                List<ReactPackage> packages = new ArrayList<>();
+                packages.add(new MainReactPackage());
+                packages.add(new NavigatorPackage());
+                packages.add(new RCTSwipeRefreshLayoutPackage());
+
+                return packages;
             }
 
             @Nullable
             @Override
-            protected String getJSBundleFile() {
-                return super.getJSBundleFile();
+            public String getJSBundleFile() {
+                return RNConfig.getJSBundleFile();
             }
         };
     }
