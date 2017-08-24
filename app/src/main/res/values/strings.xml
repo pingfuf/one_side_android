@@ -835,7 +835,7 @@
     <string name="strength_type_1">不太用力</string>
     <string name="strength_type_2">比较用力</string>
     <string name="strength_type_3">强度很大</string>
-    
+
     <string name="training_part_pectoralis">胸大肌</string>
     <string name="training_part_back">背</string>
     <string name="training_part_arm">手臂</string>
@@ -857,5 +857,6 @@
 
     <string name="coach_course_upload">提 交</string>
     <string name="coach_course_modify">修 改</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

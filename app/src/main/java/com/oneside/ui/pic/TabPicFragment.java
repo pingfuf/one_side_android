@@ -14,7 +14,7 @@ import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.model.BaseResult;
 import com.oneside.base.utils.BusinessStateHelper;
 import com.oneside.base.view.filter.FilterView;
-import com.oneside.hy.HyNativeUtils;
+import com.oneside.base.hy.HyNativeUtils;
 import com.oneside.model.ShowApiService;
 import com.oneside.model.beans.ArticleSummary;
 import com.oneside.model.request.BaseShowApiRequestParam;

@@ -124,4 +124,5 @@
     <dimen name="arrow_width">10dp</dimen>
     <dimen name="class_near_reminder_tp_margin">10dp</dimen>
     <dimen name="common_tv_height_44">44dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

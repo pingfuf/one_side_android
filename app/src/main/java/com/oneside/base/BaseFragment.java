@@ -19,8 +19,8 @@ import com.oneside.base.net.XRequest;
 import com.oneside.base.net.XResponse;
 import com.oneside.base.net.model.BaseRequestParam;
 import com.oneside.base.net.model.BaseResult;
-import com.oneside.hy.CardWebActivity;
-import com.oneside.hy.WebPageParam;
+import com.oneside.base.hy.CardWebActivity;
+import com.oneside.base.hy.WebPageParam;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.ui.LoginActivity;
 import com.oneside.utils.LangUtils;
@@ -253,7 +253,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         //点击事件相应的时候，应该判断当前页面是否有效
         if(!isValidFragment() || v == null) {
-            return;
+            onBackPressed();
         }
     }
 
@@ -351,7 +351,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      *
      * @param clazz        目标页面
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz) {
+    public void xStartActivity(Class<? extends Activity> clazz) {
         xStartActivity(clazz, (BasePageParam) null);
     }
 
@@ -361,7 +361,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param clazz  目标页面
      * @param bundle bundle数据
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz, Bundle bundle) {
+    public void xStartActivity(Class<? extends Activity> clazz, Bundle bundle) {
         xStartActivity(clazz, bundle, 0);
     }
 
@@ -372,7 +372,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param bundle      bundle数据
      * @param requestCode requestCode
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz, Bundle bundle, int requestCode) {
+    public void xStartActivity(Class<? extends Activity> clazz, Bundle bundle, int requestCode) {
         if (!isValidFragment()) {
             return;
         }
@@ -389,7 +389,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param clazz        目标页面
      * @param pageParam    目标页面参数
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz, BasePageParam pageParam) {
+    public void xStartActivity(Class<? extends Activity> clazz, BasePageParam pageParam) {
         xStartActivity(clazz, pageParam, 0);
     }
 
@@ -399,7 +399,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param clazz        目标页面
      * @param requestCode    目标页面参数
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz, int requestCode) {
+    public void xStartActivity(Class<? extends Activity> clazz, int requestCode) {
         xStartActivity(clazz, (BasePageParam) null, requestCode);
     }
 
@@ -410,7 +410,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param pageParam    目标页面参数
      * @param requestCode  requestCode
      */
-    public void xStartActivity(Class<? extends BaseActivity> clazz, BasePageParam pageParam, int requestCode) {
+    public void xStartActivity(Class<? extends Activity> clazz, BasePageParam pageParam, int requestCode) {
         if(!isValidFragment()) {
             return;
         }

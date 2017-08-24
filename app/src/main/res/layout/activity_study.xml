@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oneside.ui.study.ui.StudyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="测试"/>
+
+    <Button
+        android:id="@+id/btn_canvas"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="测试"/>
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="lalalalall" />
+
+    <com.oneside.ui.study.ui.CanvasStudyView
+        android:id="@+id/canvas_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_go_to_rx"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="btn_goto_rx"/>
+
+    <Button
+        android:id="@+id/btn_go_to_video"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="btn_goto_video"/>
+
+</com.oneside.ui.study.ui.StudyLinearLayout>

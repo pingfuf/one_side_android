@@ -4,15 +4,15 @@ task hello() {
 }
 
 tasks.whenTaskAdded { task ->
-    if (task.name == 'assembleXiaomiDebug') {
-        installApkFiles.dependsOn assembleXiaomiDebug
+    if (task.name == 'assembleInhouseDebug') {
+        installApkFiles.dependsOn assembleInhouseDebug
     }
 }
 
 task installApkFiles(type: Exec){
     def  purposeDir = "$buildDir/outputs/apk/"
     workingDir  =  "$purposeDir"
-    def myCommand = ['adb', 'install', '-r', getApkName('xiaomi')]
+    def myCommand = ['adb', 'install', '-r', getApkName('inhouse')]
     commandLine  myCommand
 }
 
