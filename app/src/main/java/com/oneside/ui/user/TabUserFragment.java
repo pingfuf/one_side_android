@@ -12,6 +12,7 @@ import com.oneside.base.hy.HyConfigActivity;
 import com.oneside.base.rn.RNPageParam;
 import com.oneside.base.rn.RNRootActivity;
 import com.oneside.base.rn.RnActivity;
+import com.oneside.base.rn.CardReactActivity;
 import com.oneside.ui.study.StudyActivity;
 
 import java.util.HashMap;
@@ -33,6 +34,9 @@ public class TabUserFragment extends BaseFragment {
     @From(R.id.btn_rn)
     private Button btnRn;
 
+    @From(R.id.btn_kotlin_rn)
+    private Button btnKotlinRn;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -41,6 +45,7 @@ public class TabUserFragment extends BaseFragment {
         btnStudy.setOnClickListener(this);
         btnMyRn.setOnClickListener(this);
         btnRn.setOnClickListener(this);
+        btnKotlinRn.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +65,8 @@ public class TabUserFragment extends BaseFragment {
             xStartActivity(RNRootActivity.class, param);
         } else if (v == btnRn) {
             xStartActivity(RnActivity.class);
+        } else if (v == btnKotlinRn) {
+            xStartActivity(CardReactActivity.class);
         }
     }
 }

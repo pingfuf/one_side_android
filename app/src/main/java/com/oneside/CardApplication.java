@@ -7,10 +7,9 @@ import android.os.Environment;
 import android.support.multidex.MultiDex;
 
 import com.facebook.react.*;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.shell.MainReactPackage;
-import com.facebook.soloader.SoLoader;
-import com.oneside.base.CardConfig;
-import com.oneside.base.rn.NavigatorPackage;
+import com.oneside.base.rn.CardReactPackage;
 import com.oneside.base.rn.RNConfig;
 import com.oneside.base.rn.lib.RCTSwipeRefreshLayoutPackage;
 import com.oneside.manager.CardManager;
@@ -18,9 +17,7 @@ import com.oneside.utils.LogUtils;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +27,8 @@ import javax.annotation.Nullable;
 public class CardApplication extends Application implements ReactApplication {
     public static CardApplication application;
     public static boolean isInit = false;
+
+    public ReactContext mReactContext;
 
     @Override
     public void onCreate() {
@@ -49,6 +48,7 @@ public class CardApplication extends Application implements ReactApplication {
             CardManager.initInMainThread(this);
 
             initReactJsBundleFile();
+            registerReactInstanceEventListener();
         }
         isInit = true;
         LogUtils.d("CardApplication start time = %s", System.currentTimeMillis() - startTime);
@@ -99,29 +99,46 @@ public class CardApplication extends Application implements ReactApplication {
         }
     }
 
+    public ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        public boolean getUseDeveloperSupport() {
+            return true;
+        }
+
+        @Override
+        public List<ReactPackage> getPackages() {
+            List<ReactPackage> packages = new ArrayList<>();
+            packages.add(new MainReactPackage());
+            packages.add(new CardReactPackage());
+            packages.add(new RCTSwipeRefreshLayoutPackage());
+
+            return packages;
+        }
+
+        @Nullable
+        @Override
+        public String getJSBundleFile() {
+            return RNConfig.getJSBundleFile();
+        }
+    };
+
     @Override
     public ReactNativeHost getReactNativeHost() {
-        return new ReactNativeHost(this) {
-            @Override
-            public boolean getUseDeveloperSupport() {
-                return true;
-            }
-
-            @Override
-            public List<ReactPackage> getPackages() {
-                List<ReactPackage> packages = new ArrayList<>();
-                packages.add(new MainReactPackage());
-                packages.add(new NavigatorPackage());
-                packages.add(new RCTSwipeRefreshLayoutPackage());
-
-                return packages;
-            }
-
-            @Nullable
-            @Override
-            public String getJSBundleFile() {
-                return RNConfig.getJSBundleFile();
-            }
-        };
+        return mReactNativeHost;
     }
+
+    private void registerReactInstanceEventListener() {
+        mReactNativeHost.getReactInstanceManager().addReactInstanceEventListener(mReactInstanceEventListener);
+    }
+
+    private void unRegisterReactInstanceEventListener() {
+        mReactNativeHost.getReactInstanceManager().removeReactInstanceEventListener(mReactInstanceEventListener);
+    }
+
+    private final ReactInstanceManager.ReactInstanceEventListener mReactInstanceEventListener = new ReactInstanceManager.ReactInstanceEventListener() {
+        @Override
+        public void onReactContextInitialized(ReactContext context) {
+            mReactContext = context;
+        }
+    };
 }

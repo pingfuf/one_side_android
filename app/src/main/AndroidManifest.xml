@@ -174,7 +174,7 @@
         <activity android:name=".ui.study.ui.VideoActivity" />
         <activity android:name=".base.rn.RnActivity" />
         <activity android:name=".base.rn.MyRnActivity" />
-        <activity android:name=".base.rn.RnTempActivity" />
+        <activity android:name=".base.rn.CardReactActivity" />
         <activity android:name=".ui.RnKotlinActivity" />
         <activity android:name=".ui.TempKotlinActivity"></activity>
     </application>

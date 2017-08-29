@@ -101,6 +101,15 @@ public class CardReactActivityDelegate extends ReactActivityDelegate {
     }
 
     @Override
+    public boolean onBackPressed() {
+        if (getReactNativeHost().hasInstance()) {
+            getReactNativeHost().getReactInstanceManager().onBackPressed();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
     }

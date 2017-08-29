@@ -6,12 +6,14 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.RelativeLayout;
 
 import com.alibaba.fastjson.JSON;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
@@ -26,7 +28,7 @@ import com.oneside.utils.LangUtils;
 
 import java.io.File;
 
-public class RnTempActivity extends BaseActivity implements DefaultHardwareBackBtnHandler{
+public class CardReactActivity extends BaseActivity implements DefaultHardwareBackBtnHandler{
     @From(R.id.rl_container)
     private RelativeLayout rlContainer;
 
@@ -39,7 +41,7 @@ public class RnTempActivity extends BaseActivity implements DefaultHardwareBackB
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_rn_root);
+        setContentView(R.layout.activity_rn_temp);
         mDelegate = new CardReactActivityDelegate(this, RNConfig.MAIN_COMPONENT_NAME);
         mDelegate.onCreate(bundle);
 
@@ -48,17 +50,18 @@ public class RnTempActivity extends BaseActivity implements DefaultHardwareBackB
 
     private void addReactRootView() {
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(-1, -1);
+        params.addRule(RelativeLayout.CENTER_IN_PARENT);
         rlContainer.addView(mDelegate.getReactRootView(), params);
         mStateHelper = BusinessStateHelper.build(this, mDelegate.getReactRootView());
-        updateJsBundle();
-
         mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
-        mDelegate.getReactRootView().setEventListener(new ReactRootView.ReactRootViewEventListener() {
+        mDelegate.getReactInstanceManager().addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
             @Override
-            public void onAttachedToReactInstance(ReactRootView rootView) {
+            public void onReactContextInitialized(ReactContext context) {
                 mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED);
             }
         });
+
+        updateJsBundle();
     }
 
     @Override
@@ -105,8 +108,16 @@ public class RnTempActivity extends BaseActivity implements DefaultHardwareBackB
 
     @Override
     public void onBackPressed() {
-        mDelegate.onBackPressed();
+        if (!mDelegate.onBackPressed()) {
+            super.onBackPressed();
+        }
     }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        return mDelegate.onKeyUp(keyCode, event) || super.onKeyUp(keyCode, event);
+    }
+
 
     @Override
     protected void onDestroy() {
@@ -116,6 +127,6 @@ public class RnTempActivity extends BaseActivity implements DefaultHardwareBackB
 
     @Override
     public void invokeDefaultOnBackPressed() {
-        mDelegate.onBackPressed();
+        super.onBackPressed();
     }
 }

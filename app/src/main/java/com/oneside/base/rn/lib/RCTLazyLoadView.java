@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 public class RCTLazyLoadView extends ViewGroup {
 
     private OnEvChangeListener onEvChangeListener;

@@ -3,7 +3,6 @@ package com.oneside.base.rn;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 
 import com.alibaba.fastjson.JSON;
 import com.facebook.react.ReactInstanceManager;
@@ -19,8 +18,6 @@ import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.utils.LangUtils;
-
-import java.io.File;
 
 /**
  * Created by fupingfu on 2017/4/26.
@@ -48,7 +45,7 @@ public class RNRootFragment extends BaseFragment implements DefaultHardwareBackB
     private void initReactRootView() {
         ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
                 .addPackage(new MainReactPackage())
-                .addPackage(new NavigatorPackage())
+                .addPackage(new CardReactPackage())
                 .setApplication(getActivity().getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")

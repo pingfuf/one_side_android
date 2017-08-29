@@ -19,6 +19,7 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.oneside.base.net.RequestDelegate;
 import com.oneside.base.hy.WebPageParam;
 import com.oneside.model.event.LoginStatusChangedEvent;
@@ -56,7 +57,8 @@ import java.util.List;
  *
  * @author pingfu
  */
-public abstract class BaseActivity extends FragmentActivity implements RequestDelegate, View.OnClickListener {
+public abstract class BaseActivity extends FragmentActivity
+        implements RequestDelegate, View.OnClickListener, DefaultHardwareBackBtnHandler {
     protected static final int PHONE_CONFIRM_PAGE = 801;
     //登陆失效code
     protected static final int LOGIN_TOKEN_EXPIRED_CODE = 1001;
@@ -794,6 +796,12 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
 
     @Override
     public void onBackPressed() {
+        if (!onFragmentBackPressed()) {
+            super.onBackPressed();
+        }
+    }
+
+    protected boolean onFragmentBackPressed() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         boolean flag = false;
         if (!LangUtils.isEmpty(fragments)) {
@@ -807,9 +815,12 @@ public abstract class BaseActivity extends FragmentActivity implements RequestDe
             }
         }
 
-        if (!flag) {
-            super.onBackPressed();
-        }
+        return flag;
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        this.onBackPressed();
     }
 
     @Override

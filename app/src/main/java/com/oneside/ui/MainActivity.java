@@ -17,14 +17,13 @@ import android.widget.Toast;
 import com.oneside.base.inject.From;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.net.UrlRequest;
-import com.oneside.base.rn.RNRootFragment;
+import com.oneside.base.rn.CardReactFragment;
 import com.oneside.manager.CardManager;
 import com.oneside.manager.CardSessionManager;
 import com.oneside.model.beans.XRole;
 import com.oneside.model.event.LoginStatusChangedEvent;
 import com.oneside.model.response.CoachCourseDetailResponse;
 import com.oneside.R;
-import com.oneside.ui.home.TabFavorFragment;
 import com.oneside.ui.pic.TabPicFragment;
 import com.oneside.ui.story.TabStoriesFragment;
 import com.oneside.ui.user.TabUserFragment;
@@ -56,7 +55,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     private List<Fragment> mFragments;
     private TabStoriesFragment tabStoriesFragment;
     private TabPicFragment mPicFragment;
-    private RNRootFragment mFavorFragment;
+    private CardReactFragment mFavorFragment;
     private TabUserFragment mUserFragment;
 
     private boolean canExit;
@@ -88,7 +87,7 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
         tvItems.addItemView(R.drawable.ic_coupon_color_user, R.drawable.ic_coupon_icon, "欢乐图");
         mFragments.add(mPicFragment);
 
-        mFavorFragment = new RNRootFragment();
+        mFavorFragment = new CardReactFragment();
         tvItems.addItemView(R.drawable.ic_fav_chosen, R.drawable.ic_fav_normal, "我的收藏");
         mFragments.add(mFavorFragment);
 
@@ -191,20 +190,22 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
 
     @Override
     public void onBackPressed() {
-        if (canExit) {
-            moveTaskToBack(true);
-            CardManager.exit();
-        } else {
-            ViewUtils.showToast(getResources().getString(R.string.exit_warn), Toast.LENGTH_SHORT);
-        }
-
-        canExit = true;
-        ViewUtils.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                canExit = false;
+        if (!onFragmentBackPressed()) {
+            if (canExit) {
+                moveTaskToBack(true);
+                CardManager.exit();
+            } else {
+                ViewUtils.showToast(getResources().getString(R.string.exit_warn), Toast.LENGTH_SHORT);
             }
-        }, DELAY_TO_EXIT);
+
+            canExit = true;
+            ViewUtils.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    canExit = false;
+                }
+            }, DELAY_TO_EXIT);
+        }
     }
 
     @Override

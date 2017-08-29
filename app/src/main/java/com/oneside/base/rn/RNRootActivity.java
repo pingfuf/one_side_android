@@ -1,6 +1,5 @@
 package com.oneside.base.rn;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,10 +7,10 @@ import android.os.Environment;
 import android.provider.Settings;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
@@ -50,13 +49,13 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
             }
         }
         mStateHelper = BusinessStateHelper.build(this, mReactRootView);
-        //mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
         initReactRootView();
 
-        mReactRootView.setEventListener(new ReactRootView.ReactRootViewEventListener() {
+        mReactInstanceManager.addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
             @Override
-            public void onAttachedToReactInstance(ReactRootView rootView) {
-               mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED);
+            public void onReactContextInitialized(ReactContext context) {
+                mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED);
             }
         });
     }
@@ -73,7 +72,7 @@ public class RNRootActivity extends BaseActivity implements DefaultHardwareBackB
     private void initReactRootView() {
         ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
                 .addPackage(new MainReactPackage())
-                .addPackage(new NavigatorPackage())
+                .addPackage(new CardReactPackage())
                 .addPackage(new RCTSwipeRefreshLayoutPackage())
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
