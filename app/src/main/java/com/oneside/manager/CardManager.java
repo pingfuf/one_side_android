@@ -113,11 +113,11 @@ public class CardManager {
     }
 
 
-    public static void logUmengEvent(String event, int nValue) {
+    public static void logUmengEvent(String event, String nValue) {
         if (LangUtils.isEmpty(event)) {
             return;
         }
-        MobclickAgent.onEvent(getApplicationContext(), event, nValue);
+        MobclickAgent.onEvent(getApplicationContext(), event, "" + nValue);
     }
 
     public static boolean isRunningApp() {

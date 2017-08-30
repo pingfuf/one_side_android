@@ -13,6 +13,7 @@ import com.oneside.base.rn.RNPageParam;
 import com.oneside.base.rn.RNRootActivity;
 import com.oneside.base.rn.RnActivity;
 import com.oneside.base.rn.CardReactActivity;
+import com.oneside.kotlin.ui.KotlinStudyActivity;
 import com.oneside.ui.study.StudyActivity;
 
 import java.util.HashMap;
@@ -66,7 +67,7 @@ public class TabUserFragment extends BaseFragment {
         } else if (v == btnRn) {
             xStartActivity(RnActivity.class);
         } else if (v == btnKotlinRn) {
-            xStartActivity(CardReactActivity.class);
+            xStartActivity(KotlinStudyActivity.class);
         }
     }
 }

@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.oneside.manager.CardManager;
 import com.oneside.model.event.ReactModuleEvent;
 import com.oneside.utils.ViewUtils;
 
@@ -73,12 +74,15 @@ public class RCTNavigatorModule extends ReactContextBaseJavaModule {
     }
 
     /**
+     * 记录点击事件
      *
-     * @param key
-     * @param params
+     * @param key    事件标识
+     * @param params 事件参数
      */
     @ReactMethod
     public void onReactModuleClicked(String key, String... params) {
         ViewUtils.showToast(key, Toast.LENGTH_LONG);
+
+        CardManager.logUmengEvent(key, params[0]);
     }
 }

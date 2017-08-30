@@ -11,13 +11,14 @@ import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.model.event.ReactModuleEvent;
-import com.oneside.utils.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 /**
+ * 默认的react fragment
+ *
  * Created by fupingfu on 2017/8/24.
  */
 @XAnnotation(layoutId = R.layout.fragment_rn_temp)

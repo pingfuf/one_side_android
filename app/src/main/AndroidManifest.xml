@@ -176,7 +176,9 @@
         <activity android:name=".base.rn.MyRnActivity" />
         <activity android:name=".base.rn.CardReactActivity" />
         <activity android:name=".ui.RnKotlinActivity" />
-        <activity android:name=".ui.TempKotlinActivity"></activity>
+        <activity android:name=".ui.TempKotlinActivity" />
+        <activity android:name=".kotlin.ui.KotlinStudyActivity" />
+        <activity android:name=".kotlin.ui.UserCenterActivity"></activity>
     </application>
 
 </manifest>
