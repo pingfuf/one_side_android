@@ -46,7 +46,7 @@ public class XLoadingView extends LinearLayout {
 
     private void init() {
         setOrientation(VERTICAL);
-        setGravity(Gravity.CENTER_HORIZONTAL);
+        setGravity(Gravity.CENTER);
         initLoadingView();
         initHintView();
         addView(vProcess);
@@ -57,7 +57,7 @@ public class XLoadingView extends LinearLayout {
         vProcess = new XProcessView(getContext());
         size = ViewUtils.rp(80);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
-        params.setMargins(0, ViewUtils.rp(60), 0, 0);
+        params.setMargins(0, 0, 0, 0);
         vProcess.setLayoutParams(params);
         vProcess.startAnim();
     }

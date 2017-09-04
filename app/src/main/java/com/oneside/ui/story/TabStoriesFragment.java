@@ -12,6 +12,8 @@ import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.model.BaseResult;
+import com.oneside.base.rn.CardReactActivity;
+import com.oneside.base.rn.RNPageParam;
 import com.oneside.base.utils.BusinessStateHelper;
 import com.oneside.base.view.filter.FilterView;
 import com.oneside.base.hy.HyNativeUtils;
@@ -76,17 +78,21 @@ public class TabStoriesFragment extends BaseFragment
                 //XListView添加了Header，能点击到的onItemClick中的position从1开始，需要特殊处理
                 //使用Parent的Adapter可以保证点击的Item编号从0开始
                 if (parent.getAdapter().getItem(position) != null) {
+                    RNPageParam param = new RNPageParam();
+                    param.scheme = "rn://android/storyDetail";
+                    param.addParam("type", "" + mMenuType);
                     if(mMenuType == 0) {
                         ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
-                        HyNativeUtils.gotoStoryDetailWebPage((BaseActivity) getActivity(), summary.title, summary.id);
-
+                        param.addParam("id", summary.id);
+                        param.addParam("title", summary.title);
+                        param.addParam("text", "");
                     } else {
                         JokeListResponse.JokeArticle article = (JokeListResponse.JokeArticle)parent.getAdapter().getItem(position);
-                        JokeDetailPageParam pageParam = new JokeDetailPageParam();
-                        pageParam.title = article.title;
-                        pageParam.content = article.text;
-                        xStartActivity(JokeDetailActivity.class, pageParam);
+                        param.addParam("id", "");
+                        param.addParam("title", article.title);
+                        param.addParam("text", article.text);
                     }
+                    xStartActivity(CardReactActivity.class, param);
                 }
             }
         });

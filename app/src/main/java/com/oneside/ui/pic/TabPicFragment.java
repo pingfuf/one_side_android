@@ -8,10 +8,13 @@ import android.widget.AdapterView;
 import com.oneside.R;
 import com.oneside.base.BaseActivity;
 import com.oneside.base.BaseFragment;
+import com.oneside.base.hy.CardWebActivity;
 import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.net.UrlRequest;
 import com.oneside.base.net.model.BaseResult;
+import com.oneside.base.rn.CardReactActivity;
+import com.oneside.base.rn.RNPageParam;
 import com.oneside.base.utils.BusinessStateHelper;
 import com.oneside.base.view.filter.FilterView;
 import com.oneside.base.hy.HyNativeUtils;
@@ -70,13 +73,20 @@ public class TabPicFragment extends BaseFragment
         lvItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(mType == 0) {
-                    ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
-                    HyNativeUtils.gotoStoryPicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
-                } else {
-                    ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
-                    HyNativeUtils.gotoConnotativePicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
-                }
+                ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
+                RNPageParam param = new RNPageParam();
+                param.scheme = "rn://android/picDetail";
+                param.addParam("title", summary.title);
+                param.addParam("id", summary.id);
+                param.addParam("type", "" + mType);
+                xStartActivity(CardReactActivity.class, param);
+//                if(mType == 0) {
+//                    ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
+//                    HyNativeUtils.gotoStoryPicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
+//                } else {
+//                    ArticleSummary summary = (ArticleSummary) parent.getAdapter().getItem(position);
+//                    HyNativeUtils.gotoConnotativePicDetailWebPage((BaseActivity)getActivity(), summary.title, summary.id);
+//                }
             }
         });
 

@@ -30,7 +30,6 @@ public class JokeDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_joke_detail);
         setTitle(mPageParam.title, true);
 
-
         tvContent.setText(Html.fromHtml(mPageParam.content));
     }
 }

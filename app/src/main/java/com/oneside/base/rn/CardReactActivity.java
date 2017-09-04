@@ -43,6 +43,7 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
         super.onCreate(bundle);
         setContentView(R.layout.activity_rn_temp);
         mDelegate = new CardReactActivityDelegate(this, RNConfig.MAIN_COMPONENT_NAME);
+        mDelegate.setPageParam(mParams);
         mDelegate.onCreate(bundle);
 
         addReactRootView();
@@ -53,7 +54,9 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
         params.addRule(RelativeLayout.CENTER_IN_PARENT);
         rlContainer.addView(mDelegate.getReactRootView(), params);
         mStateHelper = BusinessStateHelper.build(this, mDelegate.getReactRootView());
-        mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        if (!mDelegate.getReactInstanceManager().hasStartedCreatingInitialContext()) {
+            mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING);
+        }
         mDelegate.getReactInstanceManager().addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
             @Override
             public void onReactContextInitialized(ReactContext context) {

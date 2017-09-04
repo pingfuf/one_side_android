@@ -11,6 +11,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactRootView;
 import com.oneside.utils.LangUtils;
+import com.oneside.utils.LogUtils;
 
 import javax.annotation.Nullable;
 
@@ -82,14 +83,16 @@ public class CardReactActivityDelegate extends ReactActivityDelegate {
     @Override
     protected Bundle getLaunchOptions() {
         Bundle bundle = new Bundle();
-        if (mParams != null && !LangUtils.isEmpty(mParams.scheme)) {
-            bundle.putString("scheme", mParams.scheme);
+        if (mParams != null) {
+            LogUtils.i("react scheme = %s", mParams.scheme);
+            LogUtils.i("react params = %s", mParams.buildScheme());
+            if (!LangUtils.isEmpty(mParams.scheme)) {
+                bundle.putString("scheme", mParams.buildScheme());
+            } else {
+                bundle.putString("scheme", "rn://android/main");
+            }
         } else {
             bundle.putString("scheme", "rn://android/main");
-        }
-
-        if (mParams != null && mParams.params != null) {
-            bundle.putString("param", JSON.toJSONString(mParams.params));
         }
 
         return bundle;

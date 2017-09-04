@@ -39,7 +39,7 @@ public class RCTNavigatorModule extends ReactContextBaseJavaModule {
      * 从JS页面跳转到原生activity 同时也可以从JS传递相关数据到原生
      *
      * @param name   需要打开的Activity的class
-     * @param params
+     * @param params 参数
      */
     @ReactMethod
     public void startActivity(String name, String params) {
@@ -66,8 +66,6 @@ public class RCTNavigatorModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void onReactModuleFinished() {
-        ViewUtils.showToast("finished", Toast.LENGTH_LONG);
-
         ReactModuleEvent event = new ReactModuleEvent();
         event.state = 1;
         EventBus.getDefault().post(event);
