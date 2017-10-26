@@ -9,6 +9,7 @@ import com.oneside.R;
 import com.oneside.base.adapter.XSimpleAdapter;
 import com.oneside.base.view.XRoundImageView;
 import com.oneside.model.beans.ArticleSummary;
+import com.oneside.utils.LangUtils;
 
 import java.util.List;
 
@@ -49,6 +50,7 @@ public class ConnotativePicAdapter extends XSimpleAdapter<ArticleSummary> {
 
         holder.tvTitle.setText(item.title);
         holder.tvContent.setText(item.desc);
+        holder.tvContent.setVisibility(LangUtils.isEmpty(item.desc) ? View.GONE : View.VISIBLE);
     }
 
     private static class ViewHolder {

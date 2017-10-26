@@ -106,11 +106,7 @@ public class CardReactFragment extends BaseFragment {
 
     @Override
     protected boolean onBackPressed() {
-        if (mReactModuleIsFinished) {
-            return false;
-        }
-
-        return mDelegate.onBackPressed();
+        return !mReactModuleIsFinished && mDelegate.onBackPressed();
     }
 
     @Override

@@ -26,6 +26,13 @@ allprojects {
     }
 }
 
+ext {
+    //compileSdkVersion、buildToolsVersion、supportLibraryVersion应该对应，否则编译不过
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+    supportLibraryVersion = '25.3.1'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

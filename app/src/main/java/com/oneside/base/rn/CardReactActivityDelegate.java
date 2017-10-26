@@ -10,8 +10,11 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactRootView;
+import com.oneside.CardApplication;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.LogUtils;
+
+import java.lang.ref.WeakReference;
 
 import javax.annotation.Nullable;
 
@@ -19,18 +22,18 @@ import javax.annotation.Nullable;
  * Created by fupingfu on 2017/8/17.
  */
 public class CardReactActivityDelegate extends ReactActivityDelegate {
-    private Activity mActivity;
+    private WeakReference<Activity> mActivityRef;
     private RNPageParam mParams;
     private ReactRootView mReactRootView;
 
     public CardReactActivityDelegate(Activity activity, @Nullable String mainComponentName) {
         super(activity, mainComponentName);
-        mActivity = activity;
+        mActivityRef = new WeakReference<Activity>(activity);
     }
 
     public CardReactActivityDelegate(FragmentActivity fragmentActivity, @Nullable String mainComponentName) {
         super(fragmentActivity, mainComponentName);
-        mActivity = fragmentActivity;
+        mActivityRef = new WeakReference<Activity>(fragmentActivity);
     }
 
     public void setPageParam(RNPageParam pageParam) {
@@ -44,7 +47,7 @@ public class CardReactActivityDelegate extends ReactActivityDelegate {
 
     @Override
     public ReactRootView createRootView() {
-        mReactRootView = new ReactRootView(mActivity);
+        mReactRootView = new ReactRootView(mActivityRef.get());
 
         return mReactRootView;
     }
@@ -55,11 +58,7 @@ public class CardReactActivityDelegate extends ReactActivityDelegate {
 
     @Override
     public ReactNativeHost getReactNativeHost() {
-        if (mActivity == null) {
-            return null;
-        }
-
-        return ((ReactApplication) mActivity.getApplication()).getReactNativeHost();
+        return CardApplication.getApplication().getReactNativeHost();
     }
 
     @Override
@@ -86,11 +85,7 @@ public class CardReactActivityDelegate extends ReactActivityDelegate {
         if (mParams != null) {
             LogUtils.i("react scheme = %s", mParams.scheme);
             LogUtils.i("react params = %s", mParams.buildScheme());
-            if (!LangUtils.isEmpty(mParams.scheme)) {
-                bundle.putString("scheme", mParams.buildScheme());
-            } else {
-                bundle.putString("scheme", "rn://android/main");
-            }
+            bundle.putString("scheme", mParams.buildScheme());
         } else {
             bundle.putString("scheme", "rn://android/main");
         }

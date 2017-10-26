@@ -46,7 +46,7 @@ public class CardSessionManager {
         mToken = IOUtils.getPreferenceValue(TOKEN_KEY);
     }
 
-    public synchronized static CardSessionManager getInstance() {
+    public static CardSessionManager getInstance() {
         CardSessionManager manager = mManager;
         if(manager == null) {
             synchronized (CardSessionManager.class) {

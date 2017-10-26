@@ -62,7 +62,7 @@ public class RCTNavigatorModule extends ReactContextBaseJavaModule {
     }
 
     /**
-     * react模块结束时间
+     * react模块结束事件
      */
     @ReactMethod
     public void onReactModuleFinished() {

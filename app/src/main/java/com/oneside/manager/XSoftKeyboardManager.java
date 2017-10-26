@@ -18,7 +18,7 @@ import com.oneside.utils.SysUtils;
  * FIXME
  */
 public class XSoftKeyboardManager {
-    private static final int VISIABLE_SIZE = 50;
+    private static final int VISIBLE_SIZE = 50;
 
     private Activity mActivity;
     private OnSoftKeyboardShowOrHideListener mSoftKeyboardShowOrHideListener;
@@ -55,7 +55,7 @@ public class XSoftKeyboardManager {
                         View view = mRootWindow.getDecorView();
                         view.getWindowVisibleDisplayFrame(r);
 
-                        if (SysUtils.HEIGHT - r.bottom > VISIABLE_SIZE) {
+                        if (SysUtils.HEIGHT - r.bottom > VISIBLE_SIZE) {
                             softKeyboardHeight = SysUtils.HEIGHT - r.bottom;
                             isSoftKeyboardShowing = true;
                             mSoftKeyboardShowOrHideListener.onKeyboardShow();

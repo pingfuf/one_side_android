@@ -24,7 +24,13 @@ import com.oneside.base.inject.From;
 import com.oneside.base.inject.XAnnotation;
 import com.oneside.base.rn.lib.RCTSwipeRefreshLayoutPackage;
 import com.oneside.base.utils.BusinessStateHelper;
+import com.oneside.model.event.ReactModuleEvent;
 import com.oneside.utils.LangUtils;
+import com.oneside.utils.LogUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 
@@ -37,11 +43,14 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
 
     @XAnnotation
     RNPageParam mParams;
+    boolean isVisible;
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        LogUtils.i("react activity onCreate");
         setContentView(R.layout.activity_rn_temp);
+        EventBus.getDefault().register(this);
         mDelegate = new CardReactActivityDelegate(this, RNConfig.MAIN_COMPONENT_NAME);
         mDelegate.setPageParam(mParams);
         mDelegate.onCreate(bundle);
@@ -71,6 +80,8 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
     protected void onResume() {
         super.onResume();
         mDelegate.onResume();
+        LogUtils.i("react activity onResume");
+        isVisible = true;
     }
 
     private void updateJsBundle() {
@@ -97,10 +108,20 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
 
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReactModuleFinished(ReactModuleEvent event) {
+        LogUtils.i("react activity onReactModuleFinished");
+        if (isVisible) {
+            finish();
+        }
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
+        LogUtils.i("react activity onPause");
         mDelegate.onPause();
+        isVisible = false;
     }
 
     @Override
@@ -111,6 +132,7 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
 
     @Override
     public void onBackPressed() {
+        LogUtils.i("react activity onBackPressed");
         if (!mDelegate.onBackPressed()) {
             super.onBackPressed();
         }
@@ -125,7 +147,9 @@ public class CardReactActivity extends BaseActivity implements DefaultHardwareBa
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        LogUtils.i("react activity onDestroy");
         mDelegate.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override

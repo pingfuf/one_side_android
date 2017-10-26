@@ -311,5 +311,6 @@ public class MainActivity extends BaseActivity implements TabView.OnItemClick {
     protected void onDestroy() {
 //        EventBus.getDefault().unregister(this);
         super.onDestroy();
+        LogUtils.i("MainActivity onDestroy");
     }
 }

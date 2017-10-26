@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 
 import com.oneside.base.BaseActivity;
 import com.oneside.manager.CardManager;
+import com.oneside.manager.CardSessionManager;
 import com.oneside.ui.LoginActivity;
 import com.oneside.ui.MainActivity;
 import com.oneside.utils.Constant;
@@ -16,19 +17,21 @@ public class SplashActivity extends BaseActivity implements ViewPager.OnPageChan
         super.onCreate(bundle);
         setContentView(R.layout.activity_splash);
 
-        jumpActivity(MainActivity.class, true);
+        if (CardSessionManager.getInstance().isLogin()) {
+            jumpActivity();
+        } else {
+
+        }
         CardManager.logUmengEvent(Constant.UMENG_EVENT_OPEN);
     }
 
-    private void jumpActivity(final Class<? extends BaseActivity> clazz, final boolean isFinish) {
+    private void jumpActivity() {
         ViewUtils.postDelayed(new Runnable() {
 
             public void run() {
                 if (!isFinishing()) {
-                    xStartActivity(clazz, LoginActivity.LOGIN_PAGE_CODE);
-                    if(isFinish) {
-                        finish();
-                    }
+                    xStartActivity(MainActivity.class, LoginActivity.LOGIN_PAGE_CODE);
+                    finish();
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }

@@ -10,6 +10,7 @@ import com.oneside.base.BaseActivity;
 import com.oneside.base.inject.From;
 import com.oneside.ui.study.ui.CanvasStudyView;
 import com.oneside.ui.study.ui.VideoActivity;
+import com.oneside.utils.LogUtils;
 
 public class StudyActivity extends BaseActivity {
     @From(R.id.btn_test)
@@ -59,5 +60,11 @@ public class StudyActivity extends BaseActivity {
         } else if (v == btnGotoVideo) {
             xStartActivity(VideoActivity.class);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtils.i("StudyActivity onDestroy");
     }
 }
