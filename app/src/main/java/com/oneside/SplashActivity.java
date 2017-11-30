@@ -20,7 +20,7 @@ public class SplashActivity extends BaseActivity implements ViewPager.OnPageChan
         if (CardSessionManager.getInstance().isLogin()) {
             jumpActivity();
         } else {
-
+            jumpActivity();
         }
         CardManager.logUmengEvent(Constant.UMENG_EVENT_OPEN);
     }

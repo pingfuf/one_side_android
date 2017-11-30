@@ -42,6 +42,9 @@ public class CardReactPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return  Collections.emptyList();
+        List<ViewManager> list = new ArrayList<>();
+        list.add(new ReactViewManager());
+
+        return list;
     }
 }
