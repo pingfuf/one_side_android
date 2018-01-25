@@ -16,7 +16,7 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp" >
 
-        <Button
+     MyButtontton
             android:id="@+id/button_send"
             android:layout_width="65dp"
             android:layout_height="match_parent"

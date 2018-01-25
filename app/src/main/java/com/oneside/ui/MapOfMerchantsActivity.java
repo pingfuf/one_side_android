@@ -102,8 +102,6 @@ public class MapOfMerchantsActivity extends BaseActivity implements OnMapLoadedL
         return true;
     }
 
-    ;
-
     @Override
     protected void onResume() {
         super.onResume();

@@ -70,6 +70,4 @@ public class RCTSwipeRefreshLayoutManager extends ViewGroupManager<RCTSwipeRefre
                 .put("RCTSwipeRefreshLayout.TouchUp", MapBuilder.of("registrationName", "onSwipeRefresh"))
                 .build();
     }
-
-
 }

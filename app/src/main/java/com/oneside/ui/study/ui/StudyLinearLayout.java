@@ -27,4 +27,6 @@ public class StudyLinearLayout extends LinearLayout {
         LogUtils.e(StudyConfig.TAG + "StudyLinearLayout onDraw");
         super.onDraw(canvas);
     }
+
+
 }

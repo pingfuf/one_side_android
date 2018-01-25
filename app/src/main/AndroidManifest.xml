@@ -178,7 +178,10 @@
         <activity android:name=".ui.RnKotlinActivity" />
         <activity android:name=".ui.TempKotlinActivity" />
         <activity android:name=".kotlin.ui.KotlinStudyActivity" />
-        <activity android:name=".kotlin.ui.UserCenterActivity"></activity>
+        <activity android:name=".kotlin.ui.UserCenterActivity" />
+        <activity android:name=".ui.study.ScrollViewActivity" />
+        <activity android:name=".ui.study.TouchableActivity" />
+        <activity android:name=".kotlin.ui.KotlinHomeActivity"></activity>
     </application>
 
 </manifest>

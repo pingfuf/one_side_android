@@ -23,7 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oneside.R;
-import com.oneside.base.utils.DownloadTask;
 import com.oneside.utils.LangUtils;
 import com.oneside.utils.ViewUtils;
 

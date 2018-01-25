@@ -8,7 +8,7 @@ import com.oneside.base.BaseActivity
 import com.oneside.base.utils.BusinessStateHelper
 
 class KotlinStudyActivity : BaseActivity() {
-    private lateinit var mStateHelper : BusinessStateHelper
+    private var mStateHelper : BusinessStateHelper? = null
     private lateinit var mTvTemp : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,10 +17,10 @@ class KotlinStudyActivity : BaseActivity() {
 
         mTvTemp = findViewById(R.id.tv_temp) as TextView
         mStateHelper = BusinessStateHelper.build(this, mTvTemp)
-        mStateHelper.setState(BusinessStateHelper.BusinessState.LOADING)
+        mStateHelper?.setState(BusinessStateHelper.BusinessState.LOADING)
 
         mTvTemp.postDelayed({
-            mStateHelper.setState(BusinessStateHelper.BusinessState.FINISHED)
+            mStateHelper?.setState(BusinessStateHelper.BusinessState.FINISHED)
         }, 2000)
     }
 }

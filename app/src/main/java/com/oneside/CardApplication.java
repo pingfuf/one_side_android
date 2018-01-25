@@ -33,7 +33,6 @@ public class CardApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
         //在使用SDK各组间之前初始化context 信息，传入 ApplicationContext
         application = this;
 
@@ -52,6 +51,12 @@ public class CardApplication extends Application implements ReactApplication {
         }
         isInit = true;
         LogUtils.d("CardApplication start time = %s", System.currentTimeMillis() - startTime);
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     @Override

@@ -89,7 +89,7 @@
             android:text="@string/UMIgnore"
             android:textColor="#000" />
 
-        <!-- OK&Cancel Button -->
+        <!-- OK&CanMyButtontton -->
 
         <LinearLayout
             android:layout_width="fill_parent"
